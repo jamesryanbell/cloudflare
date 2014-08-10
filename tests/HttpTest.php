@@ -46,4 +46,15 @@ class HttpTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals("delete", $result['method']);
 	}
 
+	public function testHttpRequest() {
+		$reflectionClass = new ReflectionClass('\\JamesryanBell\Cloudflare\\Api');
+		$method = $reflectionClass->getMethod('request');
+		$method->setAccessible(true);
+
+		$api = new Cloudflare\Api('email@example.com', 'Auth Key');
+		$result = $method->invoke($api, 'test');
+
+		$this->assertEquals('get', $result['method']);
+	}
+
 }
