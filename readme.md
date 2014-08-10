@@ -21,6 +21,8 @@ Add `"jamesryanbell/cloudflare": "dev-master"` to your `composer.json` file
 Run `composer update` to install the latest version.
 
 ##Usage
+```php
+
     use JamesRyanBell\Cloudflare;
 
     // Create a connection to the Cloudflare API which you can
@@ -30,6 +32,7 @@ Run `composer update` to install the latest version.
     // Create a new DNS record
     $dns = new Cloudflare\Dns($client);
     $dns->create('12345678901234567890', 'TXT', '127.0.0.1', 120);
+```
 
 #License
 MIT
