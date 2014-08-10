@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/jamesryanbell/Cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/Cloudflare)
-[![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/Cloudflare.svg)](https://coveralls.io/r/jamesryanbell/Cloudflare)
+[![Build Status](https://travis-ci.org/jamesryanbell/Cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/cloudflare)
+[![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/cloudflare.svg)](https://coveralls.io/r/jamesryanbell/cloudflare?branch=master)
 [![Dependency Status](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a)
 
 [![Latest Stable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/stable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Total Downloads](https://poser.pugx.org/jamesryanbell/cloudflare/downloads.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Latest Unstable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/unstable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![License](https://poser.pugx.org/jamesryanbell/cloudflare/license.svg)](https://packagist.org/packages/jamesryanbell/cloudflare)
