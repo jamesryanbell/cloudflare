@@ -1,6 +1,6 @@
 {
-    "name": "jamesryanbell/Cloudflare",
-    "description": "Cloud Flare API v4 wrapper",
+    "name": "jamesryanbell/cloudflare",
+    "description": "Cloudflare API V4 PHP wrapper",
     "license": "MIT",
     "keywords": ["cloudflare", "dns", "cache", "zone", "api"],
     "authors": [
