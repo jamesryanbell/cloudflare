@@ -21,8 +21,10 @@ Add `"jamesryanbell/cloudflare": "dev-master"` to your `composer.json` file
 Run `composer update` to install the latest version.
 
 ##Usage
-```php
 
+In situations where you want to make multiple calls to the API across different services it's easier to create a connection to the api first and then pass that around the other services e.g.
+
+```php
     use JamesRyanBell\Cloudflare;
 
     // Create a connection to the Cloudflare API which you can
@@ -31,6 +33,16 @@ Run `composer update` to install the latest version.
 
     // Create a new DNS record
     $dns = new Cloudflare\Dns($client);
+    $dns->create('12345678901234567890', 'TXT', '127.0.0.1', 120);
+```
+
+If you are just performing a single action then you can connect to the API directly when you instantiate the class e.g.
+```php
+    use JamesRyanBell\Cloudflare;
+
+    // Create a connection to the Cloudflare API which you can
+    // then pass into other services, e.g. DNS, later on
+    $dns = new Cloudflare\Dns('email@example.com', 'API_KEY');
     $dns->create('12345678901234567890', 'TXT', '127.0.0.1', 120);
 ```
 
