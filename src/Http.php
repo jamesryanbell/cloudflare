@@ -2,6 +2,8 @@
 
 namespace JamesRyanBell\Cloudflare;
 
+use \Exception;
+
 /**
  * CloudFlare API wrapper
  *
@@ -12,29 +14,34 @@ namespace JamesRyanBell\Cloudflare;
 
 class Http
 {
-	protected function get($path, $data = array())
+	public function get($path, $data = array())
 	{
 		return $this->request($path, $data, 'get');
 	}
 
-	protected function post($path, $data = array())
+	public function post($path, $data = array())
 	{
 		return $this->request($path, $data, 'post');
 	}
 
-	protected function put($path, $data = array())
+	public function put($path, $data = array())
 	{
 		return $this->request($path, $data, 'put');
 	}
 
-	protected function delete($path, $data = array())
+	public function delete($path, $data = array())
 	{
 		return $this->request($path, $data, 'delete');
 	}
 
 	protected function request($path, $data = array(), $method = 'get')
 	{
-		//Remove empty entries
+		if( !isset($this->email) || !isset($this->auth_key) ) {
+			throw new Exception('Authentication information must be provided');
+			return false;
+		}
+
+		//Removes empty entries
 		$data = array_filter($data);
 
 		$url = 'https://api.cloudflare.com/v4/' . $path;
@@ -50,7 +57,7 @@ class Http
 		);
 
 		$curl_options = $default_curl_options;
-		if(is_array($this->curl_options)) {
+		if(isset($this->curl_options) && is_array($this->curl_options)) {
 			$curl_options = array_merge($default_curl_options, $this->curl_options);
 		}
 
@@ -79,9 +86,7 @@ class Http
 		} else {
 			$url .= '?' . http_build_query($data);
 		}
-var_dump($data);
-var_dump(http_build_query($data));
-var_dump($url);
+
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_URL, $url);
 
@@ -90,12 +95,12 @@ var_dump($url);
 		$information = curl_getinfo($ch);
 		$http_code   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-		var_dump($information);
 		curl_close($ch);
 		if ($http_code != 200) {
 			return array(
-				'error' => $error,
-				'http_code' => $http_code
+				'error'     => $error,
+				'http_code' => $http_code,
+				'method'    => $method
 			);
 		} else {
 			return json_decode($http_result);
