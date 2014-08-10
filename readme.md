@@ -2,6 +2,8 @@
 [![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/Cloudflare.svg)](https://coveralls.io/r/jamesryanbell/Cloudflare)
 [![Dependency Status](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a)
 
+[![Latest Stable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/stable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Total Downloads](https://poser.pugx.org/jamesryanbell/cloudflare/downloads.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Latest Unstable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/unstable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![License](https://poser.pugx.org/jamesryanbell/cloudflare/license.svg)](https://packagist.org/packages/jamesryanbell/cloudflare)
+
 #Cloudflare API V4 PHP wrapper
 
 A work in progress library for the new Cloudflare API. The documentation for the new API  can be found at http://developers.cloudflare.com/next/.
