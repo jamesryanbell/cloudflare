@@ -27,7 +27,7 @@ class Dns extends Api
 	public function create($zone_identifier, $type, $name = null, $content = null, $ttl = null)
 	{
 		$data = array(
-			'type'    => $type,
+			'type'    => strtoupper($type),
 			'name'    => $name,
 			'content' => $content,
 			'ttl'     => $ttl
