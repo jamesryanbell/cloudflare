@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jamesryanbell/Cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/cloudflare)
+[![Build Status](https://travis-ci.org/jamesryanbell/cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/cloudflare)
 [![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/cloudflare.svg)](https://coveralls.io/r/jamesryanbell/cloudflare?branch=master)
 [![Dependency Status](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a)
 
