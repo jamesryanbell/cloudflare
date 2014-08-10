@@ -42,8 +42,7 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 	public function testSetCurlOption()
 	{
 		$api = new Cloudflare\Api;
-		$api->setCurlOption(array(CURLOPT_TIMEOUT => 5));
-		$this->assertArrayHasKey(CURLOPT_TIMEOUT, $api->curl_options);
+		$api->setCurlOption(CURLOPT_TIMEOUT, 5);
 		$this->assertEquals(5, $api->curl_options[CURLOPT_TIMEOUT]);
 	}
 
