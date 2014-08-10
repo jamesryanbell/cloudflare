@@ -14,11 +14,11 @@ use JamesRyanBell\Cloudflare\Http;
 
 class Api extends Http
 {
-	protected $email;
-	protected $auth_key;
-	protected $curl_options;
+	public $email;
+	public $auth_key;
+	public $curl_options;
 
-	protected $client;
+	public $client;
 
 	/**
 	 * Make a new instance of the API client
@@ -51,7 +51,6 @@ class Api extends Http
 	}
 
 	public function setCurlOption($option) {
-		$key = 'CURLOPT_' . strtoupper(ltrim(key($option), 'CURLOPT_'));
-		$this->curl_options[$key] = current($option);
+		$this->curl_options[key($option)] = current($option);
 	}
 }
