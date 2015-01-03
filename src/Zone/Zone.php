@@ -51,7 +51,7 @@ class Zone extends Api
 			'page'      => $page,
 			'per_page'  => $per_page,
 			'order'     => $order,
-			//'direction' => $direction,
+			'direction' => $direction,
 			'match'     => $match
 		);
 		return $this->get('zones', $data);
