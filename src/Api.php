@@ -110,6 +110,16 @@ class Api
 	}
 
 	/**
+	 * API call method for sending requests using PATCH
+	 * @param  string $path Path of the endpoint
+	 * @param  array  $data Data to be sent along with the request
+	 */
+	public function patch($path, $data = array())
+	{
+		return $this->request($path, $data, 'patch');
+	}
+
+	/**
 	 *
 	 * @codeCoverageIgnore
 	 *
@@ -128,7 +138,7 @@ class Api
 		//Removes empty entries
 		$data = array_filter($data);
 
-		$url = 'https://api.cloudflare.com/v4/' . $path;
+		$url = 'https://api.cloudflare.com/client/v4/' . $path;
 
 		$default_curl_options = array(
 			CURLOPT_VERBOSE        => false,
@@ -163,10 +173,11 @@ class Api
 		} else if ( $method === 'delete' ) {
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+			$headers[] = "Content-type: application/json";
 		} else if ($method === 'patch') {
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
-			//$headers[] = "Content-type: application/json";
+			$headers[] = "Content-type: application/json";
 		} else {
 			$url .= '?' . http_build_query($data);
 		}
@@ -182,9 +193,11 @@ class Api
 		curl_close($ch);
 		if ($http_code != 200) {
 			return array(
-				'error'     => $error,
-				'http_code' => $http_code,
-				'method'    => $method
+				'error'       => $error,
+				'http_code'   => $http_code,
+				'method'      => $method,
+				'result'      => $http_result,
+				'information' => $information
 			);
 		} else {
 			return json_decode($http_result);
