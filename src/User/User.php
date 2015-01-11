@@ -15,6 +15,7 @@ use JamesRyanBell\Cloudflare\Api;
 
 class User extends Api
 {
+	protected $permission_level = array('read' => null, 'edit' => null);
 
 	/**
 	 * User details

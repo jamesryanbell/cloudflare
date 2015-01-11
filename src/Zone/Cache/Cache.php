@@ -2,6 +2,7 @@
 
 namespace JamesRyanBell\Cloudflare\Zone;
 use JamesRyanBell\Cloudflare\Api;
+use JamesRyanBell\Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -12,14 +13,15 @@ use JamesRyanBell\Cloudflare\Api;
  * @version 1
  */
 
-class Cache extends Api
+class Cache extends Zone
 {
+	protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
 
 	/**
 	 * Purge all files (permission needed: #zone:edit)
 	 * Remove ALL files from CloudFlare's cache
-	 * @param  string  $identifier API item identifier tag
-	 * @param  boolean A flag that indicates all resources in CloudFlare's cache should be removed.
+	 * @param string  $identifier API item identifier tag
+	 * @param boolean A flag that indicates all resources in CloudFlare's cache should be removed.
 	 *                 Note: This may have dramatic affects on your origin server load after
 	 *                 performing this action. (true)
 	 */
@@ -34,8 +36,8 @@ class Cache extends Api
 	/**
 	 * Purge individual files (permission needed: #zone:edit)
 	 * Remove one or more files from CloudFlare's cache
-	 * @param  string $identifier API item identifier tag
-	 * @param  array  $files      An array of URLs that should be removed from cache
+	 * @param string $identifier API item identifier tag
+	 * @param array  $files      An array of URLs that should be removed from cache
 	 */
 	public function purge_files($identifier, array $files)
 	{
