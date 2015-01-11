@@ -15,9 +15,12 @@ use \Exception;
 
 class Api
 {
+	protected $permission_level = array('read' => null, 'edit' => null);
+
 	public $email;
 	public $auth_key;
 	public $curl_options;
+	private $permissions = null;
 
 	/**
 	 * Make a new instance of the API client
