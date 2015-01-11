@@ -145,8 +145,8 @@ class Api
 			return false;
 		}
 
-		if(!is_null($this->permission_level[$permission_level])) {
-			if(!$this->permissions) { $this->_permissions(); }
+		if( !is_null($this->permission_level[$permission_level]) ) {
+			if( !$this->permissions ) { $this->_permissions(); }
 			if( !isset($this->permissions) || !in_array($this->permission_level[$permission_level], $this->permissions) ) {
 				throw new Exception('You do not have permission to perform this request');
 				return false;
