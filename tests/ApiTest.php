@@ -76,6 +76,12 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals("put", $result['method']);
 	}
 
+	public function testHttpPatchMethodSet() {
+		$api = new Api('email@example.com', 'Auth Key');
+		$result = $api->patch('test');
+		$this->assertEquals("patch", $result['method']);
+	}
+
 	public function testHttpDeleteMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->delete('test');
