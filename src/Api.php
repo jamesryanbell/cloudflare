@@ -175,7 +175,7 @@ class Api
 
 		$curl_options = $default_curl_options;
 		if(isset($this->curl_options) && is_array($this->curl_options)) {
-			$curl_options = array_merge($default_curl_options, $this->curl_options);
+			$curl_options = array_replace($default_curl_options, $this->curl_options);
 		}
 
 		$headers = array("X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}");
