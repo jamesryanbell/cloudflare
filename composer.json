@@ -1,26 +1,29 @@
 {
-    "name": "mcstutterfish/cloudflare",
-    "description": "Cloudflare API V4 PHP wrapper",
-    "license": "MIT",
-    "keywords": ["cloudflare", "api"],
-    "authors": [
-        {
-            "name": "Christopher M. Black",
-            "email": "cblack@devonium.com"
-        },
-        {
-            "name": "James Bell",
-            "email": "james@james-bell.co.uk"
-        }
-    ],
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "*",
-        "satooshi/php-coveralls": "dev-master"
+  "name": "mcstutterfish/cloudflare",
+  "description": "Cloudflare API V4 PHP wrapper",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "api"
+  ],
+  "authors": [
+    {
+      "name": "Christopher M. Black",
+      "email": "cblack@devonium.com"
     },
-    "autoload": {
-        "psr-4": {
-            "Cloudflare\\": "src"
-        }
+    {
+      "name": "James Bell",
+      "email": "james@james-bell.co.uk"
     }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "satooshi/php-coveralls": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cloudflare\\": "src"
+    }
+  }
 }
