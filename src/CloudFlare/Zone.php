@@ -2,6 +2,8 @@
 
 namespace CloudFlare;
 
+use Api;
+
 /**
  * CloudFlare API wrapper
  *

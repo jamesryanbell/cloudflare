@@ -2,6 +2,8 @@
 
 namespace CloudFlare;
 
+use Api;
+
 /**
  * CloudFlare API wrapper
  *
@@ -56,7 +58,7 @@ class User extends Api {
 
 		$data = array(
 			'email'         => $email,
-			'confirm_email' => $confirm_email,
+			'confirm_email' => $email_confirm,
 			'password'      => $password
 		);
 

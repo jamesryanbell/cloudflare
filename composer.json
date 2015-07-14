@@ -22,8 +22,8 @@
     "satooshi/php-coveralls": "dev-master"
   },
   "autoload": {
-    "psr-4": {
-      "Cloudflare\\": "src"
+    "psr-0": {
+      "CloudFlare": "src/"
     }
   }
 }
