@@ -2,8 +2,6 @@
 
 namespace CloudFlare;
 
-use Api;
-
 /**
  * CloudFlare API wrapper
  *
@@ -15,7 +13,7 @@ use Api;
  */
 class User extends Api {
 
-	protected $permission_level = array('read' => null, 'edit' => null);
+	protected $permission_level = ['read' => null, 'edit' => null];
 
 	/**
 	 * User details
@@ -36,13 +34,13 @@ class User extends Api {
 	 */
 	public function update($first_name = null, $last_name = null, $telephone = null, $country = null, $zipcode = null) {
 
-		$data = array(
+		$data = [
 			'first_name' => $first_name,
-			'last_name'  => $last_name,
-			'telephone'  => $telephone,
-			'country'    => $country,
-			'zipcode'    => $zipcode
-		);
+			'last_name' => $last_name,
+			'telephone' => $telephone,
+			'country' => $country,
+			'zipcode' => $zipcode
+		];
 
 		return $this->patch('user', $data);
 	}
@@ -56,11 +54,11 @@ class User extends Api {
 	 */
 	public function change_email($email, $email_confirm, $password) {
 
-		$data = array(
-			'email'         => $email,
+		$data = [
+			'email' => $email,
 			'confirm_email' => $email_confirm,
-			'password'      => $password
-		);
+			'password' => $password
+		];
 
 		return $this->put('user/email', $data);
 	}
@@ -74,11 +72,11 @@ class User extends Api {
 	 */
 	public function change_password($old_password, $new_password, $new_password_confirm) {
 
-		$data = array(
-			'old_password'         => $old_password,
-			'new_password'         => $new_password,
+		$data = [
+			'old_password' => $old_password,
+			'new_password' => $new_password,
 			'new_password_confirm' => $new_password_confirm
-		);
+		];
 
 		return $this->put('user/password', $data);
 	}
@@ -91,10 +89,10 @@ class User extends Api {
 	 */
 	public function change_username($username, $password) {
 
-		$data = array(
+		$data = [
 			'username' => $username,
 			'password' => $password
-		);
+		];
 
 		return $this->put('user/username', $data);
 	}
@@ -108,11 +106,11 @@ class User extends Api {
 	 */
 	public function initialize_two_factor_authentication($country_code, $mobile_phone_number, $current_password) {
 
-		$data = array(
-			'country_code'        => $country_code,
+		$data = [
+			'country_code' => $country_code,
 			'mobile_phone_number' => $mobile_phone_number,
-			'current_password'    => $current_password
-		);
+			'current_password' => $current_password
+		];
 
 		return $this->post('/user/two_factor_authentication', $data);
 	}
@@ -124,9 +122,9 @@ class User extends Api {
 	 */
 	public function finalize_two_factor_authentication($auth_token) {
 
-		$data = array(
+		$data = [
 			'auth_token' => $auth_token
-		);
+		];
 
 		return $this->put('user/two_factor_authentication', $data);
 	}
@@ -138,9 +136,9 @@ class User extends Api {
 	 */
 	public function disable_two_factor_authentication($auth_token) {
 
-		$data = array(
+		$data = [
 			'auth_token' => $auth_token
-		);
+		];
 
 		return $this->delete('user/two_factor_authentication', $data);
 	}

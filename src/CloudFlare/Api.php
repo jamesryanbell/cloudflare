@@ -19,7 +19,7 @@ class Api {
 
 	public $curl_options;
 
-	protected $permission_level = array('read' => null, 'edit' => null);
+	protected $permission_level = ['read' => null, 'edit' => null];
 
 	private $permissions = null;
 
@@ -93,7 +93,7 @@ class Api {
 	 *
 	 * @return array|mixed
 	 */
-	public function get($path, $data = array()) {
+	public function get($path, $data = []) {
 
 		return $this->request($path, $data, 'get', 'read');
 
@@ -113,7 +113,7 @@ class Api {
 	 * @return array|mixed
 	 * @throws \Exception
 	 */
-	protected function request($path, $data = array(), $method = 'get', $permission_level = 'read') {
+	protected function request($path, $data = [], $method = 'get', $permission_level = 'read') {
 
 		if (!isset($this->email) || !isset($this->auth_key)) {
 
@@ -129,32 +129,40 @@ class Api {
 				$this->_permissions();
 			}
 
-			if (!isset($this->permissions) || !in_array($this->permission_level[$permission_level], $this->permissions)) {
+			if ($this->permissions != 'all' && (!isset($this->permissions) || !in_array(
+						$this->permission_level[$permission_level],
+						$this->permissions
+					))
+			) {
+
 				throw new \Exception('You do not have permission to perform this request');
 
 				return false;
+
 			}
 
 		}
 
 		//Removes null entries
-		$data = array_filter($data,
+		$data = array_filter(
+			$data,
 			function ($val) {
 
 				return !is_null($val);
-			});
+			}
+		);
 
 		$url = 'https://api.cloudflare.com/client/v4/' . $path;
 
-		$default_curl_options = array(
-			CURLOPT_VERBOSE        => false,
-			CURLOPT_FORBID_REUSE   => true,
+		$default_curl_options = [
+			CURLOPT_VERBOSE => false,
+			CURLOPT_FORBID_REUSE => true,
 			CURLOPT_RETURNTRANSFER => 1,
-			CURLOPT_HEADER         => false,
-			CURLOPT_TIMEOUT        => 5,
+			CURLOPT_HEADER => false,
+			CURLOPT_TIMEOUT => 5,
 			CURLOPT_SSL_VERIFYPEER => false,
 			CURLOPT_FOLLOWLOCATION => true
-		);
+		];
 
 		$curl_options = $default_curl_options;
 
@@ -162,7 +170,7 @@ class Api {
 			$curl_options = array_replace($default_curl_options, $this->curl_options);
 		}
 
-		$headers = array("X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}");
+		$headers = ["X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}"];
 
 		$ch = curl_init();
 
@@ -171,15 +179,14 @@ class Api {
 		if ($method === 'post') {
 
 			curl_setopt($ch, CURLOPT_POST, true);
-			//curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			$headers[] = "Content-type: application/json";
+			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
 		} else if ($method === 'put') {
 
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-			//curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-HTTP-Method-Override: PUT'));
+			$headers[] = "Content-type: application/json";
 
 		} else if ($method === 'delete') {
 
@@ -209,13 +216,13 @@ class Api {
 
 		if ($http_code != 200) {
 
-			return array(
-				'error'       => $error,
-				'http_code'   => $http_code,
-				'method'      => $method,
-				'result'      => $http_result,
+			return [
+				'error' => $error,
+				'http_code' => $http_code,
+				'method' => $method,
+				'result' => $http_result,
 				'information' => $information
-			);
+			];
 
 		} else {
 			return json_decode($http_result);
@@ -227,9 +234,18 @@ class Api {
 
 		if (!$this->permissions) {
 
-			$api               = new User($this->email, $this->auth_key);
-			$user              = $api->user();
-			$this->permissions = $user->result->organizations[0]->permissions;
+			$api  = new \CloudFlare\User($this->email, $this->auth_key);
+			$user = $api->user();
+
+			if (!empty($user->result->organizations)) {
+
+				$this->permissions = $user->result->organizations[0]->permissions;
+
+			} else {
+
+				$this->permissions = 'all';
+
+			}
 
 		}
 
@@ -245,7 +261,7 @@ class Api {
 	 *
 	 * @return array|mixed
 	 */
-	public function post($path, $data = array()) {
+	public function post($path, $data = []) {
 
 		return $this->request($path, $data, 'post', 'edit');
 
@@ -259,7 +275,7 @@ class Api {
 	 *
 	 * @return array|mixed
 	 */
-	public function put($path, $data = array()) {
+	public function put($path, $data = []) {
 
 		return $this->request($path, $data, 'put', 'edit');
 
@@ -273,7 +289,7 @@ class Api {
 	 *
 	 * @return array|mixed
 	 */
-	public function delete($path, $data = array()) {
+	public function delete($path, $data = []) {
 
 		return $this->request($path, $data, 'delete', 'edit');
 
@@ -287,7 +303,7 @@ class Api {
 	 *
 	 * @return array|mixed
 	 */
-	public function patch($path, $data = array()) {
+	public function patch($path, $data = []) {
 
 		return $this->request($path, $data, 'patch', 'edit');
 

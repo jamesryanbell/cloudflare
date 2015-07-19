@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class Plan extends Zone {
+class Plan extends Api {
 
-	protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
+	protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
 
 	/**
 	 * Available plans (permission needed: #billing:read)

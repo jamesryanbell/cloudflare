@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class CustomPages extends Zone {
+class CustomPages extends Api {
 
-	protected $permission_level = array('read' => '#zone_settings:read', 'edit' => '#zone_settings:edit');
+	protected $permission_level = ['read' => '#zone_settings:read', 'edit' => '#zone_settings:edit'];
 
 	/**
 	 * Available Custom Pages (permission needed: #zone_settings:read)
@@ -47,10 +47,10 @@ class CustomPages extends Zone {
 	 */
 	public function update($zone_identifier, $identifier, $url, $state) {
 
-		$data = array(
-			'url'   => $url,
+		$data = [
+			'url' => $url,
 			'state' => $state
-		);
+		];
 
 		return $this->patch('zones/' . $zone_identifier . '/custom_pages/' . $identifier, $data);
 	}

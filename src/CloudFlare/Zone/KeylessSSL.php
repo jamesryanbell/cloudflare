@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class KeylessSSL extends Zone {
+class KeylessSSL extends Api {
 
-	protected $permission_level = array('read' => '#ssl:read', 'edit' => '#ssl:edit');
+	protected $permission_level = ['read' => '#ssl:read', 'edit' => '#ssl:edit'];
 
 	/**
 	 * List Keyless SSLs (permission needed: #ssl:read)
@@ -49,12 +49,12 @@ class KeylessSSL extends Zone {
 	 */
 	public function create($zone_identifier, $host, $port, $name, $certificate) {
 
-		$data = array(
-			'host'        => $host,
-			'port'        => $port,
-			'name'        => $name,
+		$data = [
+			'host' => $host,
+			'port' => $port,
+			'name' => $name,
 			'certificate' => $certificate
-		);
+		];
 
 		return $this->post('zones/' . $zone_identifier . '/keyless_certificates', $data);
 	}
@@ -82,12 +82,12 @@ class KeylessSSL extends Zone {
 	 */
 	public function update($zone_identifier, $identifier, $host, $name, $port, $enabled = false) {
 
-		$data = array(
-			'host'    => $host,
-			'port'    => $port,
-			'name'    => $name,
+		$data = [
+			'host' => $host,
+			'port' => $port,
+			'name' => $name,
 			'enabled' => $enabled
-		);
+		];
 
 		return $this->patch('zones/' . $zone_identifier . '/keyless_certificates/' . $identifier, $data);
 	}

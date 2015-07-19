@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class Cache extends Zone {
+class Cache extends Api {
 
-	protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
+	protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
 
 	/**
 	 * Purge all files (permission needed: #zone:edit)
@@ -27,9 +27,9 @@ class Cache extends Zone {
 	 */
 	public function purge($identifier, $purge_everything = true) {
 
-		$data = array(
+		$data = [
 			'purge_everything' => $purge_everything
-		);
+		];
 
 		return $this->delete('zones/' . $identifier . '/purge_cache', $data);
 	}
@@ -43,9 +43,9 @@ class Cache extends Zone {
 	 */
 	public function purge_files($identifier, array $files) {
 
-		$data = array(
+		$data = [
 			'files' => $files
-		);
+		];
 
 		return $this->delete('zones/' . $identifier . '/purge_cache', $data);
 	}

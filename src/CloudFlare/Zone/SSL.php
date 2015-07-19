@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class SSL extends Zone {
+class SSL extends Api {
 
-	protected $permission_level = array('read' => '#ssl:read', 'edit' => '#ssl:edit');
+	protected $permission_level = ['read' => '#ssl:read', 'edit' => '#ssl:edit'];
 
 	/**
 	 * List SSL configurations (permission needed: #ssl:read)
@@ -46,10 +46,10 @@ class SSL extends Zone {
 	 */
 	public function create($zone_identifier, $certificate, $private_key) {
 
-		$data = array(
+		$data = [
 			'certificate' => $certificate,
 			'private_key' => $private_key
-		);
+		];
 
 		return $this->post('zones/' . $zone_identifier . '/custom_certificates', $data);
 	}
@@ -75,10 +75,10 @@ class SSL extends Zone {
 	 */
 	public function update($zone_identifier, $identifier, $certificate, $private_key) {
 
-		$data = array(
+		$data = [
 			'certificate' => $certificate,
 			'private_key' => $private_key
-		);
+		];
 
 		return $this->patch('zones/' . $zone_identifier . '/custom_certificates/' . $identifier, $data);
 	}
@@ -91,9 +91,9 @@ class SSL extends Zone {
 	 */
 	public function prioritize($zone_identifier, $certificates) {
 
-		$data = array(
+		$data = [
 			'certificates' => $certificates
-		);
+		];
 
 		return $this->patch('zones/' . $zone_identifier . '/custom_certificates/prioritize', $data);
 	}

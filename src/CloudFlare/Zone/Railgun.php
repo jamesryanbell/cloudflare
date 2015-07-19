@@ -2,7 +2,7 @@
 
 namespace CloudFlare\Zone;
 
-use CloudFlare\Zone;
+use CloudFlare\Api;
 
 /**
  * CloudFlare API wrapper
@@ -12,9 +12,9 @@ use CloudFlare\Zone;
  * @author  James Bell <james@james-bell.co.uk>
  * @version 1
  */
-class Railgun extends Zone {
+class Railgun extends Api {
 
-	protected $permission_level = array('read' => '#zone_settings:read', 'edit' => '#zone_settings:edit');
+	protected $permission_level = ['read' => '#zone_settings:read', 'edit' => '#zone_settings:edit'];
 
 	/**
 	 * Get available Railguns (permission needed: #zone_settings:read)
@@ -45,9 +45,9 @@ class Railgun extends Zone {
 	 */
 	public function railgun_connected($zone_identifier, $identifier, bool $connected) {
 
-		$data = array(
+		$data = [
 			'connected' => $connected
-		);
+		];
 
 		return $this->get('zones/' . $zone_identifier . '/railguns/' . $identifier, $data);
 	}
