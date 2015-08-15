@@ -1,99 +1,132 @@
 <?php
 
 namespace JamesRyanBell\Cloudflare;
-use JamesRyanBell\Cloudflare\Api;
 
 /**
- * CloudFlare API wrapper
+ * CloudFlare API wrapper.
  *
  * Zone
  * A Zone is a domain name along with its subdomains and other identities
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class Zone extends Api
 {
-	protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
+    protected $permissionLevel = [
+        'read' => '#zone:read',
+        'edit' => '#zone:edit',
+    ];
 
-	/**
-	 * Create a zone (permission needed: #zone:edit)
-	 * @param string   $domain       The domain name
-	 * @param boolean  $jump_start   Automatically attempt to fetch existing DNS records
-	 * @param null     $organization Organization that this zone will belong to
-	 */
-	public function create($name, $jump_start = true, $organization = null)
-	{
-		$data = array(
-			'name'         => $name,
-			'jump_start'   => $jump_start,
-			'organization' => $organization
-		);
-		return $this->post('zones', $data);
-	}
+    /**
+     * Create a zone (permission needed: #zone:edit).
+     *
+     * @param $name
+     * @param bool $jumpStart    Automatically attempt to fetch existing DNS records
+     * @param null $organization Organization that this zone will belong to
+     *
+     * @return array|mixed
+     *
+     * @internal param string $domain The domain name
+     */
+    public function create($name, $jumpStart = true, $organization = null)
+    {
+        $data = [
+            'name' => $name,
+            'jump_start' => $jumpStart,
+            'organization' => $organization,
+        ];
 
-	/**
-	 * List zones permission needed: #zone:read
-	 * List, search, sort, and filter your zones
-	 * @param string  $name      A domain name
-	 * @param string  $status    Status of the zone (active, pending, initializing, moved, deleted)
-	 * @param integer $page      Page number of paginated results
-	 * @param integer $per_page  Number of zones per page
-	 * @param string  $order     Field to order zones by (name, status, email)
-	 * @param string  $direction Direction to order zones (asc, desc)
-	 * @param string  $match     Whether to match all search requirements or at least one (any) (any, all)
-	 */
-	public function zones($name = '', $status = 'active', $page = 1, $per_page = 20, $order = 'status', $direction = 'desc', $match = 'all')
-	{
-		$data = array(
-			'name'      => $name,
-			'status'    => $status,
-			'page'      => $page,
-			'per_page'  => $per_page,
-			'order'     => $order,
-			'direction' => $direction,
-			'match'     => $match
-		);
-		return $this->get('zones', $data);
-	}
+        return $this->post('zones', $data);
+    }
 
-	/**
-	 * Zone details (permission needed: #zone:read)
-	 * @param string $zone_identifier API item identifier tag
-	 */
-	public function zone($zone_identifier)
-	{
-		return $this->get('zones/' . $zone_identifier);
-	}
+    /**
+     * List zones permission needed: #zone:read.
+     *
+     * List, search, sort, and filter your zones
+     *
+     * @param string $name      A domain name
+     * @param string $status    Status of the zone (active, pending, initializing, moved, deleted)
+     * @param int    $page      Page number of paginated results
+     * @param int    $perPage   Number of zones per page
+     * @param string $order     Field to order zones by (name, status, email)
+     * @param string $direction Direction to order zones (asc, desc)
+     * @param string $match     Whether to match all search requirements or at least one (any) (any, all)
+     *
+     * @return array|mixed
+     */
+    public function zones(
+        $name = '',
+        $status = 'active',
+        $page = 1,
+        $perPage = 20,
+        $order = 'status',
+        $direction = 'desc',
+        $match = 'all'
+    ) {
+        $data = [
+            'name' => $name,
+            'status' => $status,
+            'page' => $page,
+            'per_page' => $perPage,
+            'order' => $order,
+            'direction' => $direction,
+            'match' => $match,
+        ];
 
-	/**
-	 * Pause all CloudFlare features (permission needed: #zone:edit)
-	 * This will pause all features and settings for the zone. DNS will still resolve
-	 * @param string $zone_identifier API item identifier tag
-	 */
-	public function pause($zone_identifier)
-	{
-		return $this->put('zones/' . $zone_identifier . '/pause');
-	}
+        return $this->get('zones', $data);
+    }
 
-	/**
-	 * Re-enable all CloudFlare features (permission needed: #zone:edit)
-	 * This will restore all features and settings for the zone
-	 * @param string $zone_identifier API item identifier tag
-	 */
-	public function unpause($zone_identifier)
-	{
-		return $this->put('zones/' . $zone_identifier . '/unpause');
-	}
+    /**
+     * Zone details (permission needed: #zone:read).
+     *
+     * @param string $zoneIdentifier API item identifier tag
+     *
+     * @return array|mixed
+     */
+    public function zone($zoneIdentifier)
+    {
+        return $this->get('zones/'.$zoneIdentifier);
+    }
 
-	/**
-	 * Delete a zone (permission needed: #zone:edit)
-	 * @param string $zone_identifier API item identifier tag
-	 */
-	public function delete_zone($zone_identifier)
-	{
-		return $this->delete('zones/' . $zone_identifier);
-	}
+    /**
+     * Pause all CloudFlare features (permission needed: #zone:edit).
+     *
+     * This will pause all features and settings for the zone. DNS will still resolve
+     *
+     * @param string $zoneIdentifier API item identifier tag
+     *
+     * @return array|mixed
+     */
+    public function pause($zoneIdentifier)
+    {
+        return $this->put('zones/'.$zoneIdentifier.'/pause');
+    }
 
+    /**
+     * Re-enable all CloudFlare features (permission needed: #zone:edit).
+     *
+     * This will restore all features and settings for the zone
+     *
+     * @param string $zoneIdentifier API item identifier tag
+     *
+     * @return array|mixed
+     */
+    public function unpause($zoneIdentifier)
+    {
+        return $this->put('zones/'.$zoneIdentifier.'/unpause');
+    }
+
+    /**
+     * Delete a zone (permission needed: #zone:edit).
+     *
+     * @param string $zoneIdentifier API item identifier tag
+     *
+     * @return array|mixed
+     */
+    public function deleteZone($zoneIdentifier)
+    {
+        return $this->delete('zones/'.$zoneIdentifier);
+    }
 }

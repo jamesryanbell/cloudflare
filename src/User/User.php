@@ -1,128 +1,164 @@
 <?php
 
 namespace JamesRyanBell\Cloudflare;
-use JamesRyanBell\Cloudflare\Api;
 
 /**
- * CloudFlare API wrapper
+ * CloudFlare API wrapper.
  *
  * User
  * The currently logged in/authenticated User
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class User extends Api
 {
-	protected $permission_level = array('read' => null, 'edit' => null);
+    protected $permissionLevel = [
+        'read' => null,
+        'edit' => null,
+    ];
 
-	/**
-	 * User details
-	 */
-	public function user()
-	{
-		return $this->get('user');
-	}
+    /**
+     * User details.
+     */
+    public function user()
+    {
+        return $this->get('user');
+    }
 
-	/**
-	 * Update part of your user details
-	 * @param string $first_name User's first name
-	 * @param string $last_name  User's last name
-	 * @param string $telephone  User's telephone number
-	 * @param string $country    The country in which the user lives. (Full list is here: http://en.wikipedia.org/wiki/List_of_country_calling_codes)
-	 * @param string $zipcode    The zipcode or postal code where the user lives.
-	 */
-	public function update($first_name = null, $last_name = null, $telephone = null, $country = null, $zipcode = null)
-	{
-		$data = array(
-			'first_name' => $first_name,
-			'last_name'  => $last_name,
-			'telephone'  => $telephone,
-			'country'    => $country,
-			'zipcode'    => $zipcode
-		);
-		return $this->patch('user', $data);
-	}
+    /**
+     * Update part of your user details.
+     *
+     * @param string $firstName User's first name
+     * @param string $lastName  User's last name
+     * @param string $telephone User's telephone number
+     * @param string $country   The country in which the user lives.
+     *                          (Full list is here: http://en.wikipedia.org/wiki/List_of_country_calling_codes)
+     * @param string $zipcode   The zipcode or postal code where the user lives.
+     *
+     * @return array|mixed
+     */
+    public function update($firstName = null, $lastName = null, $telephone = null, $country = null, $zipcode = null)
+    {
+        $data = [
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'telephone' => $telephone,
+            'country' => $country,
+            'zipcode' => $zipcode,
+        ];
 
-	/**
-	 * Change your email address. Note: You must provide your current password.
-	 * @param string $email         Your contact email address
-	 * @param string $email_confirm Your contact email address, repeated
-	 * @param string $password      Your current password
-	 */
-	public function change_email($email, $email_confirm, $password) {
-		$data = array(
-			'email'         => $email,
-			'confirm_email' => $confirm_email,
-			'password'      => $password
-		);
-		return $this->put('user/email', $data);
-	}
+        return $this->patch('user', $data);
+    }
 
-	/**
-	 * Change your password
-	 * @param string $old_password         Your current password
-	 * @param string $new_password         Your new password
-	 * @param string $new_password_confirm Your new password, repeated
-	 */
-	public function change_password($old_password, $new_password, $new_password_confirm) {
-		$data = array(
-			'old_password'         => $old_password,
-			'new_password'         => $new_password,
-			'new_password_confirm' => $new_password_confirm
-		);
-		return $this->put('user/password', $data);
-	}
+    /**
+     * Change your email address. Note: You must provide your current password.
+     *
+     * @param string $email        Your contact email address
+     * @param string $emailConfirm Your contact email address, repeated
+     * @param string $password     Your current password
+     *
+     * @return array|mixed
+     */
+    public function changeEmail($email, $emailConfirm, $password)
+    {
+        $data = [
+            'email' => $email,
+            'confirm_email' => $emailConfirm,
+            'password' => $password,
+        ];
 
-	/**
-	 * Change your username. Note: You must provide your current password.
-	 * @param string $username A username used to access other cloudflare services, like support
-	 * @param string $password Your current password
-	 */
-	public function change_username($username, $password) {
-		$data = array(
-			'username' => $username,
-			'password' => $password
-		);
-		return $this->put('user/username', $data);
-	}
+        return $this->put('user/email', $data);
+    }
 
-	/**
-	 * Begin setting up CloudFlare two-factor authentication with a given telephone number
-	 * @param int $country_code           The country code of your mobile phone number
-	 * @param string $mobile_phone_number Your mobile phone number
-	 * @param string $current_password    Your current CloudFlare password
-	 */
-	public function initialize_two_factor_authentication($country_code, $mobile_phone_number, $current_password) {
-		$data = array(
-			'country_code'        => $country_code,
-			'mobile_phone_number' => $mobile_phone_number,
-			'current_password'    => $current_password
-		);
-		return $this->post('/user/two_factor_authentication', $data);
-	}
+    /**
+     * Change your password.
+     *
+     * @param string $oldPassword        Your current password
+     * @param string $newPassword        Your new password
+     * @param string $newPasswordConfirm Your new password, repeated
+     *
+     * @return array|mixed
+     */
+    public function changePassword($oldPassword, $newPassword, $newPasswordConfirm)
+    {
+        $data = [
+            'old_password' => $oldPassword,
+            'new_password' => $newPassword,
+            'new_password_confirm' => $newPasswordConfirm,
+        ];
 
-	/**
-	 * Finish setting up CloudFlare two-factor authentication with a given telephone number
-	 * @param int $auth_token The token provided by the two-factor authenticator
-	 */
-	public function finalize_two_factor_authentication($auth_token) {
-		$data = array(
-			'auth_token' => $auth_token
-		);
-		return $this->put('user/two_factor_authentication', $data);
-	}
+        return $this->put('user/password', $data);
+    }
 
-	/**
-	 * Disable two-factor authentication for your CloudFlare user account
-	 * @param int The token provided by the two-factor authenticator
-	 */
-	public function disable_two_factor_authentication($auth_token) {
-		$data = array(
-			'auth_token' => $auth_token
-		);
-		return $this->delete('user/two_factor_authentication', $data);
-	}
+    /**
+     * Change your username. Note: You must provide your current password.
+     *
+     * @param string $username A username used to access other cloudflare services, like support
+     * @param string $password Your current password
+     *
+     * @return array|mixed
+     */
+    public function changeUsername($username, $password)
+    {
+        $data = [
+            'username' => $username,
+            'password' => $password,
+        ];
 
+        return $this->put('user/username', $data);
+    }
+
+    /**
+     * Begin setting up CloudFlare two-factor authentication with a given telephone number.
+     *
+     * @param int    $countryCode       The country code of your mobile phone number
+     * @param string $mobilePhoneNumber Your mobile phone number
+     * @param string $currentPassword   Your current CloudFlare password
+     *
+     * @return array|mixed
+     */
+    public function initializeTwoFactorAuthentication($countryCode, $mobilePhoneNumber, $currentPassword)
+    {
+        $data = [
+            'country_code' => $countryCode,
+            'mobile_phone_number' => $mobilePhoneNumber,
+            'current_password' => $currentPassword,
+        ];
+
+        return $this->post('/user/two_factor_authentication', $data);
+    }
+
+    /**
+     * Finish setting up CloudFlare two-factor authentication with a given telephone number.
+     *
+     * @param int $authToken The token provided by the two-factor authenticator
+     *
+     * @return array|mixed
+     */
+    public function finalizeTwoFactorAuthentication($authToken)
+    {
+        $data = [
+            'auth_token' => $authToken,
+        ];
+
+        return $this->put('user/two_factor_authentication', $data);
+    }
+
+    /**
+     * Disable two-factor authentication for your CloudFlare user account.
+     *
+     * @param int $authToken The token provided by the two-factor authenticator
+     *
+     * @return array|mixed
+     */
+    public function disableTwoFactorAuthentication($authToken)
+    {
+        $data = [
+            'auth_token' => $authToken,
+        ];
+
+        return $this->delete('user/two_factor_authentication', $data);
+    }
 }
