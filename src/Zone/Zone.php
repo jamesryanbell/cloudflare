@@ -2,6 +2,8 @@
 
 namespace JamesRyanBell\Cloudflare\Zone;
 
+use JamesRyanBell\Cloudflare\Api;
+
 /**
  * CloudFlare API wrapper.
  *

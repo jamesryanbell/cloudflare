@@ -3,6 +3,7 @@
 namespace JamesRyanBell\Cloudflare;
 
 use Exception;
+use JamesRyanBell\Cloudflare\User\User;
 
 /**
  * CloudFlare API wrapper.
@@ -155,7 +156,7 @@ class Api
         }
         $api = new User($this->email, $this->authKey);
         $user = $api->user();
-        if (isset($user->result->organisations) && count() > 0) {
+        if (isset($user->result->organisations) && count($user->result->organisations) > 0) {
             $this->permissions = $user->result->organizations[0]->permissions;
         }
 
@@ -186,7 +187,7 @@ class Api
             if (!$this->permissions) {
                 $this->setPermissions();
             }
-            if (!isset($this->permissions) || !in_array($this->permissionLevel[$permissionLevel], $this->permissions)) {
+            if ($this->permissions && !in_array($this->permissionLevel[$permissionLevel], $this->permissions)) {
                 throw new Exception('You do not have permission to perform this request');
             }
         }
