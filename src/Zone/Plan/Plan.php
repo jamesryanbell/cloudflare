@@ -1,8 +1,8 @@
 <?php
 
-namespace JamesRyanBell\Cloudflare\Zone;
+namespace JamesRyanBell\Cloudflare\Zone\Plan;
 
-use JamesRyanBell\Cloudflare\Zone;
+use JamesRyanBell\Cloudflare\Zone\Zone;
 
 /**
  * CloudFlare API wrapper.

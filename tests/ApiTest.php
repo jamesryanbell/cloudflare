@@ -1,6 +1,6 @@
 <?php
 
-namespace JamesRyanBell\CloudflareTests;
+namespace JamesRyanBell\Cloudflare\Tests;
 
 use JamesRyanBell\Cloudflare\Api as Api;
 

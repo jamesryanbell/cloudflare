@@ -1,6 +1,8 @@
 <?php
 
-namespace JamesRyanBell\Cloudflare;
+namespace JamesRyanBell\Cloudflare\User;
+
+use JamesRyanBell\Cloudflare\Api;
 
 /**
  * CloudFlare API wrapper.

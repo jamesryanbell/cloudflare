@@ -1,6 +1,6 @@
 <?php
 
-namespace JamesRyanBell\Cloudflare;
+namespace JamesRyanBell\Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper.

@@ -150,9 +150,12 @@ class Api
      */
     public function setPermissions()
     {
-        if (!$this->permissions) {
-            $api = new User($this->email, $this->authKey);
-            $user = $api->user();
+        if ($this->permissions) {
+            return $this->permissions;
+        }
+        $api = new User($this->email, $this->authKey);
+        $user = $api->user();
+        if (isset($user->result->organisations) && count() > 0) {
             $this->permissions = $user->result->organizations[0]->permissions;
         }
 

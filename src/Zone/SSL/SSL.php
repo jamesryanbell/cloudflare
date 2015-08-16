@@ -1,9 +1,8 @@
 <?php
 
-namespace JamesRyanBell\Cloudflare\Zone;
+namespace JamesRyanBell\Cloudflare\Zone\SSL;
 
-use JamesRyanBell\Cloudflare\Api;
-use JamesRyanBell\Cloudflare\Zone;
+use JamesRyanBell\Cloudflare\Zone\Zone;
 
 /**
  * CloudFlare API wrapper.

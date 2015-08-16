@@ -1,8 +1,8 @@
 <?php
 
-namespace JamesRyanBell\Cloudflare\Zone;
+namespace JamesRyanBell\Cloudflare\Zone\Cache;
 
-use JamesRyanBell\Cloudflare\Zone;
+use JamesRyanBell\Cloudflare\Zone\Zone;
 
 /**
  * CloudFlare API wrapper.
@@ -32,7 +32,7 @@ class Cache extends Zone
      *
      * @return array|mixed
      */
-    public function purge($identifier, bool $purgeEverything = true)
+    public function purge($identifier, $purgeEverything = true)
     {
         $data = [
             'purgeEverything' => $purgeEverything,
