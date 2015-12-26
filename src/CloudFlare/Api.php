@@ -8,6 +8,7 @@ use \Exception;
 /**
  * CloudFlare API wrapper
  *
+ * A work in progress library for the Cloudflare API. The documentation for the API can be found at https://www.cloudflare.com/docs/.
  *
  * @author James Bell <james@james-bell.co.uk>
  * @version 1
@@ -15,11 +16,34 @@ use \Exception;
 
 class Api
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => null, 'edit' => null);
 
+    /**
+     * Holds the provided email address for API authentication
+     * @var string
+     */
     public $email;
+
+    /**
+     * olds the provided auth_key for API authentication
+     * @var string
+     */
     public $auth_key;
+
+    /**
+     * Holds the curl options
+     * @var array
+     */
     public $curl_options;
+
+    /**
+     * Holds the users permission levels
+     * @var null|array
+     */
     private $permissions = null;
 
     /**
@@ -122,6 +146,9 @@ class Api
         return $this->request($path, $data, 'patch', 'edit');
     }
 
+    /**
+     * Retrieves the users' permisison levels
+     */
     public function permissions()
     {
         if(!$this->permissions) {

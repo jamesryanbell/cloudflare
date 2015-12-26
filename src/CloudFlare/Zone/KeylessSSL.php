@@ -20,7 +20,7 @@ class KeylessSSL extends Zone
 
     /**
      * Create a Keyless SSL configuration (permission needed: #ssl:edit)
-     * @param string $zone_identifier API item identifier tag
+     * @param string      $zone_identifier API item identifier tag
      * @param string      $zone_identifier
      * @param string      $host            The keyless SSL host
      * @param int         $port            The keyless SSL port used to commmunicate between CloudFlare and the client's Keyless SSL server
