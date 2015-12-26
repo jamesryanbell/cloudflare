@@ -1,7 +1,6 @@
 <?php
 
-use JamesRyanBell\Cloudflare;
-use JamesRyanBell\Cloudflare\Api as Api;
+use Cloudflare\Api as Api;
 
 class ApiTest extends PHPUnit_Framework_TestCase {
 
@@ -89,7 +88,7 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function testHttpRequest() {
-		$reflectionClass = new ReflectionClass('\\JamesryanBell\Cloudflare\\Api');
+		$reflectionClass = new ReflectionClass('\\Cloudflare\\Api');
 		$method = $reflectionClass->getMethod('request');
 		$method->setAccessible(true);
 
