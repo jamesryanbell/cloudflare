@@ -4,12 +4,13 @@
 
 [![Latest Stable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/stable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Total Downloads](https://poser.pugx.org/jamesryanbell/cloudflare/downloads.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Latest Unstable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/unstable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![License](https://poser.pugx.org/jamesryanbell/cloudflare/license.svg)](https://packagist.org/packages/jamesryanbell/cloudflare)
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jamesryanbell/cloudflare/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 #Cloudflare API V4 PHP wrapper
 
 A work in progress library for the Cloudflare API. The documentation for the API can be found at https://www.cloudflare.com/docs/.
 
-
-I have integrated most of the methods available but many features from the current API have not been implemented yet. For now I suggest you use the API wrapper written by [vexxhost](https://github.com/vexxhost) which can befound at https://github.com/vexxhost/CloudFlare-API.
+I have implemented all of the methods from the available documentation but if there are more just let me please [https://github.com/cloudflare](Cloudflare)
 
 
 ##Installation
