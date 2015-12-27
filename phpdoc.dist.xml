@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title><![CDATA[CloudFlare API v4]]></title>
+  <parser>
+    <encoding>utf8</encoding>
+    <markers>
+      <item>TODO</item>
+      <item>FIXME</item>
+    </markers>
+  </parser>
+  <transformer>
+    <target>docs</target>
+  </transformer>
+  <files>
+    <directory>src</directory>
+  </files>
+  <transformations>
+    <template name="clean" />
+  </transformations>
+</phpdoc>
