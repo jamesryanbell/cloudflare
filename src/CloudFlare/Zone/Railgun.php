@@ -16,6 +16,10 @@ use Cloudflare\Zone;
 
 class Railgun extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#zone_settings:read', 'edit' => '#zone_settings:edit');
 
     /**

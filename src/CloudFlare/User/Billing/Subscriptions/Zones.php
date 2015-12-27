@@ -18,6 +18,10 @@ use Cloudflare\User\Billing;
 
 class Zones extends Billing
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
 
     /**

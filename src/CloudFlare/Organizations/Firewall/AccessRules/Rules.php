@@ -18,6 +18,10 @@ use Cloudflare\Organizations\Firewall\AccessRules;
 
 class Rules extends AccessRules
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#organization:read', 'edit' => '#organization:edit');
 
     /**

@@ -16,6 +16,10 @@ use Cloudflare\Zone;
 
 class Plan extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
 
     /**

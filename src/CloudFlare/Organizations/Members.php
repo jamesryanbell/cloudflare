@@ -16,6 +16,10 @@ use Cloudflare\Organizations;
 
 class Members extends Organizations
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#organization:read', 'edit' => '#organization:edit');
 
     /**

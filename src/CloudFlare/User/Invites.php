@@ -16,6 +16,10 @@ use Cloudflare\User;
 
 class Invites extends User
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#invites:read', 'edit' => '#invites:edit');
 
     /**

@@ -16,6 +16,10 @@ use Cloudflare\Zone;
 
 class SSL extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#ssl:read', 'edit' => '#ssl:edit');
 
     /**

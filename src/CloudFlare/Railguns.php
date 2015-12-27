@@ -14,6 +14,10 @@ namespace Cloudflare;
 
 class Railguns extends Api
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#railgun:read', 'edit' => '#railgun:edit');
 
     /**

@@ -18,6 +18,10 @@ use Cloudflare\Zone\WAF\Packages;
 
 class Rules extends Packages
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
 
     /**

@@ -17,6 +17,10 @@ use Cloudflare\User\Firewall;
 
 class AccesRules extends Firewall
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
 
     /**

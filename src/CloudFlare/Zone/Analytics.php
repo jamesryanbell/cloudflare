@@ -17,6 +17,10 @@ use Cloudflare\Zone;
 
 class Analytics extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#analytics:read', 'edit' => '#analytics:edit');
 
     /**

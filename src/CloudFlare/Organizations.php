@@ -15,6 +15,10 @@ use Cloudflare\Api;
 
 class Organizations extends Api
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#organization:read', 'edit' => '#organization:edit');
 
     /**

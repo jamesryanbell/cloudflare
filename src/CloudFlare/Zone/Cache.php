@@ -16,6 +16,10 @@ use Cloudflare\Zone;
 
 class Cache extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
 
     /**

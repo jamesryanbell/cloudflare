@@ -16,6 +16,10 @@ use Cloudflare\User;
 
 class Billing extends User
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
 
     /**

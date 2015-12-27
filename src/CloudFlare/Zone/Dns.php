@@ -17,6 +17,10 @@ use Cloudflare\Zone;
 
 class Dns extends Zone
 {
+    /**
+     * Default permissions level
+     * @var array
+     */
     protected $permission_level = array('read' => '#dns_records:read', 'edit' => '#dns_records:edit');
 
     /**
