@@ -33,8 +33,8 @@ In situations where you want to make multiple calls to the API across different 
     $client = new Cloudflare\Api('email@example.com', 'API_KEY');
 
     // Create a new DNS record
-    $dns = new Cloudflare\Dns($client);
-    $dns->create('12345678901234567890', 'TXT', '127.0.0.1', 120);
+    $dns = new Cloudflare\Zone\Dns($client);
+    $dns->create('12345678901234567890', 'A', 'name.com', '127.0.0.1', 120);
 ```
 
 If you are just performing a single action then you can connect to the API directly when you instantiate the class e.g.
@@ -44,7 +44,7 @@ If you are just performing a single action then you can connect to the API direc
     // Create a connection to the Cloudflare API which you can
     // then pass into other services, e.g. DNS, later on
     $dns = new Cloudflare\Zone\Dns('email@example.com', 'API_KEY');
-    $dns->create('12345678901234567890', 'TXT', '127.0.0.1', 120);
+    $dns->create('12345678901234567890', 'TXT', 'name.com', '127.0.0.1', 120);
 ```
 
 #License
