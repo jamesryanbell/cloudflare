@@ -59,7 +59,7 @@ class User extends Api
     {
         $data = array(
             'email'         => $email,
-            'confirm_email' => $confirm_email,
+            'confirm_email' => $email_confirm,
             'password'      => $password
         );
         return $this->put('user/email', $data);
@@ -134,5 +134,4 @@ class User extends Api
         );
         return $this->delete('user/two_factor_authentication', $data);
     }
-
 }

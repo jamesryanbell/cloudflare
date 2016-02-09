@@ -17,6 +17,14 @@ use \Exception;
 class Api
 {
     /**
+     * Endpoint for a hosting partner
+     */
+    const ENDPOINT_HOSTING_PARTNER = 'https://api.cloudflare.com/host-gw.html';
+    /**
+     * Default API endpoint
+     */
+    const ENDPOINT_DEFAULT = 'https://api.cloudflare.com/client/v4/%s';
+    /**
      * Default permissions level
      * @var array
      */
@@ -47,24 +55,45 @@ class Api
     private $permissions = null;
 
     /**
+     * Default API endpoint
+     */
+    protected $endpoint = self::ENDPOINT_DEFAULT;
+
+    /**
      * Make a new instance of the API client
      * This can be done via providing the email address and api key as seperate parameters
      * or by passing in an already instantiated object from which the details will be extracted
+     *
+     * Signature 1:
+     * @param $arg1 Object client object
+     *
+     * Signature 2:
+     * @param $arg1 string hosting partner key
+     *
+     * Signature 3:
+     * @param $arg1 string user email
+     * @param $arg2 string user auth key
      */
-    public function __construct()
+    public function __construct($arg1, $arg2 =  null, $arg3 = null)
     {
-        $num_args = func_num_args();
-        if ($num_args === 1) {
-            $parameters         = func_get_args();
-            $client             = $parameters[0];
-            $this->email        = $client->email;
-            $this->auth_key     = $client->auth_key;
-            $this->curl_options = $client->curl_options;
-            $this->permissions  = $client->permissions;
-        } else if ($num_args === 2) {
-            $parameters     = func_get_args();
-            $this->email    = $parameters[0];
-            $this->auth_key = $parameters[1];
+        if (is_object($arg1)) {
+            $this->email = $arg1->email;
+            $this->auth_key = $arg1->auth_key;
+            $this->curl_options = $arg1->curl_options;
+            $this->permissions = $arg1->permissions;
+        } else if (is_null($arg2)) {
+            $this->auth_key = $arg1;
+            $this->endpoint = self::ENDPOINT_HOSTING_PARTNER;
+        } else {
+            if (false !== strpos($arg2, '@')) {
+                // reversed arguments
+                $this->email = $arg2;
+                $this->auth_key = $arg1;
+            } else {
+                $this->email = $arg1;
+                $this->auth_key = $arg2;
+            }
+
         }
     }
 
@@ -164,6 +193,24 @@ class Api
     }
 
     /**
+     * API in client mode
+     *
+     * @return bool
+     */
+    public function isClient() {
+        return isset($this->email);
+    }
+
+    /**
+     * API in provider mode
+     *
+     * @return bool
+     */
+    public function isProvider() {
+        return !$this->isClient();
+    }
+
+    /**
      *
      * @codeCoverageIgnore
      *
@@ -173,17 +220,17 @@ class Api
      * @param string|null $method           Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
      * @param string|null $permission_level Permission level required to preform the action
      */
-    protected function request($path, array $data = null, $method = null, $permission_level = null)
+    protected function request($path = null, array $data = null, $method = null, $permission_level = null)
     {
-        if(!isset($this->email) || !isset($this->auth_key)) {
+        if(!isset($this->auth_key)) {
             throw new Exception('Authentication information must be provided');
             return false;
         }
-        $data = (is_null($data) ? array() : $data);
+        $data = (is_null($data) ? array() : (array)$data);
         $method = (is_null($method) ? 'get' : $method);
         $permission_level = (is_null($permission_level) ? 'read' : $permission_level);
 
-        if(!is_null($this->permission_level[$permission_level])) {
+        if(!$this->isProvider() && !is_null($this->permission_level[$permission_level])) {
             if(!$this->permissions) {
                 $this->permissions();
             }
@@ -198,7 +245,16 @@ class Api
             return !is_null($val);
         });
 
-        $url = 'https://api.cloudflare.com/client/v4/' . $path;
+        $headers = array('X-Auth-Key: ' . $this->auth_key);
+        if ($this->isProvider()) {
+            // no path is ever given, everything operates on host-gw.html
+            $data['host_key'] = $this->auth_key;
+            $data['act'] = $path;
+        } else {
+            $headers[] = "X-Auth-Email: " . $this->email;
+        }
+
+        $url = sprintf($this->endpoint, $path);
 
         $default_curl_options = array(
             CURLOPT_VERBOSE        => false,
@@ -214,8 +270,6 @@ class Api
         if(isset($this->curl_options) && is_array($this->curl_options)) {
             $curl_options = array_replace($default_curl_options, $this->curl_options);
         }
-
-        $headers = array("X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}");
 
         $ch = curl_init();
         curl_setopt_array($ch, $curl_options);
