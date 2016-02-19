@@ -16,7 +16,7 @@ use Cloudflare\Organizations\Firewall\AccessRules;
  * @version 1
  */
 
-class Rules extends AccessRules
+class Rules extends Api
 {
     /**
      * Default permissions level

@@ -14,7 +14,7 @@ use Cloudflare\User;
  * @version 1
  */
 
-class Organizations extends User
+class Organizations extends Api
 {
     /**
      * Default permissions level

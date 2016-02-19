@@ -14,7 +14,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class KeylessSSL extends Zone
+class KeylessSSL extends Api
 {
     /**
      * Default permissions level

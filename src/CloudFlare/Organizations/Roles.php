@@ -14,7 +14,7 @@ use Cloudflare\Organizations;
  * @version 1
  */
 
-class Roles extends Organizations
+class Roles extends Api
 {
     /**
      * Default permissions level

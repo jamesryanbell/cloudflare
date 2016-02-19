@@ -16,7 +16,7 @@ use Cloudflare\Zone\WAF\Packages;
  * @version 1
  */
 
-class Groups extends Packages
+class Groups extends Api
 {
     /**
      * Default permissions level

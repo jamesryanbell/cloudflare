@@ -15,7 +15,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class Analytics extends Zone
+class Analytics extends Api
 {
     /**
      * Default permissions level

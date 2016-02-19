@@ -14,7 +14,7 @@ use Cloudflare\Organizations;
  * @version 1
  */
 
-class Invites extends Organizations
+class Invites extends Api
 {
     /**
      * Default permissions level

@@ -16,7 +16,7 @@ use Cloudflare\User\Billing;
  * @version 1
  */
 
-class Zones extends Billing
+class Zones extends Api
 {
     /**
      * Default permissions level

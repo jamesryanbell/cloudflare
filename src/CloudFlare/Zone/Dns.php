@@ -15,7 +15,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class Dns extends Zone
+class Dns extends Api
 {
     /**
      * Default permissions level

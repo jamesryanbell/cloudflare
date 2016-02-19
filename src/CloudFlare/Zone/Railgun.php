@@ -14,7 +14,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class Railgun extends Zone
+class Railgun extends Api
 {
     /**
      * Default permissions level

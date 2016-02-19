@@ -14,7 +14,7 @@ use Cloudflare\User;
  * @version 1
  */
 
-class Invites extends User
+class Invites extends Api
 {
     /**
      * Default permissions level

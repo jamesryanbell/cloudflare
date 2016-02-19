@@ -14,7 +14,7 @@ use Cloudflare\User;
  * @version 1
  */
 
-class Billing extends User
+class Billing extends Api
 {
     /**
      * Default permissions level

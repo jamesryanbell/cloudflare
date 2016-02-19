@@ -14,7 +14,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class CustomPages extends Zone
+class CustomPages extends Api
 {
     /**
      * Default permissions level

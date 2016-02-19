@@ -14,7 +14,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class CustomSSL extends Zone
+class CustomSSL extends Api
 {
     /**
      * Default permissions level

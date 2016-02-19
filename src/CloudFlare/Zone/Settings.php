@@ -14,7 +14,7 @@ use Cloudflare\Zone;
  * @version 1
  */
 
-class Settings extends Zone
+class Settings extends Api
 {
     /**
      * Default permissions level
