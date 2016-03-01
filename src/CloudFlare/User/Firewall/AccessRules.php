@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\User;
+namespace Cloudflare\User\Firewall;
 
 use Cloudflare\Api;
 use Cloudflare\User;
@@ -15,7 +15,7 @@ use Cloudflare\User\Firewall;
  * @version 1
  */
 
-class AccesRules extends Api
+class AccessRules extends Api
 {
     /**
      * Default permissions level
@@ -91,7 +91,7 @@ class AccesRules extends Api
      * Remove an access rule so it is no longer evaluated during requests. This will apply to all zones owned by the user
      * @param string $identifier
      */
-    public function delete($identifier)
+    public function delete_rule($identifier)
     {
         return $this->delete('/user/firewall/access_rules/rules/' . $identifier);
     }

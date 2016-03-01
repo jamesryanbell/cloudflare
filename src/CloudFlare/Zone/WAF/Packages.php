@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\Zone;
+namespace Cloudflare\Zone\WAF;
 
 use Cloudflare\Api;
 use Cloudflare\Zone;

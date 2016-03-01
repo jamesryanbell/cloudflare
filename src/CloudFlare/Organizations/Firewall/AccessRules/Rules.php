@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\Organizations;
+namespace Cloudflare\Organizations\Firewall\AccessRules;
 
 use Cloudflare\Api;
 use Cloudflare\Organizations;
@@ -86,7 +86,7 @@ class Rules extends Api
      * @param string $organization_id
      * @param string $identifier
      */
-    public function delete($organization_id, $identifier)
+    public function delete_rule($organization_id, $identifier)
     {
         return $this->delete('organizations/' . $organization_id . '/firewall/access_rules/rules/' . $identifier);
     }

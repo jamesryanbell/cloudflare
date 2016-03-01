@@ -89,7 +89,7 @@ class KeylessSSL extends Api
      * @param string $zone_identifier API item identifier tag
      * @param string $identifier
      */
-    public function delete($zone_identifier, $identifier)
+    public function delete_ssl($zone_identifier, $identifier)
     {
         return $this->delete('zones/' . $zone_identifier . '/keyless_certificates/' . $identifier);
     }

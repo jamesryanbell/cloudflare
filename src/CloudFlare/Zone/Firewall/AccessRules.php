@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\Zone;
+namespace Cloudflare\Zone\Firewall;
 
 use Cloudflare\Api;
 use Cloudflare\Zone;
@@ -15,7 +15,7 @@ use Cloudflare\Zone\Firewall;
  * @version 1
  */
 
-class AccesRules extends Api
+class AccessRules extends Api
 {
     /**
      * Default permissions level
@@ -101,7 +101,7 @@ class AccesRules extends Api
      * @param string      $identifier
      * @param string|null $cascade    The level to attempt to delete rules defined on other zones that are similar to this rule
      */
-    public function delete($zone_id, $identifier, $cascade = null)
+    public function delete_rule($zone_id, $identifier, $cascade = null)
     {
         $data = array(
             'cascade' => $cascade

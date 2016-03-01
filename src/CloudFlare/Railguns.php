@@ -87,7 +87,7 @@ class Railguns extends Api
      * Disable and delete a Railgun. This will immediately disable the Railgun for any connected zones
      * @param string $identifier API item identifier tag
      */
-    public function delete($identifier)
+    public function delete_railgun($identifier)
     {
         return $this->delete('railguns/' . $identifier);
     }

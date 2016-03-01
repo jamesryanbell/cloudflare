@@ -65,7 +65,7 @@ class Members extends Api
      * @param string $organization_identifier
      * @param string $identifier
      */
-    public function delete($organization_identifier, $identifier)
+    public function delete_member($organization_identifier, $identifier)
     {
         return $this->delete('/organizations/' . $organization_identifier . '/members/' . $identifier);
     }

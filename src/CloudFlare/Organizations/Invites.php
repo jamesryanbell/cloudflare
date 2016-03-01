@@ -81,7 +81,7 @@ class Invites extends Api
      * @param string $organization_identifier
      * @param string $identifier
      */
-    public function delete($organization_identifier, $identifier)
+    public function delete_invitation($organization_identifier, $identifier)
     {
         return $this->delete('/organizations/' . $organization_identifier . '/invites/' . $identifier);
     }
