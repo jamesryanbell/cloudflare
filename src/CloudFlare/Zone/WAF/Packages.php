@@ -66,7 +66,7 @@ class Packages extends Api
      * @param string|null $sensitivity     The sensitivity of the firewall package.
      * @param string|null $action_mode     The default action that will be taken for rules under the firewall package.
      */
-    public function update(string $zone_identifier, string $identifier, string $sensitivity = null, string $action_mode = null)
+    public function update(string $zone_identifier, $identifier, $sensitivity = null, $action_mode = null)
     {
         $data = array(
             'sensitivity' => $sensitivity,

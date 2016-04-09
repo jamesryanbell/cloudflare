@@ -39,7 +39,7 @@ class Rules extends Api
      * @param string|null $direction   Direction to order rules
      * @param string|null $match       Whether to match all search requirements or at least one (any)
      */
-    public function rules($zone_id, $package_id, $description = null, object $mode = null, $priority = null, $group_id = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
+    public function rules($zone_id, $package_id, $description = null, $mode = null, $priority = null, $group_id = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
         $data = array(
             'description' => $description,

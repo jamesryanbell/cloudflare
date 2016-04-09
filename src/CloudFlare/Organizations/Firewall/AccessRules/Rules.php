@@ -51,7 +51,7 @@ class Rules extends Api
      * @param object      $configuration   Rule configuration
      * @param string|null $notes           A personal note about the rule. Typically used as a reminder or explanation for the rule.
      */
-    public function create($organization_id, $mode, object $configuration, $notes = null)
+    public function create($organization_id, $mode, $configuration, $notes = null)
     {
         $data = array(
             'mode'          => $mode,
@@ -70,7 +70,7 @@ class Rules extends Api
      * @param object|null $configuration   Rule configuration
      * @param string|null $notes           A personal note about the rule. Typically used as a reminder or explanation for the rule.
      */
-    public function update($organization_id, $identifier, $mode = null, object $configuration = null, $notes = null)
+    public function update($organization_id, $identifier, $mode = null, $configuration = null, $notes = null)
     {
         $data = array(
             'mode'          => $mode,
