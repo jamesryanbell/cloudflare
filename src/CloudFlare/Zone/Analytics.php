@@ -35,7 +35,7 @@ class Analytics extends Api
      *                                          Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
      *                                          If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data
      */
-    public function dashboard($zone_identifier, $since = null, $until = null, bool $continuous = null)
+    public function dashboard($zone_identifier, $since = null, $until = null, $continuous = null)
     {
         $data = array(
             'since'      => $since,
@@ -57,7 +57,7 @@ class Analytics extends Api
      *                                          Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
      *                                          If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data
      */
-    public function colos($zone_identifier, $since = null, $until = null, bool $continuous = null)
+    public function colos($zone_identifier, $since = null, $until = null, $continuous = null)
     {
         $data = array(
             'since'      => $since,

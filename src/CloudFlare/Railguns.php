@@ -74,7 +74,7 @@ class Railguns extends Api
      * @param string    $zone_identifier API item identifier tag
      * @param bool|null $enabled         Flag to determine if the Railgun is accepting connections
      */
-    public function enabled($zone_identifier, bool $enabled = null)
+    public function enabled($zone_identifier, $enabled = null)
     {
         $data = array(
             'enabled' => $enabled

@@ -61,7 +61,7 @@ class Railgun extends Api
      * @param string $identifier      API item identifier tag
      * @param bool   $connected       A flag indicating whether the given zone is connected to the Railgun [valid values: (true,false)]
      */
-    public function connected($zone_identifier, $identifier, bool $connected)
+    public function connected($zone_identifier, $identifier, $connected)
     {
         $data = array(
             'connected' => $connected

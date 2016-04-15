@@ -26,7 +26,7 @@ class Zone extends Api
      * @param boolean|null $jump_start   Automatically attempt to fetch existing DNS records
      * @param int|null     $organization To create a zone owned by an organization, specify the organization parameter. Organization objects can be found in the User or User's Organizations endpoints. You must pass at least the ID of the organization.
      */
-    public function create($name, bool $jump_start = null, int $organization = null)
+    public function create($name, $jump_start = null, $organization = null)
     {
         $data = array(
             'name'         => $name,

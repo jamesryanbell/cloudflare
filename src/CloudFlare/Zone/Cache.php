@@ -29,7 +29,7 @@ class Cache extends Api
      * @param boolean|null  $purge_everything  A flag that indicates all resources in CloudFlare's cache should be removed.
      *                                         Note: This may have dramatic affects on your origin server load after performing this action. (true)
      */
-    public function purge($identifier, bool $purge_everything = null)
+    public function purge($identifier, $purge_everything = null)
     {
         $data = array(
             'purge_everything' => $purge_everything
