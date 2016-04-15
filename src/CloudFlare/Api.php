@@ -205,7 +205,7 @@ class Api
             CURLOPT_FORBID_REUSE   => true,
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_HEADER         => false,
-            CURLOPT_TIMEOUT        => 20,
+            CURLOPT_TIMEOUT        => 30,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_FOLLOWLOCATION => true
         );
