@@ -79,13 +79,44 @@ class Zone extends Api
     }
 
     /**
+     * Edit Vanity Name Servers (permission needed: #zone:edit)
+     * @param string $zone_identifier     API item identifier tag
+     * @param array  $vanity_name_servers An array of domains used for custom name servers. This is only available for Business
+     *                                    and Enterprise plans.
+     */
+    public function edit_vanity_name_servers($zone_identifier, $vanity_name_servers)
+    {
+        $data = array(
+            'vanity_name_servers' => $vanity_name_servers
+        );
+        return $this->put('zones/' . $zone_identifier . '/pause', $data);
+    }
+
+    /**
+     * Edit the desired plan for the zone (permission needed: #zone:edit)
+     * @param string $zone_identifier API item identifier tag
+     * @param object $plan            The desired plan for the zone. Changing this value will create/cancel associated
+     *                                subscriptions. To view available plans for this zone, see Zone Plans
+     */
+    public function edit_plan($zone_identifier, $plan)
+    {
+        $data = array(
+            'plan' => $plan
+        );
+        return $this->put('zones/' . $zone_identifier . '/pause', $data);
+    }
+
+    /**
      * Pause all CloudFlare features (permission needed: #zone:edit)
      * This will pause all features and settings for the zone. DNS will still resolve
      * @param string $zone_identifier API item identifier tag
      */
     public function pause($zone_identifier)
     {
-        return $this->put('zones/' . $zone_identifier . '/pause');
+        $data = array(
+            'pause' => true
+        );
+        return $this->put('zones/' . $zone_identifier . '/pause', $data);
     }
 
     /**
@@ -95,7 +126,10 @@ class Zone extends Api
      */
     public function unpause($zone_identifier)
     {
-        return $this->put('zones/' . $zone_identifier . '/unpause');
+        $data = array(
+            'pause' => false
+        );
+        return $this->put('zones/' . $zone_identifier . '/unpause', $data);
     }
 
     /**
