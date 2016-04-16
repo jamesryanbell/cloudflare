@@ -86,12 +86,24 @@ class Dns extends Api
 
     /**
      * Update DNS record (permission needed: #dns_records:edit)
-     * @param string $zone_identifier
-     * @param string $identifier      API item identifier tag
+     * @param string      $zone_identifier
+     * @param string      $identifier      API item identifier tag
+     * @param string|null $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
+     * @param string|null $name            DNS record name
+     * @param string|null $content         DNS record content
+     * @param string|null $proxiable
+     * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      */
-    public function update($zone_identifier, $identifier)
+    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $proxiable = null, $ttl = null)
     {
-        return $this->put('zones/' . $zone_identifier . '/dns_records/' . $identifier);
+        $data = array(
+            'type'      => $type,
+            'name'      => $name,
+            'content'   => $content,
+            'proxiable' => $proxiable,
+            'ttl'       => $ttl
+        );
+        return $this->put('zones/' . $zone_identifier . '/dns_records/' . $identifier, $data);
     }
 
     /**
