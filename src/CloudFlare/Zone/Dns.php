@@ -92,15 +92,17 @@ class Dns extends Api
      * @param string|null $name            DNS record name
      * @param string|null $content         DNS record content
      * @param string|null $proxiable
+     * @param string|null $proxied
      * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      */
-    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $proxiable = null, $ttl = null)
+    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $proxiable = null, $proxied = null, $ttl = null)
     {
         $data = array(
             'type'      => $type,
             'name'      => $name,
             'content'   => $content,
             'proxiable' => $proxiable,
+            'proxied'   => $proxied,
             'ttl'       => $ttl
         );
         return $this->put('zones/' . $zone_identifier . '/dns_records/' . $identifier, $data);
