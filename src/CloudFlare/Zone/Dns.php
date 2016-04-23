@@ -26,19 +26,21 @@ class Dns extends Api
     /**
      * Create DNS record (permission needed: #dns_records:edit)
      * Create a new DNS record for a zone. See the record object definitions for required attributes for each record type
-     * @param string   $zone_identifier
-     * @param string   $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
-     * @param string   $name            DNS record name
-     * @param string   $content         DNS record content
-     * @param int|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
+     * @param string    $zone_identifier
+     * @param string    $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
+     * @param string    $name            DNS record name
+     * @param string    $content         DNS record content
+     * @param int|null  $ttl             Time to live for DNS record. Value of 1 is 'automatic'
+     * @param bool|null $proxied         Whether to proxy the domain through CloudFlare or not
      */
-    public function create($zone_identifier, $type, $name, $content, $ttl = null)
+    public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null)
     {
         $data = array(
             'type'    => strtoupper($type),
             'name'    => $name,
             'content' => $content,
-            'ttl'     => $ttl
+            'ttl'     => $ttl,
+            'proxied' => $proxied
         );
         return $this->post('zones/' . $zone_identifier . '/dns_records', $data);
     }
@@ -91,19 +93,17 @@ class Dns extends Api
      * @param string|null $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
      * @param string|null $name            DNS record name
      * @param string|null $content         DNS record content
-     * @param string|null $proxiable
-     * @param string|null $proxied
      * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
+     * @param bool|null   $proxied         Whether to proxy the domain through CloudFlare or not
      */
-    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $proxiable = null, $proxied = null, $ttl = null)
+    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null)
     {
         $data = array(
             'type'      => $type,
             'name'      => $name,
             'content'   => $content,
-            'proxiable' => $proxiable,
-            'proxied'   => $proxied,
-            'ttl'       => $ttl
+            'ttl'       => $ttl,
+            'proxied'   => $proxied
         );
         return $this->put('zones/' . $zone_identifier . '/dns_records/' . $identifier, $data);
     }
