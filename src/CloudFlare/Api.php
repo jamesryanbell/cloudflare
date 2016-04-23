@@ -193,10 +193,13 @@ class Api
             }
         }
 
+
         //Removes null entries
         $data = array_filter($data, function ($val) {
             return !is_null($val);
         });
+
+        //$data = (object)$data;
 
         $url = 'https://api.cloudflare.com/client/v4/' . $path;
 
@@ -220,21 +223,23 @@ class Api
         $ch = curl_init();
         curl_setopt_array($ch, $curl_options);
 
+        $headers[] = "Content-type: application/json";
+        $json_data = json_encode($data);
+
         if($method === 'post') {
             curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+            var_dump($json_data);
         } else if ($method === 'put') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-            $headers[] = "Content-type: application/json";
         } else if ($method === 'delete') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-            $headers[] = "Content-type: application/json";
         } else if ($method === 'patch') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
-            $headers[] = "Content-type: application/json";
+
         } else {
             $url .= '?' . http_build_query($data);
         }
@@ -249,15 +254,14 @@ class Api
 
         curl_close($ch);
         if ($http_code != 200) {
-            return array(
-                'error'       => $error,
-                'http_code'   => $http_code,
-                'method'      => $method,
-                'result'      => $http_result,
-                'information' => $information
-            );
+            $response = json_decode($http_result);
+            $response->http_code   = $http_code;
+            $response->method      = $method;
+            $response->information = $information;
         } else {
-            return json_decode($http_result);
+            $response = json_decode($http_result);
+            $response->success = true;
         }
+        return $response;
     }
 }
