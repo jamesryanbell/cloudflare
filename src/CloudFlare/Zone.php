@@ -89,7 +89,7 @@ class Zone extends Api
         $data = array(
             'vanity_name_servers' => $vanity_name_servers
         );
-        return $this->put('zones/' . $zone_identifier . '/pause', $data);
+        return $this->patch('zones/' . $zone_identifier, $data);
     }
 
     /**
@@ -103,7 +103,7 @@ class Zone extends Api
         $data = array(
             'plan' => $plan
         );
-        return $this->put('zones/' . $zone_identifier . '/pause', $data);
+        return $this->patch('zones/' . $zone_identifier, $data);
     }
 
     /**
@@ -114,9 +114,9 @@ class Zone extends Api
     public function pause($zone_identifier)
     {
         $data = array(
-            'pause' => true
+            'paused' => true
         );
-        return $this->put('zones/' . $zone_identifier . '/pause', $data);
+        return $this->patch('zones/' . $zone_identifier, $data);
     }
 
     /**
@@ -127,9 +127,9 @@ class Zone extends Api
     public function unpause($zone_identifier)
     {
         $data = array(
-            'pause' => false
+            'paused' => false
         );
-        return $this->put('zones/' . $zone_identifier . '/unpause', $data);
+        return $this->patch('zones/' . $zone_identifier, $data);
     }
 
     /**
