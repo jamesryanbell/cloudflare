@@ -35,7 +35,7 @@ class Pagerules extends Api
      *                                     higher priority on the latter (#2) so it will override the first.
      * @param string|null $status          Status of the page rule
      */
-    public function create($zone_identifier, $targets, $actions, $priority = null, $status = null)
+    public function create($zone_identifier, $targets, $actions, $priority = null, $status = 'active')
     {
         $data = array(
             'targets'  => $targets,
