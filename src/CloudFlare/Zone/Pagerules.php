@@ -96,7 +96,7 @@ class Pagerules extends Api
             'priority' => $priority,
             'status'   => $status
         );
-        return $this->patch('zones/' . $zone_identifier . '/page_rules/' . $identifier, $data);
+        return $this->patch('zones/' . $zone_identifier . '/pagerules/' . $identifier, $data);
     }
 
     /**
@@ -121,7 +121,7 @@ class Pagerules extends Api
             'priority' => $priority,
             'status'   => $status
         );
-        return $this->put('zones/' . $zone_identifier . '/keyless_certificates/' . $identifier, $data);
+        return $this->put('zones/' . $zone_identifier . '/pagerules/' . $identifier, $data);
     }
 
     /**
