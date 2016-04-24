@@ -251,17 +251,15 @@ class Api
         $error       = curl_error($ch);
         $information = curl_getinfo($ch);
         $http_code   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $response    = json_decode($http_result);
 
         curl_close($ch);
-        if ($http_code != 200) {
-            $response = json_decode($http_result);
+        if ($response->success !== true) {
             $response->http_code   = $http_code;
             $response->method      = $method;
             $response->information = $information;
-        } else {
-            $response = json_decode($http_result);
-            $response->success = true;
         }
+
         return $response;
     }
 }
