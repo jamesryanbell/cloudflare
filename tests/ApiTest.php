@@ -60,31 +60,31 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 	public function testHttpGetMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->get('test');
-		$this->assertEquals("get", $result['method']);
+		$this->assertEquals("get", $result->method);
 	}
 
 	public function testHttpPostMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->post('test');
-		$this->assertEquals("post", $result['method']);
+		$this->assertEquals("post", $result->method);
 	}
 
 	public function testHttpPutMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->put('test');
-		$this->assertEquals("put", $result['method']);
+		$this->assertEquals("put", $result->method);
 	}
 
 	public function testHttpPatchMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->patch('test');
-		$this->assertEquals("patch", $result['method']);
+		$this->assertEquals("patch", $result->method);
 	}
 
 	public function testHttpDeleteMethodSet() {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $api->delete('test');
-		$this->assertEquals("delete", $result['method']);
+		$this->assertEquals("delete", $result->method);
 	}
 
 	public function testHttpRequest() {
@@ -95,7 +95,7 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 		$api = new Api('email@example.com', 'Auth Key');
 		$result = $method->invoke($api, 'test');
 
-		$this->assertEquals('get', $result['method']);
+		$this->assertEquals('get', $result->method);
 	}
 
 }
