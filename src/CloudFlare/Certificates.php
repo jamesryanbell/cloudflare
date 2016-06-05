@@ -52,7 +52,6 @@ class Certificates extends Api
         return $this->post('certificates', $data);
     }
 
-
     /**
      * Certificate Details
      * Get an existing certificate by its serial number. Use your Certificates API Key as your User Service Key
