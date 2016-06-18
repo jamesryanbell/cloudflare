@@ -15,6 +15,6 @@
     <directory>src</directory>
   </files>
   <transformations>
-    <template name="clean" />
+    <template name="responsive" />
   </transformations>
 </phpdoc>
