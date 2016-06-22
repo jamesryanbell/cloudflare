@@ -10,7 +10,7 @@
 
 A work in progress library for the Cloudflare API. The documentation for the API can be found at https://api.cloudflare.com.
 
-I have implemented all of the methods from the available documentation but if there are more just let me know please [https://github.com/jamesryanbell/cloudflare](Cloudflare)
+I have implemented all of the methods from the available documentation but if there are more just let me know via issues please https://github.com/jamesryanbell/cloudflare/issues
 
 
 ##Installation
