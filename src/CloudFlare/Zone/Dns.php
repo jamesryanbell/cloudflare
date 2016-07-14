@@ -33,7 +33,7 @@ class Dns extends Api
      * @param int|null  $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      * @param bool|null $proxied         Whether to proxy the domain through CloudFlare or not
      */
-    public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null, $priority = null)
+    public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null, $priority = null, $data = null)
     {
         $data = array(
             'type'     => strtoupper($type),
@@ -41,7 +41,8 @@ class Dns extends Api
             'content'  => $content,
             'ttl'      => $ttl,
             'proxied'  => $proxied,
-            'priority' => $priority
+            'priority' => $priority,
+            'data'     => $data
         );
         return $this->post('zones/' . $zone_identifier . '/dns_records', $data);
     }
@@ -97,14 +98,15 @@ class Dns extends Api
      * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      * @param bool|null   $proxied         Whether to proxy the domain through CloudFlare or not
      */
-    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null)
+    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null, $data = null)
     {
         $data = array(
             'type'      => $type,
             'name'      => $name,
             'content'   => $content,
             'ttl'       => $ttl,
-            'proxied'   => $proxied
+            'proxied'   => $proxied,
+            'data'      => $data
         );
         return $this->put('zones/' . $zone_identifier . '/dns_records/' . $identifier, $data);
     }
