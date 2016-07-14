@@ -26,12 +26,13 @@ class Dns extends Api
     /**
      * Create DNS record (permission needed: #dns_records:edit)
      * Create a new DNS record for a zone. See the record object definitions for required attributes for each record type
-     * @param string    $zone_identifier
-     * @param string    $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
-     * @param string    $name            DNS record name
-     * @param string    $content         DNS record content
-     * @param int|null  $ttl             Time to live for DNS record. Value of 1 is 'automatic'
-     * @param bool|null $proxied         Whether to proxy the domain through CloudFlare or not
+     * @param string     $zone_identifier
+     * @param string     $type            DNS record type (A, AAAA, CNAME, TXT, SRV, LOC, MX, NS, SPF)
+     * @param string     $name            DNS record name
+     * @param string     $content         DNS record content
+     * @param int|null   $ttl             Time to live for DNS record. Value of 1 is 'automatic'
+     * @param bool|null  $proxied         Whether to proxy the domain through CloudFlare or not
+     * @param array|null $data            Additional data required for SRV record
      */
     public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null, $priority = null, $data = null)
     {
@@ -97,6 +98,7 @@ class Dns extends Api
      * @param string|null $content         DNS record content
      * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      * @param bool|null   $proxied         Whether to proxy the domain through CloudFlare or not
+     * @param array|null  $data            Additional data required for SRV record
      */
     public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null, $data = null)
     {
