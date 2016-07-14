@@ -29,7 +29,7 @@ class Api
     public $email;
 
     /**
-     * olds the provided auth_key for API authentication
+     * Holds the provided auth_key for API authentication
      * @var string
      */
     public $auth_key;
