@@ -6,6 +6,8 @@ The documentation for the API can be found at https://api.cloudflare.com, I will
 
 If you spot an issue with the package just let me know via issues but please include as much detail as possible, ideally with code examples, environment information etc.
 
+Documentation for this package can be viewed here: https://jamesryanbell.github.io/cloudflare/
+
 ## Installation
 Installation should be done via composer, details of how to install composer can be found at https://getcomposer.org/
 
