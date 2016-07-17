@@ -13,20 +13,22 @@ use Cloudflare\Zone\WAF\Packages;
  * WAF Rule Groups properties
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class Groups extends Api
 {
     /**
      * Default permissions level
+     *
      * @var array
      */
-    protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
+    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
 
     /**
      * List rule groups (permission needed: #zone:read)
      * Search, list, and sort rule groups contained within a package
+     *
      * @param string      $zone_identifier
      * @param string      $package_identifier
      * @param string|null $name               Name of the firewall rule group
@@ -40,7 +42,7 @@ class Groups extends Api
      */
     public function groups($zone_identifier, $package_identifier, $name = null, $mode = null, $rules_count = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
-        $data = array(
+        $data = [
             'name'        => $name,
             'mode'        => $mode,
             'rules_count' => $rules_count,
@@ -48,27 +50,29 @@ class Groups extends Api
             'per_page'    => $per_page,
             'order'       => $order,
             'direction'   => $direction,
-            'match'       => $match
-        );
-        return $this->get('/zones/' . $zone_identifier . '/firewall/waf/packages/' . $package_identifier . '/groups', $data);
+            'match'       => $match,
+        ];
+
+        return $this->get('/zones/'.$zone_identifier.'/firewall/waf/packages/'.$package_identifier.'/groups', $data);
     }
 
     /**
      * Rule group info (permission needed: #zone:read)
      * Get a single rule group
+     *
      * @param string $zone_identifier
      * @param string $package_identifier
      * @param string $identifier
      */
     public function info($zone_identifier, $package_identifier, $identifier)
     {
-
-        return $this->get('/zones/' . $zone_identifier . '/firewall/waf/packages/' . $package_identifier . '/groups/' . $identifier);
+        return $this->get('/zones/'.$zone_identifier.'/firewall/waf/packages/'.$package_identifier.'/groups/'.$identifier);
     }
 
     /**
      * Update Rule group (permission needed: #zone:edit)
      * Update the state of a rule group
+     *
      * @param string      $zone_identifier
      * @param string      $package_identifier
      * @param string      $identifier
@@ -76,9 +80,10 @@ class Groups extends Api
      */
     public function update($zone_identifier, $package_identifier, $identifier, $mode = null)
     {
-        $data = array(
-            'mode' => $mode
-        );
-        return $this->patch('/zones/' . $zone_identifier . '/firewall/waf/packages/' . $package_identifier . '/groups/' . $identifier, $data);
+        $data = [
+            'mode' => $mode,
+        ];
+
+        return $this->patch('/zones/'.$zone_identifier.'/firewall/waf/packages/'.$package_identifier.'/groups/'.$identifier, $data);
     }
 }

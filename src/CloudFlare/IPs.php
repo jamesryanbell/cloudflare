@@ -2,8 +2,6 @@
 
 namespace Cloudflare;
 
-use Cloudflare\Api;
-
 /**
  * CloudFlare API wrapper
  *
@@ -11,16 +9,17 @@ use Cloudflare\Api;
  * CloudFlare IP space
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class IPs extends Api
 {
     /**
      * Default permissions level
+     *
      * @var array
      */
-    protected $permission_level = array('read' => null, 'edit' => null);
+    protected $permission_level = ['read' => null, 'edit' => null];
 
     /**
      * CloudFlare IPs
