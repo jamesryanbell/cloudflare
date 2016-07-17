@@ -11,16 +11,17 @@ use Cloudflare\User;
  * Invites
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class Invites extends Api
 {
     /**
      * Default permissions level
+     *
      * @var array
      */
-    protected $permission_level = array('read' => '#invites:read', 'edit' => '#invites:edit');
+    protected $permission_level = ['read' => '#invites:read', 'edit' => '#invites:edit'];
 
     /**
      * List invitations (permission needed: #invites:read)
@@ -34,21 +35,23 @@ class Invites extends Api
     /**
      * Invitation details (permission needed: #invites:read)
      * Get the details of an invitation
+     *
      * @param string $identifier
      */
     public function details($identifier)
     {
-        return $this->get('/user/invites/' . $identifier);
+        return $this->get('/user/invites/'.$identifier);
     }
 
     /**
      * Respond to Invitation (permission needed: #invites:edit)
      * Respond to an invitation
+     *
      * @param string $identifier
      * @param string $status     Status of your response to the invitation (rejected or accepted)
      */
     public function respond($identifier, $status)
     {
-        return $this->patch('/user/invites/' . $identifier);
+        return $this->patch('/user/invites/'.$identifier);
     }
 }

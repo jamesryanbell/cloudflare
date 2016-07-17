@@ -13,20 +13,22 @@ use Cloudflare\Zone\WAF\Packages;
  * WAF Rules properties
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class Rules extends Api
 {
     /**
      * Default permissions level
+     *
      * @var array
      */
-    protected $permission_level = array('read' => '#zone:read', 'edit' => '#zone:edit');
+    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
 
     /**
      * List rule (permission needed: #zone:read)
      * Search, list, and filter rules within a package
+     *
      * @param string      $zone_id
      * @param string      $package_id
      * @param string|null $description Public description of the rule
@@ -41,7 +43,7 @@ class Rules extends Api
      */
     public function rules($zone_id, $package_id, $description = null, $mode = null, $priority = null, $group_id = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
-        $data = array(
+        $data = [
             'description' => $description,
             'mode'        => $mode,
             'priority'    => $priority,
@@ -50,27 +52,29 @@ class Rules extends Api
             'per_page'    => $per_page,
             'order'       => $order,
             'direction'   => $direction,
-            'match'       => $match
-        );
-        return $this->get('/zones/' . $zone_id . '/firewall/waf/packages/' . $package_id . '/rules', $data);
+            'match'       => $match,
+        ];
+
+        return $this->get('/zones/'.$zone_id.'/firewall/waf/packages/'.$package_id.'/rules', $data);
     }
 
     /**
      * Rule info (permission needed: #zone:read)
      * Individual information about a rule
+     *
      * @param string $zone_id
      * @param string $package_id
      * @param string $identifier
      */
     public function info($zone_id, $package_id, $identifier)
     {
-
-        return $this->get('/zones/' . $zone_id . '/firewall/waf/packages/' . $package_id . '/rules/' . $identifier);
+        return $this->get('/zones/'.$zone_id.'/firewall/waf/packages/'.$package_id.'/rules/'.$identifier);
     }
 
     /**
      * Update Rule group (permission needed: #zone:edit)
      * Update the state of a rule group
+     *
      * @param string      $zone_id
      * @param string      $package_id
      * @param string      $identifier
@@ -78,9 +82,10 @@ class Rules extends Api
      */
     public function update($zone_id, $package_id, $identifier, $mode = null)
     {
-        $data = array(
-            'mode' => $mode
-        );
-        return $this->patch('/zones/' . $zone_id . '/firewall/waf/packages/' . $package_id . '/rules/' . $identifier, $data);
+        $data = [
+            'mode' => $mode,
+        ];
+
+        return $this->patch('/zones/'.$zone_id.'/firewall/waf/packages/'.$package_id.'/rules/'.$identifier, $data);
     }
 }

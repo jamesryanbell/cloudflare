@@ -12,20 +12,22 @@ use Cloudflare\User\Firewall;
  * User-level Firewall access rule
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class AccessRules extends Api
 {
     /**
      * Default permissions level
+     *
      * @var array
      */
-    protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
+    protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
 
     /**
      * List access rules (permission needed: #billing:read)
      * Search, sort, and filter IP/country access rules
+     *
      * @param string|null $mode                 The action to apply to a matched request
      * @param string|null $configuration_target The rule configuration target
      * @param string|null $configuration_value  Search by IP, range, or country code
@@ -37,7 +39,7 @@ class AccessRules extends Api
      */
     public function rules($mode = null, $configuration_target = null, $configuration_value = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
-        $data = array(
+        $data = [
             'mode'                 => $mode,
             'configuration_target' => $configuration_target,
             'configuration_value'  => $configuration_value,
@@ -45,8 +47,9 @@ class AccessRules extends Api
             'per_page'             => $per_page,
             'order'                => $order,
             'direction'            => $direction,
-            'match'                => $match
-        );
+            'match'                => $match,
+        ];
+
         return $this->get('/user/firewall/access_rules/rules', $data);
     }
 
@@ -54,23 +57,26 @@ class AccessRules extends Api
      * Create access rule (permission needed: #billing:edit)
      * Make a new IP, IP range, or country access rule for all zones owned by the user.
      * Note: If you would like to create an access rule that applies to a specific zone only, use the zone firewall endpoints.
+     *
      * @param string      $mode          The action to apply to a matched request
      * @param object      $configuration Rule configuration
      * @param string|null $notes         A personal note about the rule. Typically used as a reminder or explanation for the rule.
      */
     public function create($mode, object $configuration, $notes = null)
     {
-        $data = array(
+        $data = [
             'mode'          => $mode,
             'configuration' => $configuration,
-            'notes'         => $notes
-        );
+            'notes'         => $notes,
+        ];
+
         return $this->post('/user/firewall/access_rules/rules', $data);
     }
 
     /**
      * Update access rule (permission needed: #billing:edit)
      * Update rule state and/or configuration. This will be applied across all zones owned by the user.
+     *
      * @param string      $identifier
      * @param string|null $mode          The action to apply to a matched request
      * @param object|null $configuration Rule configuration
@@ -78,21 +84,23 @@ class AccessRules extends Api
      */
     public function update($identifier, $mode = null, $configuration = null, $notes = null)
     {
-        $data = array(
+        $data = [
             'mode'          => $mode,
             'configuration' => $configuration,
-            'notes'         => $notes
-        );
-        return $this->patch('/user/firewall/access_rules/rules/' . $identifier, $data);
+            'notes'         => $notes,
+        ];
+
+        return $this->patch('/user/firewall/access_rules/rules/'.$identifier, $data);
     }
 
     /**
      * Delete access rule (permission needed: #billing:edit)
      * Remove an access rule so it is no longer evaluated during requests. This will apply to all zones owned by the user
+     *
      * @param string $identifier
      */
     public function delete_rule($identifier)
     {
-        return $this->delete('/user/firewall/access_rules/rules/' . $identifier);
+        return $this->delete('/user/firewall/access_rules/rules/'.$identifier);
     }
 }
