@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Cloudflare\Api</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Cloudflare.html">
+						Cloudflare<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.Organizations.html">
+						Organizations<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.Organizations.Firewall.html">
+						Firewall<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.Organizations.Firewall.AccessRules.html">
+						AccessRules					</a>
+
+						</li>
+							</ul></li></ul></li>
+				<li>
+					<a href="namespace-Cloudflare.User.html">
+						User<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.User.Billing.html">
+						Billing<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.User.Billing.Subscriptions.html">
+						Subscriptions					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Cloudflare.User.Firewall.html">
+						Firewall					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Cloudflare.Zone.html">
+						Zone<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.Zone.Firewall.html">
+						Firewall					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Cloudflare.Zone.SSL.html">
+						SSL					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Cloudflare.Zone.WAF.html">
+						WAF<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Cloudflare.Zone.WAF.Packages.html">
+						Packages					</a>
+
+						</li>
+							</ul></li></ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Cloudflare.Api.html">Api</a></li>
+				<li><a href="class-Cloudflare.Certificates.html">Certificates</a></li>
+				<li><a href="class-Cloudflare.IPs.html">IPs</a></li>
+				<li><a href="class-Cloudflare.Railguns.html">Railguns</a></li>
+				<li><a href="class-Cloudflare.User.html">User</a></li>
+				<li><a href="class-Cloudflare.Zone.html">Zone</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Cloudflare.html" title="Summary of Cloudflare"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Api</h1>
+
+
+	<div class="description">
+	<p>CloudFlare API wrapper</p>
+
+<p>A work in progress library for the Cloudflare API. The documentation for the API can be found at https://www.cloudflare.com/docs/.</p>
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Cloudflare.Certificates.html">Cloudflare\Certificates</a>, 
+			<a href="class-Cloudflare.IPs.html">Cloudflare\IPs</a>, 
+			<a href="class-Cloudflare.User.html">Cloudflare\User</a>, 
+			<a href="class-Cloudflare.User.Billing.html">Cloudflare\User\Billing</a>, 
+			<a href="class-Cloudflare.User.Billing.Subscriptions.Apps.html">Cloudflare\User\Billing\Subscriptions\Apps</a>, 
+			<a href="class-Cloudflare.User.Billing.Subscriptions.Zones.html">Cloudflare\User\Billing\Subscriptions\Zones</a>, 
+			<a href="class-Cloudflare.User.Firewall.AccessRules.html">Cloudflare\User\Firewall\AccessRules</a>, 
+			<a href="class-Cloudflare.User.Invites.html">Cloudflare\User\Invites</a>, 
+			<a href="class-Cloudflare.User.Organizations.html">Cloudflare\User\Organizations</a>, 
+			<a href="class-Cloudflare.User.Virtual_Dns.html">Cloudflare\User\Virtual_Dns</a>, 
+			<a href="class-Cloudflare.Zone.html">Cloudflare\Zone</a>, 
+			<a href="class-Cloudflare.Zone.Analytics.html">Cloudflare\Zone\Analytics</a>, 
+			<a href="class-Cloudflare.Organizations.Firewall.AccessRules.Rules.html">Cloudflare\Organizations\Firewall\AccessRules\Rules</a>, 
+			<a href="class-Cloudflare.Zone.Cache.html">Cloudflare\Zone\Cache</a>, 
+			<a href="class-Cloudflare.Zone.CustomPages.html">Cloudflare\Zone\CustomPages</a>, 
+			<a href="class-Cloudflare.Zone.CustomSSL.html">Cloudflare\Zone\CustomSSL</a>, 
+			<a href="class-Cloudflare.Zone.Dns.html">Cloudflare\Zone\Dns</a>, 
+			<a href="class-Cloudflare.Zone.Firewall.AccessRules.html">Cloudflare\Zone\Firewall\AccessRules</a>, 
+			<a href="class-Cloudflare.Zone.KeylessSSL.html">Cloudflare\Zone\KeylessSSL</a>, 
+			<a href="class-Cloudflare.Zone.Pagerules.html">Cloudflare\Zone\Pagerules</a>, 
+			<a href="class-Cloudflare.Zone.Plan.html">Cloudflare\Zone\Plan</a>, 
+			<a href="class-Cloudflare.Zone.Railgun.html">Cloudflare\Zone\Railgun</a>, 
+			<a href="class-Cloudflare.Zone.Settings.html">Cloudflare\Zone\Settings</a>, 
+			<a href="class-Cloudflare.Organizations.Invites.html">Cloudflare\Organizations\Invites</a>, 
+			<a href="class-Cloudflare.Zone.SSL.html">Cloudflare\Zone\SSL</a>, 
+			<a href="class-Cloudflare.Zone.SSL.Analyze.html">Cloudflare\Zone\SSL\Analyze</a>, 
+			<a href="class-Cloudflare.Zone.SSL.CertificatePacks.html">Cloudflare\Zone\SSL\CertificatePacks</a>, 
+			<a href="class-Cloudflare.Zone.WAF.Packages.html">Cloudflare\Zone\WAF\Packages</a>, 
+			<a href="class-Cloudflare.Zone.WAF.Packages.Groups.html">Cloudflare\Zone\WAF\Packages\Groups</a>, 
+			<a href="class-Cloudflare.Zone.WAF.Packages.Rules.html">Cloudflare\Zone\WAF\Packages\Rules</a>, 
+			<a href="class-Cloudflare.Organizations.Members.html">Cloudflare\Organizations\Members</a>, 
+			<a href="class-Cloudflare.Organizations.Organizations.html">Cloudflare\Organizations\Organizations</a>, 
+			<a href="class-Cloudflare.Organizations.Railguns.html">Cloudflare\Organizations\Railguns</a>, 
+			<a href="class-Cloudflare.Organizations.Roles.html">Cloudflare\Organizations\Roles</a>, 
+			<a href="class-Cloudflare.Organizations.Virtual_Dns.html">Cloudflare\Organizations\Virtual_Dns</a>, 
+			<a href="class-Cloudflare.Railguns.html">Cloudflare\Railguns</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Cloudflare.html">Cloudflare</a><br>
+		
+
+				<b>Author:</b>
+				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
+				<b>Version:</b>
+				1<br>
+			<b>Located at</b> <a href="source-class-Cloudflare.Api.html#9-264" title="Go to source code">CloudFlare/Api.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#49-69" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			<p>Make a new instance of the API client
+This can be done via providing the email address and api key as seperate parameters
+or by passing in an already instantiated object from which the details will be extracted</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Make a new instance of the API client
+This can be done via providing the email address and api key as seperate parameters
+or by passing in an already instantiated object from which the details will be extracted</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEmail" id="_setEmail">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEmail">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#71-78" title="Go to source code">setEmail</a>( <span>string <var>$email</var></span> )</code>
+
+		<div class="description short">
+			<p>Setter to allow the setting of the email address</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Setter to allow the setting of the email address</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd>The email address associated with the Cloudflare account</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setAuthKey" id="_setAuthKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setAuthKey">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#80-87" title="Go to source code">setAuthKey</a>( <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			<p>Setter to allow the setting of the Authentication Key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Setter to allow the setting of the Authentication Key</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$token</var></dt>
+					<dd>Authentication key, this can be retrieve from the 'My Account' section of the Cloudflare account</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setCurlOption" id="_setCurlOption">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setCurlOption">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#89-97" title="Go to source code">setCurlOption</a>( <span>long <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Setter to allow the adding / changing of the Curl options that will be used within the HTTP requests</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Setter to allow the adding / changing of the Curl options that will be used within the HTTP requests</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd>The CURLOPT_XXX option to set e.g. CURLOPT_TIMEOUT</dd>
+					<dt><var>$value</var></dt>
+					<dd>The value to be set on option e.g. 10</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#99-107" title="Go to source code">get</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>API call method for sending requests using GET</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>API call method for sending requests using GET</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="post" id="_post">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_post">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#109-117" title="Go to source code">post</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>API call method for sending requests using POST</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>API call method for sending requests using POST</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="put" id="_put">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_put">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#119-127" title="Go to source code">put</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>API call method for sending requests using PUT</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>API call method for sending requests using PUT</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#129-137" title="Go to source code">delete</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>API call method for sending requests using DELETE</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>API call method for sending requests using DELETE</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="patch" id="_patch">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_patch">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#139-147" title="Go to source code">patch</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>API call method for sending requests using PATCH</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>API call method for sending requests using PATCH</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="permissions" id="_permissions">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_permissions">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#149-164" title="Go to source code">permissions</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieves the users' permisison levels</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieves the users' permisison levels</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="request" id="_request">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_request">#</a>
+		<code><a href="source-class-Cloudflare.Api.html#166-263" title="Go to source code">request</a>( <span>string <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$method</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$permission_level</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>Path of the endpoint</dd>
+					<dt><var>$data</var></dt>
+					<dd>Data to be sent along with the request</dd>
+					<dt><var>$method</var></dt>
+					<dd>Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')</dd>
+					<dt><var>$permission_level</var></dt>
+					<dd>Permission level required to preform the action</dd>
+				</dl></div>
+
+
+
+				<h4>Codecoverageignore</h4>
+				<div class="list">
+						API call method for sending requests using GET, POST, PUT, DELETE OR PATCH<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="permission_level" id="$permission_level">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Cloudflare.Api.html#19-23" title="Go to source code"><var>$permission_level</var></a>
+
+			<div class="description short">
+				<p>Default permissions level</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Default permissions level</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$permission_level" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-keyword1">null</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-keyword1">null</span>)</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="email" id="$email">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Cloudflare.Api.html#25-29" title="Go to source code"><var>$email</var></a>
+
+			<div class="description short">
+				<p>Holds the provided email address for API authentication</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Holds the provided email address for API authentication</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$email" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="auth_key" id="$auth_key">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Cloudflare.Api.html#31-35" title="Go to source code"><var>$auth_key</var></a>
+
+			<div class="description short">
+				<p>Holds the provided auth_key for API authentication</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Holds the provided auth_key for API authentication</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$auth_key" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="curl_options" id="$curl_options">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Cloudflare.Api.html#37-41" title="Go to source code"><var>$curl_options</var></a>
+
+			<div class="description short">
+				<p>Holds the curl options</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Holds the curl options</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$curl_options" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
