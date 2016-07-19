@@ -34,6 +34,7 @@ class Dns extends Api
      * @param string     $content         DNS record content
      * @param int|null   $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      * @param bool|null  $proxied         Whether to proxy the domain through CloudFlare or not
+     * @param int|null   $priority        MX record priority value
      * @param array|null $data            Additional data required for SRV record
      */
     public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null, $priority = null, $data = null)
@@ -105,8 +106,9 @@ class Dns extends Api
      * @param string|null $ttl             Time to live for DNS record. Value of 1 is 'automatic'
      * @param bool|null   $proxied         Whether to proxy the domain through CloudFlare or not
      * @param array|null  $data            Additional data required for SRV record
+     * @param int|null    $priority        MX record priority value
      */
-    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null, $data = null)
+    public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null, $data = null, $priority = null)
     {
         $data = [
             'type'      => $type,
@@ -114,6 +116,7 @@ class Dns extends Api
             'content'   => $content,
             'ttl'       => $ttl,
             'proxied'   => $proxied,
+            'priority'  => $priority,
             'data'      => $data,
         ];
 
