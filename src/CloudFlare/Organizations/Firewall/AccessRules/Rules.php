@@ -50,7 +50,7 @@ class Rules extends Api
             'direction'            => $direction,
             'match'                => $match,
         ];
-        return $this->get('organizations/'.$organization_id.'/firewall/access_rules/rules');
+        return $this->get('organizations/'.$organization_id.'/firewall/access_rules/rules', $data);
     }
 
     /**
