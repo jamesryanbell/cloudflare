@@ -2,8 +2,6 @@
 
 namespace Cloudflare;
 
-use Cloudflare\Api;
-
 /**
  * CloudFlare API wrapper
  *

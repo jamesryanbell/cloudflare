@@ -55,6 +55,7 @@ class Invites extends Api
         $data = [
             'status' => $status,
         ];
+
         return $this->patch('/user/invites/'.$identifier, $data);
     }
 }
