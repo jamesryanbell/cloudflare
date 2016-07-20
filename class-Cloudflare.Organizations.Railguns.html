@@ -189,7 +189,7 @@ CloudFlare Railgun for Organizations</p>
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Railguns.html#9-104" title="Go to source code">CloudFlare/Organizations/Railguns.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Railguns.html#8-113" title="Go to source code">CloudFlare/Organizations/Railguns.php</a>
 		<br>
 	</div>
 
@@ -209,7 +209,7 @@ CloudFlare Railgun for Organizations</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#26-37" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#27-40" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Create Railgun (permission needed: #organization:edit)</p>
@@ -246,7 +246,7 @@ CloudFlare Railgun for Organizations</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_railguns">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#39-55" title="Go to source code">railguns</a>( <span>string <var>$organization_identifier</var></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#42-60" title="Go to source code">railguns</a>( <span>string <var>$organization_identifier</var></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List Railguns (permission needed: #organization:read)
@@ -289,7 +289,7 @@ List, search, sort and filter your Railguns</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#57-65" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#62-71" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Railgun details (permission needed: #organization:read)</p>
@@ -326,7 +326,7 @@ List, search, sort and filter your Railguns</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_zones">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#67-76" title="Go to source code">zones</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#73-83" title="Go to source code">zones</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Get zones connected to a Railgun (permission needed: #organization:read)
@@ -365,7 +365,7 @@ The zones that are currently using this Railgun</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_enabled">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#78-91" title="Go to source code">enabled</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$zone_identifier</var></span>, <span>boolean|null <var>$enabled</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#85-100" title="Go to source code">enabled</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$zone_identifier</var></span>, <span>boolean|null <var>$enabled</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Enable or disable a Railgun (permission needed: #organization:edit)
@@ -406,7 +406,7 @@ Enable or disable a Railgun for all zones connected to it</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_railgun">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#93-102" title="Go to source code">delete_railgun</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Railguns.html#102-112" title="Go to source code">delete_railgun</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Delete Railgun (permission needed: #organization:edit)
@@ -473,7 +473,7 @@ Disable and delete a Railgun. This will immediately disable the Railgun for any 
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Organizations.Railguns.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Organizations.Railguns.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -487,7 +487,7 @@ Disable and delete a Railgun. This will immediately disable the Railgun for any 
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

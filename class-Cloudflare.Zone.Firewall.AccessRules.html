@@ -183,7 +183,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#10-111" title="Go to source code">CloudFlare/Zone/Firewall/AccessRules.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#9-120" title="Go to source code">CloudFlare/Zone/Firewall/AccessRules.php</a>
 		<br>
 	</div>
 
@@ -203,7 +203,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rules">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#26-54" title="Go to source code">rules</a>( <span>string <var>$zone_id</var></span>, <span>string|null <var>$scope_type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$configuration_target</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$configuration_value</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#27-57" title="Go to source code">rules</a>( <span>string <var>$zone_id</var></span>, <span>string|null <var>$scope_type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$configuration_target</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$configuration_value</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List access rules (permission needed: #zone:read)
@@ -258,7 +258,7 @@ Search, sort, and filter IP/country access rule</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#56-73" title="Go to source code">create</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$mode</var></span>, <span>object <var>$configuration</var></span>, <span>string|null <var>$notes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#59-78" title="Go to source code">create</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$mode</var></span>, <span>object <var>$configuration</var></span>, <span>string|null <var>$notes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create access rule (permission needed: #zone:edit)
@@ -303,7 +303,7 @@ Note: If you would like to create an access rule that applies across all of your
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#75-91" title="Go to source code">update</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$notes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#80-98" title="Go to source code">update</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$notes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update access rule (permission needed: #zone:edit)
@@ -348,7 +348,7 @@ Note: you can only edit rules in the 'zone' group via this endpoint. Use the app
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_rule">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#93-110" title="Go to source code">delete_rule</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$cascade</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#100-119" title="Go to source code">delete_rule</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$cascade</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Delete access rule (permission needed: #zone:edit)
@@ -425,7 +425,7 @@ Optionally, specify how to delete rules that match the mode and configuration ac
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.Firewall.AccessRules.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -439,7 +439,7 @@ Optionally, specify how to delete rules that match the mode and configuration ac
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

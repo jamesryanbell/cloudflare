@@ -183,7 +183,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.WAF.Packages.html#10-77" title="Go to source code">CloudFlare/Zone/WAF/Packages.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.WAF.Packages.html#9-83" title="Go to source code">CloudFlare/Zone/WAF/Packages.php</a>
 		<br>
 	</div>
 
@@ -203,7 +203,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rules">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#26-48" title="Go to source code">rules</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#27-51" title="Go to source code">rules</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List firewall packages (permission needed: #zone:read)
@@ -252,7 +252,7 @@ Retrieve firewall packages for a zone</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_info">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#50-59" title="Go to source code">info</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#53-63" title="Go to source code">info</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Firewall package info (permission needed: #zone:read)
@@ -291,7 +291,7 @@ Get information about a single firewall package</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#61-76" title="Go to source code">update</a>( <span>Cloudflare\Zone\WAF\string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$sensitivity</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$action_mode</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.html#65-82" title="Go to source code">update</a>( <span>Cloudflare\Zone\WAF\string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$sensitivity</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$action_mode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Change anomaly-detection web application firewall package settings (permission needed: #zone:edit)
@@ -362,7 +362,7 @@ Change the sensitivity and action for an anomaly detection type WAF rule package
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.WAF.Packages.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.WAF.Packages.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -376,7 +376,7 @@ Change the sensitivity and action for an anomaly detection type WAF rule package
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

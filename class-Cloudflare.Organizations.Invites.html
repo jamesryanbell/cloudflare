@@ -188,7 +188,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Invites.html#9-88" title="Go to source code">CloudFlare/Organizations/Invites.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Invites.html#8-95" title="Go to source code">CloudFlare/Organizations/Invites.php</a>
 		<br>
 	</div>
 
@@ -208,7 +208,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Invites.html#25-39" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$invited_member_email</var></span>, <span>array <var>$roles</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Invites.html#26-42" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$invited_member_email</var></span>, <span>array <var>$roles</var></span> )</code>
 
 		<div class="description short">
 			<p>Create invitation (permission needed: #organization:read)
@@ -249,7 +249,7 @@ Invite a User to become a Member of an Organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_invitations">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Invites.html#41-49" title="Go to source code">invitations</a>( <span>string <var>$organization_identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Invites.html#44-53" title="Go to source code">invitations</a>( <span>string <var>$organization_identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>List invitations (permission needed: #organization:read)
@@ -286,7 +286,7 @@ List all invitations associated with an organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Invites.html#51-60" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Invites.html#55-65" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Invitation details (permission needed: #organization:read)
@@ -325,7 +325,7 @@ Get the details of an invitation</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Invites.html#62-76" title="Go to source code">update</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$roles</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Invites.html#67-82" title="Go to source code">update</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$roles</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update invitation roles (permission needed: #organization:edit)
@@ -366,7 +366,7 @@ Change the Roles of a Pending Invite</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_invitation">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Invites.html#78-87" title="Go to source code">delete_invitation</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Invites.html#84-94" title="Go to source code">delete_invitation</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Cancel Invitation (permission needed: #organization:edit)
@@ -433,7 +433,7 @@ Cancel an existing invitation</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Organizations.Invites.html#19-23" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Organizations.Invites.html#19-24" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -447,7 +447,7 @@ Cancel an existing invitation</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

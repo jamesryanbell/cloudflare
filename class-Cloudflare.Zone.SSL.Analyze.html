@@ -184,7 +184,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.SSL.Analyze.html#10-45" title="Go to source code">CloudFlare/Zone/SSL/Analyze.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.SSL.Analyze.html#9-48" title="Go to source code">CloudFlare/Zone/SSL/Analyze.php</a>
 		<br>
 	</div>
 
@@ -204,7 +204,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_analyze">#</a>
-		<code><a href="source-class-Cloudflare.Zone.SSL.Analyze.html#26-44" title="Go to source code">analyze</a>( <span>string <var>$identifier</var></span>, <span>string <var>$certificate</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.SSL.Analyze.html#27-47" title="Go to source code">analyze</a>( <span>string <var>$identifier</var></span>, <span>string <var>$certificate</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Analyze Certificate (permission needed: #ssl:read)
@@ -224,10 +224,10 @@ Returns the set of hostnames, the signature algorithm, and the expiration date o
 					<dd>The zone's SSL certificate or certificate and the intermediate(s)</dd>
 					<dt><var>$bundle_method</var></dt>
 					<dd><p>A ubiquitous bundle is a bundle that has a higher probability of
-                                    being verified everywhere, even by clients using outdated or unusual
-                                    trust stores. An optimal bundle is a bundle with the shortest chain and
-                                    newest intermediates. A forced method attempt to use the certificate/chain
-                                    as defined by the input</p></dd>
+                                  being verified everywhere, even by clients using outdated or unusual
+                                  trust stores. An optimal bundle is a bundle with the shortest chain and
+                                  newest intermediates. A forced method attempt to use the certificate/chain
+                                  as defined by the input</p></dd>
 				</dl></div>
 
 
@@ -277,7 +277,7 @@ Returns the set of hostnames, the signature algorithm, and the expiration date o
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.SSL.Analyze.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.SSL.Analyze.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -291,7 +291,7 @@ Returns the set of hostnames, the signature algorithm, and the expiration date o
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#ssl:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#ssl:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#ssl:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#ssl:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

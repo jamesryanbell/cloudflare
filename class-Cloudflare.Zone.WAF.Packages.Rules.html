@@ -184,7 +184,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#11-86" title="Go to source code">CloudFlare/Zone/WAF/Packages/Rules.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#10-91" title="Go to source code">CloudFlare/Zone/WAF/Packages/Rules.php</a>
 		<br>
 	</div>
 
@@ -204,7 +204,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rules">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#27-56" title="Go to source code">rules</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string|null <var>$description</var> = <span class="php-keyword1">null</span></span>, <span>object|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$group_id</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#28-59" title="Go to source code">rules</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string|null <var>$description</var> = <span class="php-keyword1">null</span></span>, <span>object|null <var>$mode</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$group_id</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List rule (permission needed: #zone:read)
@@ -261,7 +261,7 @@ Search, list, and filter rules within a package</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_info">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#58-69" title="Go to source code">info</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#61-72" title="Go to source code">info</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Rule info (permission needed: #zone:read)
@@ -302,7 +302,7 @@ Individual information about a rule</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#71-85" title="Go to source code">update</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#74-90" title="Go to source code">update</a>( <span>string <var>$zone_id</var></span>, <span>string <var>$package_id</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$mode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update Rule group (permission needed: #zone:edit)
@@ -373,7 +373,7 @@ Update the state of a rule group</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#21-25" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.WAF.Packages.Rules.html#21-26" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -387,7 +387,7 @@ Update the state of a rule group</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

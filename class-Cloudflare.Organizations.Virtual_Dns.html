@@ -189,7 +189,7 @@ Organizations-level Virtual DNS Management</p>
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#9-102" title="Go to source code">CloudFlare/Organizations/VirtualDns.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#8-110" title="Go to source code">CloudFlare/Organizations/VirtualDns.php</a>
 		<br>
 	</div>
 
@@ -209,7 +209,7 @@ Organizations-level Virtual DNS Management</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clusters">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#26-34" title="Go to source code">clusters</a>( <span>string <var>$organization_identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#27-36" title="Go to source code">clusters</a>( <span>string <var>$organization_identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Get Virtual DNS Clusters (permission needed: #dns_records:read)
@@ -246,7 +246,7 @@ List configured Virtual DNS clusters for an organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#36-56" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$name</var></span>, <span>array <var>$origin_ips</var></span>, <span>integer|null <var>$minimum_cache_ttl</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$maximum_cache_ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$deprecate_any_request</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#38-60" title="Go to source code">create</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$name</var></span>, <span>array <var>$origin_ips</var></span>, <span>integer|null <var>$minimum_cache_ttl</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$maximum_cache_ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$deprecate_any_request</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create a Virtual DNS Cluster (permission needed: #dns_records:edit)
@@ -293,7 +293,7 @@ Create a configured Virtual DNS Cluster</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_cluster">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#58-67" title="Go to source code">cluster</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#62-72" title="Go to source code">cluster</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Get a Virtual DNS Cluster (permission needed: #dns_records:read)
@@ -332,7 +332,7 @@ List a single configured Virtual DNS clusters for an organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modify">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#69-90" title="Go to source code">modify</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string <var>$name</var></span>, <span>array <var>$origin_ips</var></span>, <span>integer <var>$minimum_cache_ttl</var></span>, <span>integer <var>$maximum_cache_ttl</var></span>, <span>boolean <var>$deprecate_any_request</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#74-97" title="Go to source code">modify</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string <var>$name</var></span>, <span>array <var>$origin_ips</var></span>, <span>integer <var>$minimum_cache_ttl</var></span>, <span>integer <var>$maximum_cache_ttl</var></span>, <span>boolean <var>$deprecate_any_request</var></span> )</code>
 
 		<div class="description short">
 			<p>Modify a Virtual DNS Cluster
@@ -381,7 +381,7 @@ Modify a Virtual DNS Cluster configuration (permission needed: #dns_records:edit
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_cluster">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#92-101" title="Go to source code">delete_cluster</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#99-109" title="Go to source code">delete_cluster</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Delete a Virtual DNS Cluster (permission needed: #dns_records:edit)
@@ -448,7 +448,7 @@ Delete a configured Virtual DNS cluster</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Organizations.Virtual_Dns.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -462,7 +462,7 @@ Delete a configured Virtual DNS cluster</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#dns_records:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#dns_records:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#dns_records:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#dns_records:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

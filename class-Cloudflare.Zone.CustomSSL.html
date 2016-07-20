@@ -193,7 +193,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.CustomSSL.html#9-122" title="Go to source code">CloudFlare/Zone/CustomSSL.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.CustomSSL.html#8-133" title="Go to source code">CloudFlare/Zone/CustomSSL.php</a>
 		<br>
 	</div>
 
@@ -213,7 +213,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_list_certificates">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#25-47" title="Go to source code">list_certificates</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#26-50" title="Go to source code">list_certificates</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List SSL configurations (permission needed: #ssl:edit)
@@ -262,7 +262,7 @@ List, search, sort, and filter all of your custom SSL certificates</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#49-67" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$certificate</var></span>, <span>string <var>$private_key</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#52-72" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$certificate</var></span>, <span>string <var>$private_key</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create SSL configuration (permission needed: #ssl:edit)
@@ -284,8 +284,8 @@ Upload a new SSL certificate for a zone</p>
 					<dd>The zone's SSL certificate or certificate and the intermediate(s)</dd>
 					<dt><var>$bundle_method</var></dt>
 					<dd><p>A ubiquitous bundle is a bundle that has a higher probability of being verified everywhere,
-                                  even by clients using outdated or unusual trust stores. An optimal bundle is a bundle with the shortest chain and newest
-                                  intermediates. A forced method attempt to use the certificate/chain as defined by the input "ubiquitous"</p></dd>
+                                    even by clients using outdated or unusual trust stores. An optimal bundle is a bundle with the shortest chain and newest
+                                    intermediates. A forced method attempt to use the certificate/chain as defined by the input "ubiquitous"</p></dd>
 				</dl></div>
 
 
@@ -307,7 +307,7 @@ Upload a new SSL certificate for a zone</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#69-77" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#74-83" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>SSL configuration details (permission needed: #ssl:read)</p>
@@ -344,7 +344,7 @@ Upload a new SSL certificate for a zone</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#79-97" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string <var>$private_key</var></span>, <span>string <var>$certificate</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#85-105" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string <var>$private_key</var></span>, <span>string <var>$certificate</var></span>, <span>string|null <var>$bundle_method</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create a Keyless SSL configuration (permission needed: #ssl:edit)</p>
@@ -366,8 +366,8 @@ Upload a new SSL certificate for a zone</p>
 					<dd>The zone's private key</dd>
 					<dt><var>$bundle_method</var></dt>
 					<dd><p>A ubiquitous bundle is a bundle that has a higher probability of being verified everywhere,
-                                  even by clients using outdated or unusual trust stores. An optimal bundle is a bundle with the shortest chain and newest
-                                  intermediates. A forced method attempt to use the certificate/chain as defined by the input "ubiquitous"</p></dd>
+                                    even by clients using outdated or unusual trust stores. An optimal bundle is a bundle with the shortest chain and newest
+                                    intermediates. A forced method attempt to use the certificate/chain as defined by the input "ubiquitous"</p></dd>
 				</dl></div>
 
 
@@ -389,7 +389,7 @@ Upload a new SSL certificate for a zone</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_prioritize">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#99-111" title="Go to source code">prioritize</a>( <span>string <var>$zone_identifier</var></span>, <span>array <var>$certificates</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#107-121" title="Go to source code">prioritize</a>( <span>string <var>$zone_identifier</var></span>, <span>array <var>$certificates</var></span> )</code>
 
 		<div class="description short">
 			<p>Re-prioritize SSL certificates (permission needed: #ssl:edit)
@@ -428,7 +428,7 @@ If a zone has multiple SSL certificates, you can set the order in which they sho
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_ssl">#</a>
-		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#113-121" title="Go to source code">delete_ssl</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.CustomSSL.html#123-132" title="Go to source code">delete_ssl</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Delete an SSL certificate (permission needed: #ssl:edit)</p>
@@ -493,7 +493,7 @@ If a zone has multiple SSL certificates, you can set the order in which they sho
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.CustomSSL.html#19-23" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.CustomSSL.html#19-24" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -507,7 +507,7 @@ If a zone has multiple SSL certificates, you can set the order in which they sho
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#ssl:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#ssl:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#ssl:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#ssl:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

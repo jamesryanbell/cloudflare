@@ -194,7 +194,7 @@ CloudFlare Analytics</p>
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Analytics.html#9-69" title="Go to source code">CloudFlare/Zone/Analytics.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Analytics.html#8-74" title="Go to source code">CloudFlare/Zone/Analytics.php</a>
 		<br>
 	</div>
 
@@ -214,7 +214,7 @@ CloudFlare Analytics</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_dashboard">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Analytics.html#26-46" title="Go to source code">dashboard</a>( <span>string <var>$zone_identifier</var></span>, <span>string|integer|null <var>$since</var> = <span class="php-keyword1">null</span></span>, <span>string|integer|null <var>$until</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$continuous</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Analytics.html#27-49" title="Go to source code">dashboard</a>( <span>string <var>$zone_identifier</var></span>, <span>string|integer|null <var>$since</var> = <span class="php-keyword1">null</span></span>, <span>string|integer|null <var>$until</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$continuous</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Dashboard (permission needed: #analytics:read)
@@ -232,14 +232,14 @@ The dashboard view provides both totals and timeseries data for the given zone a
 					<dd></dd>
 					<dt><var>$since</var></dt>
 					<dd><p>The (inclusive) beginning of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made,
-                                         or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.</p></dd>
+                                        or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.</p></dd>
 					<dt><var>$until</var></dt>
 					<dd><p>The (exclusive) end of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made,
-                                         or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</p></dd>
+                                        or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</p></dd>
 					<dt><var>$continuous</var></dt>
 					<dd><p>When set to true, the range returned by the response acts like a sliding window to provide a contiguous time-window.
-                                         Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
-                                         If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data</p></dd>
+                                        Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
+                                        If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data</p></dd>
 				</dl></div>
 
 
@@ -261,7 +261,7 @@ The dashboard view provides both totals and timeseries data for the given zone a
 
 		<td class="name"><div>
 		<a class="anchor" href="#_colos">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Analytics.html#48-68" title="Go to source code">colos</a>( <span>string <var>$zone_identifier</var></span>, <span>string|integer|null <var>$since</var> = <span class="php-keyword1">null</span></span>, <span>string|integer|null <var>$until</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$continuous</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Analytics.html#51-73" title="Go to source code">colos</a>( <span>string <var>$zone_identifier</var></span>, <span>string|integer|null <var>$since</var> = <span class="php-keyword1">null</span></span>, <span>string|integer|null <var>$until</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$continuous</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Analytics by Co-locations (permission needed: #analytics:read)
@@ -279,14 +279,14 @@ This view provides a breakdown of analytics data by datacenter. Note: This is av
 					<dd></dd>
 					<dt><var>$since</var></dt>
 					<dd><p>The (inclusive) beginning of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made,
-                                         or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.</p></dd>
+                                        or can be an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than one year.</p></dd>
 					<dt><var>$until</var></dt>
 					<dd><p>The (exclusive) end of the requested time frame. This value can be a negative integer representing the number of minutes in the past relative to time the request is made,
-                                         or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</p></dd>
+                                        or can be an absolute timestamp that conforms to RFC 3339. If omitted, the time of the request is used.</p></dd>
 					<dt><var>$continuous</var></dt>
 					<dd><p>When set to true, the range returned by the response acts like a sliding window to provide a contiguous time-window.
-                                         Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
-                                         If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data</p></dd>
+                                        Analytics data is processed and aggregated asynchronously and can sometimes lead to recent data points being incomplete if this value is set to false.
+                                        If a start date provided is earlier than a date for which data is available, the API will return 0's for those dates until the first available date with data</p></dd>
 				</dl></div>
 
 
@@ -336,7 +336,7 @@ This view provides a breakdown of analytics data by datacenter. Note: This is av
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.Analytics.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.Analytics.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -350,7 +350,7 @@ This view provides a breakdown of analytics data by datacenter. Note: This is av
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#analytics:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#analytics:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#analytics:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#analytics:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

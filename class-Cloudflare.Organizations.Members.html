@@ -188,7 +188,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Members.html#9-72" title="Go to source code">CloudFlare/Organizations/Members.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Organizations.Members.html#8-77" title="Go to source code">CloudFlare/Organizations/Members.php</a>
 		<br>
 	</div>
 
@@ -208,7 +208,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_members">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Members.html#25-33" title="Go to source code">members</a>( <span>string <var>$organization_identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Members.html#26-35" title="Go to source code">members</a>( <span>string <var>$organization_identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>List members (permission needed: #organization:read)
@@ -245,7 +245,7 @@ List all members of a organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Members.html#35-44" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Members.html#37-47" title="Go to source code">details</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Member details (permission needed: #organization:read)
@@ -284,7 +284,7 @@ Get information about a specific member of an organization</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Members.html#46-60" title="Go to source code">update</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$roles</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Members.html#49-64" title="Go to source code">update</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$roles</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update member roles (permission needed: #organization:edit)
@@ -325,7 +325,7 @@ Change the Roles of an Organization's Member</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_member">#</a>
-		<code><a href="source-class-Cloudflare.Organizations.Members.html#62-71" title="Go to source code">delete_member</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Organizations.Members.html#66-76" title="Go to source code">delete_member</a>( <span>string <var>$organization_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Remove member (permission needed: #organization:edit)
@@ -392,7 +392,7 @@ Remove a member from an organization</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Organizations.Members.html#19-23" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Organizations.Members.html#19-24" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -406,7 +406,7 @@ Remove a member from an organization</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#organization:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#organization:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

@@ -194,7 +194,7 @@ CloudFlare DNS records</p>
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Dns.html#9-125" title="Go to source code">CloudFlare/Zone/Dns.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Dns.html#8-136" title="Go to source code">CloudFlare/Zone/Dns.php</a>
 		<br>
 	</div>
 
@@ -214,7 +214,7 @@ CloudFlare DNS records</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Dns.html#26-49" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$type</var></span>, <span>string <var>$name</var></span>, <span>string <var>$content</var></span>, <span>integer|null <var>$ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$proxied</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span> <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Dns.html#27-53" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$type</var></span>, <span>string <var>$name</var></span>, <span>string <var>$content</var></span>, <span>integer|null <var>$ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$proxied</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Create DNS record (permission needed: #dns_records:edit)
@@ -241,9 +241,9 @@ Create a new DNS record for a zone. See the record object definitions for requir
 					<dt><var>$proxied</var></dt>
 					<dd>Whether to proxy the domain through CloudFlare or not</dd>
 					<dt><var>$priority</var></dt>
-					<dd>$data            Additional data required for SRV record</dd>
+					<dd>MX record priority value</dd>
 					<dt><var>$data</var></dt>
-					<dd></dd>
+					<dd>Additional data required for SRV record</dd>
 				</dl></div>
 
 
@@ -265,7 +265,7 @@ Create a new DNS record for a zone. See the record object definitions for requir
 
 		<td class="name"><div>
 		<a class="anchor" href="#_list_records">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Dns.html#51-80" title="Go to source code">list_records</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$content</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$vanity_name_server_record</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Dns.html#55-85" title="Go to source code">list_records</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$content</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$vanity_name_server_record</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$page</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$per_page</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List DNS Records (permission needed: #dns_records:read)
@@ -320,7 +320,7 @@ List, search, sort, and filter a zones' DNS records.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Dns.html#82-90" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Dns.html#87-96" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>DNS record details (permission needed: #dns_records:read)</p>
@@ -357,7 +357,7 @@ List, search, sort, and filter a zones' DNS records.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Dns.html#92-114" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$content</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$proxied</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Dns.html#98-124" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$content</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$ttl</var> = <span class="php-keyword1">null</span></span>, <span>boolean|null <var>$proxied</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$data</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update DNS record (permission needed: #dns_records:edit)</p>
@@ -385,6 +385,8 @@ List, search, sort, and filter a zones' DNS records.</p>
 					<dd>Whether to proxy the domain through CloudFlare or not</dd>
 					<dt><var>$data</var></dt>
 					<dd>Additional data required for SRV record</dd>
+					<dt><var>$priority</var></dt>
+					<dd>MX record priority value</dd>
 				</dl></div>
 
 
@@ -406,7 +408,7 @@ List, search, sort, and filter a zones' DNS records.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_record">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Dns.html#116-124" title="Go to source code">delete_record</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Dns.html#126-135" title="Go to source code">delete_record</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Update DNS record (permission needed: #dns_records:edit)</p>
@@ -471,7 +473,7 @@ List, search, sort, and filter a zones' DNS records.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.Dns.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.Dns.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -485,7 +487,7 @@ List, search, sort, and filter a zones' DNS records.</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#dns_records:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#dns_records:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#dns_records:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#dns_records:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

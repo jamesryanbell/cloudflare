@@ -193,7 +193,7 @@
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Cache.html#9-55" title="Go to source code">CloudFlare/Zone/Cache.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Cache.html#8-60" title="Go to source code">CloudFlare/Zone/Cache.php</a>
 		<br>
 	</div>
 
@@ -213,7 +213,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_purge">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Cache.html#25-38" title="Go to source code">purge</a>( <span>string <var>$identifier</var></span>, <span>boolean|null <var>$purge_everything</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Cache.html#26-41" title="Go to source code">purge</a>( <span>string <var>$identifier</var></span>, <span>boolean|null <var>$purge_everything</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Purge all files (permission needed: #zone:edit)
@@ -231,7 +231,7 @@ Remove ALL files from CloudFlare's cache</p>
 					<dd>API item identifier tag</dd>
 					<dt><var>$purge_everything</var></dt>
 					<dd><p>A flag that indicates all resources in CloudFlare's cache should be removed.
-                                        Note: This may have dramatic affects on your origin server load after performing this action. (true)</p></dd>
+                                   Note: This may have dramatic affects on your origin server load after performing this action. (true)</p></dd>
 				</dl></div>
 
 
@@ -253,7 +253,7 @@ Remove ALL files from CloudFlare's cache</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_purge_files">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Cache.html#40-54" title="Go to source code">purge_files</a>( <span>string <var>$identifier</var></span>, <span>array <var>$files</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$tags</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Cache.html#43-59" title="Go to source code">purge_files</a>( <span>string <var>$identifier</var></span>, <span>array <var>$files</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$tags</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Purge individual files (permission needed: #zone:edit)
@@ -322,7 +322,7 @@ Remove one or more files from CloudFlare's cache</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.Cache.html#19-23" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.Cache.html#19-24" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -336,7 +336,7 @@ Remove one or more files from CloudFlare's cache</p>
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>

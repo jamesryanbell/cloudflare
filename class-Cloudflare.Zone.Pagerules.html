@@ -194,7 +194,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 				James Bell <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k">&#x6a;a&#109;&#x65;&#115;&#x40;&#106;&#x61;&#109;&#x65;&#115;&#45;&#x62;&#101;&#x6c;&#108;&#x2e;&#99;&#x6f;&#46;&#x75;k</a><br>
 				<b>Version:</b>
 				1<br>
-			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Pagerules.html#9-136" title="Go to source code">CloudFlare/Zone/Pagerules.php</a>
+			<b>Located at</b> <a href="source-class-Cloudflare.Zone.Pagerules.html#8-147" title="Go to source code">CloudFlare/Zone/Pagerules.php</a>
 		<br>
 	</div>
 
@@ -214,7 +214,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#26-47" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>array <var>$targets</var></span>, <span>array <var>$actions</var></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-quote">'active'</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#27-50" title="Go to source code">create</a>( <span>string <var>$zone_identifier</var></span>, <span>array <var>$targets</var></span>, <span>array <var>$actions</var></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-quote">'active'</span></span> )</code>
 
 		<div class="description short">
 			<p>Create a page rule [BETA] (permission needed: #zone:edit)</p>
@@ -261,7 +261,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_list_pagerules">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#49-66" title="Go to source code">list_pagerules</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#52-71" title="Go to source code">list_pagerules</a>( <span>string <var>$zone_identifier</var></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$direction</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$match</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>List page rules [BETA] (permission needed: #zone:read)</p>
@@ -304,7 +304,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_details">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#68-76" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#73-82" title="Go to source code">details</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Page rule details [BETA] (permission needed: #zone:read)</p>
@@ -341,7 +341,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_change">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#78-100" title="Go to source code">change</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array|null <var>$targets</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$actions</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#84-108" title="Go to source code">change</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array|null <var>$targets</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$actions</var> = <span class="php-keyword1">null</span></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Change a page rule [BETA] (permission needed: #zone:edit)</p>
@@ -390,7 +390,7 @@ A rule describing target patterns for requests and actions to perform on matchin
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#102-125" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$targets</var></span>, <span>array <var>$actions</var></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#110-135" title="Go to source code">update</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span>, <span>array <var>$targets</var></span>, <span>array <var>$actions</var></span>, <span>integer|null <var>$priority</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$status</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Update a page rule [BETA] (permission needed: #zone:edit)
@@ -441,7 +441,7 @@ Replace a page rule. The final rule will exactly match the data passed with this
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_pagerule">#</a>
-		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#127-135" title="Go to source code">delete_pagerule</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-Cloudflare.Zone.Pagerules.html#137-146" title="Go to source code">delete_pagerule</a>( <span>string <var>$zone_identifier</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>Delete a page rule [BETA] (permission needed: #zone:edit)</p>
@@ -506,7 +506,7 @@ Replace a page rule. The final rule will exactly match the data passed with this
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Cloudflare.Zone.Pagerules.html#20-24" title="Go to source code"><var>$permission_level</var></a>
+				<a href="source-class-Cloudflare.Zone.Pagerules.html#20-25" title="Go to source code"><var>$permission_level</var></a>
 
 			<div class="description short">
 				<p>Default permissions level</p>
@@ -520,7 +520,7 @@ Replace a page rule. The final rule will exactly match the data passed with this
 		<td class="value">
 			<div>
 				<a href="#$permission_level" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>)</code>
+				<code>[<span class="php-quote">'read'</span> =&gt; <span class="php-quote">'#zone:read'</span>, <span class="php-quote">'edit'</span> =&gt; <span class="php-quote">'#zone:edit'</span>]</code>
 			</div>
 		</td>
 	</tr>
