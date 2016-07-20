@@ -4,4 +4,7 @@ filter:
 checks:
     php: true
 coding_style:
-    php: {  }
+    php:
+        spaces:
+            before_left_brace:
+                function: false
