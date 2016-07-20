@@ -25,7 +25,7 @@ class IPs extends Api
      * CloudFlare IPs
      * Get CloudFlare IPs
      */
-    public function ips($identifier)
+    public function ips()
     {
         return $this->get('/ips');
     }

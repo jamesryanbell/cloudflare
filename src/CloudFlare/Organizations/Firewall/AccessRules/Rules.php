@@ -40,6 +40,16 @@ class Rules extends Api
      */
     public function rules($organization_id, $mode = null, $configuration_target = null, $configuration_value = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
+        $data = [
+            'mode'                 => $mode,
+            'configuration_target' => $configuration_target,
+            'configuration_value'  => $configuration_value,
+            'page'                 => $page,
+            'per_page'             => $per_page,
+            'order'                => $order,
+            'direction'            => $direction,
+            'match'                => $match,
+        ];
         return $this->get('organizations/'.$organization_id.'/firewall/access_rules/rules');
     }
 

@@ -201,13 +201,11 @@ class Api
             }
             if (!isset($this->permissions) || !in_array($this->permission_level[$permission_level], $this->permissions)) {
                 throw new Exception('You do not have permission to perform this request');
-
-                return false;
             }
         }
 
         //Removes null entries
-        $data = array_filter($data, function ($val) {
+        $data = array_filter($data, function($val) {
             return !is_null($val);
         });
 
