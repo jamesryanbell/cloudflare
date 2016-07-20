@@ -35,6 +35,7 @@ class Certificates extends Api
             'per_page'  => $per_page,
             'direction' => $direction,
         ];
+
         return $this->get('certificates', $data);
     }
 

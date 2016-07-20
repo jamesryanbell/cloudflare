@@ -205,7 +205,7 @@ class Api
         }
 
         //Removes null entries
-        $data = array_filter($data, function($val) {
+        $data = array_filter($data, function ($val) {
             return !is_null($val);
         });
 
