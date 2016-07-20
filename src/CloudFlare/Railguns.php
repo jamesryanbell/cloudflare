@@ -79,10 +79,10 @@ class Railguns extends Api
      * Enable or disable a Railgun (permission needed: #railgun:edit)
      * Enable or disable a Railgun for all zones connected to it
      *
-     * @param string    $zone_identifier API item identifier tag
+     * @param string    $identifier API item identifier tag
      * @param bool|null $enabled         Flag to determine if the Railgun is accepting connections
      */
-    public function enabled($zone_identifier, $enabled = null)
+    public function enabled($identifier, $enabled = null)
     {
         $data = [
             'enabled' => $enabled,

@@ -117,7 +117,7 @@ class CustomSSL extends Api
             'certificates' => $certificates,
         ];
 
-        return $this->put('zones/'.$zone_identifier.'/custom_certificates/prioritize'.$identifier, $data);
+        return $this->put('zones/'.$zone_identifier.'/custom_certificates/prioritize', $data);
     }
 
     /**

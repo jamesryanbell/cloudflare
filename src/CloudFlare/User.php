@@ -56,10 +56,10 @@ class User extends Api
      * Change your email address. Note: You must provide your current password.
      *
      * @param string $email         Your contact email address
-     * @param string $email_confirm Your contact email address, repeated
+     * @param string $confirm_email Your contact email address, repeated
      * @param string $password      Your current password
      */
-    public function change_email($email, $email_confirm, $password)
+    public function change_email($email, $confirm_email, $password)
     {
         $data = [
             'email'         => $email,

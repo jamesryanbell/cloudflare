@@ -190,8 +190,6 @@ class Api
     {
         if (!isset($this->email) || !isset($this->auth_key)) {
             throw new Exception('Authentication information must be provided');
-
-            return false;
         }
         $data = (is_null($data) ? [] : $data);
         $method = (is_null($method) ? 'get' : $method);
@@ -208,13 +206,10 @@ class Api
             }
         }
 
-
         //Removes null entries
         $data = array_filter($data, function ($val) {
             return !is_null($val);
         });
-
-        //$data = (object)$data;
 
         $url = 'https://api.cloudflare.com/client/v4/'.$path;
 
@@ -268,6 +263,7 @@ class Api
 
         curl_close($ch);
         if ($response->success !== true) {
+            $response->error = $error;
             $response->http_code = $http_code;
             $response->method = $method;
             $response->information = $information;

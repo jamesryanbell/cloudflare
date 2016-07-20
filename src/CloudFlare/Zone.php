@@ -24,7 +24,7 @@ class Zone extends Api
     /**
      * Create a zone (permission needed: #zone:edit)
      *
-     * @param string    $domain       The domain name
+     * @param string    $name         The domain name
      * @param bool|null $jump_start   Automatically attempt to fetch existing DNS records
      * @param int|null  $organization To create a zone owned by an organization, specify the organization parameter. Organization objects can be found in the User or User's Organizations endpoints. You must pass at least the ID of the organization.
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\Organizations;
+namespace Cloudflare;
 
 use Cloudflare\Api;
 

@@ -30,6 +30,11 @@ class Certificates extends Api
      */
     public function certificates($page = null, $per_page = null, $direction = null)
     {
+        $data = [
+            'page'      => $page,
+            'per_page'  => $per_page,
+            'direction' => $direction,
+        ];
         return $this->get('certificates', $data);
     }
 
