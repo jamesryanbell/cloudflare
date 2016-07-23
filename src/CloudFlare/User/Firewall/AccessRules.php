@@ -62,7 +62,7 @@ class AccessRules extends Api
      * @param object      $configuration Rule configuration
      * @param string|null $notes         A personal note about the rule. Typically used as a reminder or explanation for the rule.
      */
-    public function create($mode, object $configuration, $notes = null)
+    public function create($mode, $configuration, $notes = null)
     {
         $data = [
             'mode'          => $mode,
