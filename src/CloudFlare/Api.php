@@ -160,6 +160,8 @@ class Api
 
     /**
      * Retrieves the users' permisison levels
+     * If the user is not part of an organisation then they have full permissions,
+     * as such their permissions are set to full control
      */
     public function permissions()
     {
