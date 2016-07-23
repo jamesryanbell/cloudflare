@@ -11,7 +11,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - phpunit --c build/logs/clover.xml
+  - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - travis_retry php vendor/bin/coveralls
