@@ -2,6 +2,7 @@
 
 namespace Cloudflare;
 
+use CloudFlare\Exception\AuthenticationException;
 use Exception;
 
 /**
@@ -190,9 +191,10 @@ class Api
      */
     protected function request($path, array $data = null, $method = null, $permission_level = null)
     {
-        if (!isset($this->email) || !isset($this->auth_key)) {
-            throw new Exception('Authentication information must be provided');
+        if (!isset($this->email, $this->auth_key)) {
+            throw new AuthenticationException('Authentication information must be provided');
         }
+
         $data = (is_null($data) ? [] : $data);
         $method = (is_null($method) ? 'get' : $method);
         $permission_level = (is_null($permission_level) ? 'read' : $permission_level);
