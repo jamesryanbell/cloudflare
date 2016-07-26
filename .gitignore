@@ -1,7 +1,7 @@
-.idea
-.ds_store
+/.idea
+/.ds_store
 
-composer.lock
+/composer.lock
 
 /vendor
 /output
