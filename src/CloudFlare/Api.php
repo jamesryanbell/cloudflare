@@ -94,6 +94,8 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function get($path, array $data = null)
     {
@@ -105,6 +107,8 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function post($path, array $data = null)
     {
@@ -116,6 +120,8 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function put($path, array $data = null)
     {
@@ -127,6 +133,8 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function delete($path, array $data = null)
     {
@@ -138,6 +146,8 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function patch($path, array $data = null)
     {
@@ -149,9 +159,11 @@ class Api
      *
      * API call method for sending requests using GET, POST, PUT, DELETE OR PATCH
      *
-     * @param string      $path             Path of the endpoint
-     * @param array|null  $data             Data to be sent along with the request
-     * @param string|null $method           Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
+     * @param string      $path   Path of the endpoint
+     * @param array|null  $data   Data to be sent along with the request
+     * @param string|null $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
+     *
+     * @return mixed
      */
     protected function request($path, array $data = null, $method = null)
     {
