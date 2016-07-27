@@ -1,6 +1,6 @@
 <?php
 
-namespace CloudFlare\Exception;
+namespace Cloudflare\Exception;
 
 class AuthenticationException extends \RuntimeException
 {
