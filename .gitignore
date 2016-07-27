@@ -1,8 +1,6 @@
 /.idea
 /.ds_store
 
-/composer.lock
-
 /vendor
 /output
 /build
