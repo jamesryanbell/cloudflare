@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Zone;
  */
 class CustomSSL extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#ssl:read', 'edit' => '#ssl:edit'];
-
     /**
      * List SSL configurations (permission needed: #ssl:edit)
      * List, search, sort, and filter all of your custom SSL certificates

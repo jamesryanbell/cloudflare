@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone;
  */
 class Pagerules extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
     /**
      * Create a page rule [BETA] (permission needed: #zone:edit)
      *

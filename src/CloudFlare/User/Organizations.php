@@ -3,7 +3,6 @@
 namespace Cloudflare\User;
 
 use Cloudflare\Api;
-use Cloudflare\User;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\User;
  */
 class Organizations extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#organizations:read', 'edit' => '#organizations:edit'];
-
     /**
      * List organizations (permission needed: #organizations:read)
      * List organizations the user is associated with

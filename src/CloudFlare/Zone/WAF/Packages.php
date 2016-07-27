@@ -4,7 +4,6 @@ namespace Cloudflare\Zone\WAF;
 
 use Cloudflare\Api;
 use Cloudflare\Zone;
-use Cloudflare\Zone\WAF;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone\WAF;
  */
 class Packages extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
     /**
      * List firewall packages (permission needed: #zone:read)
      * Retrieve firewall packages for a zone

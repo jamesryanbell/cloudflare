@@ -15,13 +15,6 @@ namespace Cloudflare;
 class User extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => null, 'edit' => null];
-
-    /**
      * User details
      */
     public function user()

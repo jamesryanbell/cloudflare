@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone;
  */
 class Dns extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#dns_records:read', 'edit' => '#dns_records:edit'];
-
     /**
      * Create DNS record (permission needed: #dns_records:edit)
      * Create a new DNS record for a zone. See the record object definitions for required attributes for each record type

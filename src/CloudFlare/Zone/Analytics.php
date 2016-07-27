@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone;
  */
 class Analytics extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#analytics:read', 'edit' => '#analytics:edit'];
-
     /**
      * Dashboard (permission needed: #analytics:read)
      * The dashboard view provides both totals and timeseries data for the given zone and time period across the entire CloudFlare network.

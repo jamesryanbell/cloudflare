@@ -15,13 +15,6 @@ namespace Cloudflare;
 class IPs extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => null, 'edit' => null];
-
-    /**
      * CloudFlare IPs
      * Get CloudFlare IPs
      */

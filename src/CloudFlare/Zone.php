@@ -15,13 +15,6 @@ namespace Cloudflare;
 class Zone extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
-    /**
      * Create a zone (permission needed: #zone:edit)
      *
      * @param string    $name         The domain name

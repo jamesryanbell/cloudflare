@@ -4,7 +4,6 @@ namespace Cloudflare\User\Firewall;
 
 use Cloudflare\Api;
 use Cloudflare\User;
-use Cloudflare\User\Firewall;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\User\Firewall;
  */
 class AccessRules extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
-
     /**
      * List access rules (permission needed: #billing:read)
      * Search, sort, and filter IP/country access rules
