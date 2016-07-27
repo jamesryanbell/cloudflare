@@ -70,7 +70,7 @@ class KeylessSSL extends Api
      * @param int       $port            The keyless SSL port used to commmunicate between CloudFlare and the client's Keyless SSL server
      * @param bool|null $enabled         Whether or not the Keyless SSL is on or off
      */
-    public function update($zone_identifier, $identifier, $host, $name, $port, bool $enabled = null)
+    public function update($zone_identifier, $identifier, $host, $name, $port, $enabled = null)
     {
         $data = [
             'host'    => $host,

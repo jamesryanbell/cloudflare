@@ -69,7 +69,7 @@ class Apps extends Api
      *
      * @param string $identifier
      */
-    public function info(string $identifier)
+    public function info($identifier)
     {
         return $this->get('/user/billing/subscriptions/apps/'.$identifier);
     }
