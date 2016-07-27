@@ -81,7 +81,7 @@ class Api
     /**
      * Setter to allow the adding / changing of the Curl options that will be used within the HTTP requests
      *
-     * @param long  $key   The CURLOPT_XXX option to set e.g. CURLOPT_TIMEOUT
+     * @param int   $key   The CURLOPT_XXX option to set e.g. CURLOPT_TIMEOUT
      * @param mixed $value The value to be set on option e.g. 10
      */
     public function setCurlOption($key, $value)
