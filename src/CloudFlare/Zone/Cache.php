@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Zone;
  */
 class Cache extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
     /**
      * Purge all files (permission needed: #zone:edit)
      * Remove ALL files from CloudFlare's cache

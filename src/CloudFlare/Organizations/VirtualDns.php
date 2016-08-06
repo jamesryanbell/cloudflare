@@ -3,7 +3,6 @@
 namespace Cloudflare\Organizations;
 
 use Cloudflare\Api;
-use Cloudflare\Organizations;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Organizations;
  */
 class Virtual_Dns extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#dns_records:read', 'edit' => '#dns_records:edit'];
-
     /**
      * Get Virtual DNS Clusters (permission needed: #dns_records:read)
      * List configured Virtual DNS clusters for an organization

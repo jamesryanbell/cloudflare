@@ -17,13 +17,6 @@ namespace Cloudflare;
 class Certificates extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => null, 'edit' => null];
-
-    /**
      * List Certificates
      * List all existing CloudFlare-issued Certificates for a given zone. Use your Certificates API Key as your
      * User Service Key when calling this endpoint

@@ -14,13 +14,6 @@ namespace Cloudflare;
 class Organizations extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#organization:read', 'edit' => '#organization:edit'];
-
-    /**
      * Organization details (permission needed: #organization:read)
      * Get information about a specific organization that you are a member of
      *

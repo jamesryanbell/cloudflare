@@ -3,7 +3,6 @@
 namespace Cloudflare\User;
 
 use Cloudflare\Api;
-use Cloudflare\User;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\User;
  */
 class Billing extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
-
     /**
      * Billing Profile (permission needed: #billing:read)
      * Access your billing profile object

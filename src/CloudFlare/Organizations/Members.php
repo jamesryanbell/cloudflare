@@ -3,7 +3,6 @@
 namespace Cloudflare\Organizations;
 
 use Cloudflare\Api;
-use Cloudflare\Organizations;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Organizations;
  */
 class Members extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#organization:read', 'edit' => '#organization:edit'];
-
     /**
      * List members (permission needed: #organization:read)
      * List all members of a organization

@@ -1,4 +1,6 @@
+/.idea
+/.ds_store
+
 /vendor
-.ds_store
 /output
 /build

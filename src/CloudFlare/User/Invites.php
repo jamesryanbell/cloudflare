@@ -3,7 +3,6 @@
 namespace Cloudflare\User;
 
 use Cloudflare\Api;
-use Cloudflare\User;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\User;
  */
 class Invites extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#invites:read', 'edit' => '#invites:edit'];
-
     /**
      * List invitations (permission needed: #invites:read)
      * List all invitations associated with my user

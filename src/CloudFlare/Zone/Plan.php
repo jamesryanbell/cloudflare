@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Zone;
  */
 class Plan extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
-
     /**
      * Available plans (permission needed: #billing:read)
      * List all plans the zone can subscribe to.

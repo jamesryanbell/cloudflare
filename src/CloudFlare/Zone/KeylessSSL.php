@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Zone;
  */
 class KeylessSSL extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#ssl:read', 'edit' => '#ssl:edit'];
-
     /**
      * Create a Keyless SSL configuration (permission needed: #ssl:edit)
      *
@@ -78,7 +70,7 @@ class KeylessSSL extends Api
      * @param int       $port            The keyless SSL port used to commmunicate between CloudFlare and the client's Keyless SSL server
      * @param bool|null $enabled         Whether or not the Keyless SSL is on or off
      */
-    public function update($zone_identifier, $identifier, $host, $name, $port, bool $enabled = null)
+    public function update($zone_identifier, $identifier, $host, $name, $port, $enabled = null)
     {
         $data = [
             'host'    => $host,

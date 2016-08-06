@@ -4,7 +4,6 @@ namespace Cloudflare\Zone\WAF;
 
 use Cloudflare\Api;
 use Cloudflare\Zone;
-use Cloudflare\Zone\WAF;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone\WAF;
  */
 class Packages extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
     /**
      * List firewall packages (permission needed: #zone:read)
      * Retrieve firewall packages for a zone
@@ -71,7 +63,7 @@ class Packages extends Api
      * @param string|null $sensitivity     The sensitivity of the firewall package.
      * @param string|null $action_mode     The default action that will be taken for rules under the firewall package.
      */
-    public function update(string $zone_identifier, $identifier, $sensitivity = null, $action_mode = null)
+    public function update($zone_identifier, $identifier, $sensitivity = null, $action_mode = null)
     {
         $data = [
             'sensitivity' => $sensitivity,

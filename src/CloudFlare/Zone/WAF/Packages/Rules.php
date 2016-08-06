@@ -5,7 +5,6 @@ namespace Cloudflare\Zone\WAF\Packages;
 use Cloudflare\Api;
 use Cloudflare\Zone;
 use Cloudflare\Zone\WAF;
-use Cloudflare\Zone\WAF\Packages;
 
 /**
  * CloudFlare API wrapper
@@ -18,13 +17,6 @@ use Cloudflare\Zone\WAF\Packages;
  */
 class Rules extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone:read', 'edit' => '#zone:edit'];
-
     /**
      * List rule (permission needed: #zone:read)
      * Search, list, and filter rules within a package

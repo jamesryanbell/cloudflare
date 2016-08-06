@@ -3,7 +3,6 @@
 namespace Cloudflare\Zone;
 
 use Cloudflare\Api;
-use Cloudflare\Zone;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Zone;
  */
 class Settings extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#zone_settings:read', 'edit' => '#zone_settings:edit'];
-
     /**
      * Zone settings (permission needed: #zone_settings:read)
      * Available settings for your user in relation to a zone

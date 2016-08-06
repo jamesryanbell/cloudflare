@@ -3,7 +3,6 @@
 namespace Cloudflare\Organizations;
 
 use Cloudflare\Api;
-use Cloudflare\Organizations;
 
 /**
  * CloudFlare API wrapper
@@ -16,13 +15,6 @@ use Cloudflare\Organizations;
  */
 class Roles extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#organization:read', 'edit' => '#organization:edit'];
-
     /**
      * List roles (permission needed: #organization:read)
      * Get all available roles for an organization

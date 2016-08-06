@@ -1,6 +1,7 @@
 <?php
 
 use Cloudflare\Api as Api;
+use Cloudflare\Exception\AuthenticationException;
 
 class ApiTest extends PHPUnit_Framework_TestCase
 {
@@ -102,5 +103,21 @@ class ApiTest extends PHPUnit_Framework_TestCase
         $result = $method->invoke($api, 'test');
 
         $this->assertEquals('get', $result->method);
+    }
+
+    public function testInvalidAuthenticationWithoutInformation()
+    {
+        self::setExpectedException(AuthenticationException::class);
+
+        $api = new Api();
+        $api->get('/bogus', []);
+    }
+
+    public function testInvalidAuthenticationWithInvalidParameters()
+    {
+        self::setExpectedException(AuthenticationException::class);
+
+        $api = new Api('foo.domain.tld', 'KEY');
+        $api->get('/bogus', []);
     }
 }

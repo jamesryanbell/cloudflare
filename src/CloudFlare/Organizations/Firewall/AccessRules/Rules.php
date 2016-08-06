@@ -18,13 +18,6 @@ use Cloudflare\Organizations\Firewall;
 class Rules extends Api
 {
     /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#organization:read', 'edit' => '#organization:edit'];
-
-    /**
      * List access rules (permission needed: #organization:read)
      * Search, sort, and filter IP/country access rules
      *

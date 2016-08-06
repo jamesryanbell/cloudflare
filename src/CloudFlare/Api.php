@@ -2,7 +2,8 @@
 
 namespace Cloudflare;
 
-use Exception;
+use Cloudflare\Exception\AuthenticationException;
+use Cloudflare\Exception\UnauthorizedException;
 
 /**
  * CloudFlare API wrapper
@@ -15,13 +16,6 @@ use Exception;
  */
 class Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => null, 'edit' => null];
-
     /**
      * Holds the provided email address for API authentication
      *
@@ -44,13 +38,6 @@ class Api
     public $curl_options;
 
     /**
-     * Holds the users permission levels
-     *
-     * @var null|array
-     */
-    private $permissions = null;
-
-    /**
      * Make a new instance of the API client
      * This can be done via providing the email address and api key as seperate parameters
      * or by passing in an already instantiated object from which the details will be extracted
@@ -64,7 +51,6 @@ class Api
             $this->email = $client->email;
             $this->auth_key = $client->auth_key;
             $this->curl_options = $client->curl_options;
-            $this->permissions = $client->permissions;
         } elseif ($num_args === 2) {
             $parameters = func_get_args();
             $this->email = $parameters[0];
@@ -95,7 +81,7 @@ class Api
     /**
      * Setter to allow the adding / changing of the Curl options that will be used within the HTTP requests
      *
-     * @param long  $key   The CURLOPT_XXX option to set e.g. CURLOPT_TIMEOUT
+     * @param int   $key   The CURLOPT_XXX option to set e.g. CURLOPT_TIMEOUT
      * @param mixed $value The value to be set on option e.g. 10
      */
     public function setCurlOption($key, $value)
@@ -108,10 +94,12 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function get($path, array $data = null)
     {
-        return $this->request($path, $data, 'get', 'read');
+        return $this->request($path, $data, 'get');
     }
 
     /**
@@ -119,10 +107,12 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function post($path, array $data = null)
     {
-        return $this->request($path, $data, 'post', 'edit');
+        return $this->request($path, $data, 'post');
     }
 
     /**
@@ -130,10 +120,12 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function put($path, array $data = null)
     {
-        return $this->request($path, $data, 'put', 'edit');
+        return $this->request($path, $data, 'put');
     }
 
     /**
@@ -141,10 +133,12 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function delete($path, array $data = null)
     {
-        return $this->request($path, $data, 'delete', 'edit');
+        return $this->request($path, $data, 'delete');
     }
 
     /**
@@ -152,30 +146,12 @@ class Api
      *
      * @param string     $path Path of the endpoint
      * @param array|null $data Data to be sent along with the request
+     *
+     * @return mixed
      */
     public function patch($path, array $data = null)
     {
-        return $this->request($path, $data, 'patch', 'edit');
-    }
-
-    /**
-     * Retrieves the users' permisison levels
-     * If the user is not part of an organisation then they have full permissions,
-     * as such their permissions are set to full control
-     */
-    public function permissions()
-    {
-        if (!$this->permissions) {
-            $api = new User($this->email, $this->auth_key);
-            $user = $api->user();
-            if (!$user->result->organizations[0]) {
-                $this->permissions = ['read' => true, 'write' => true];
-            } else {
-                $this->permissions = $user->result->organizations[0]->permissions;
-            }
-        }
-
-        return $this->permissions;
+        return $this->request($path, $data, 'patch');
     }
 
     /**
@@ -183,28 +159,20 @@ class Api
      *
      * API call method for sending requests using GET, POST, PUT, DELETE OR PATCH
      *
-     * @param string      $path             Path of the endpoint
-     * @param array|null  $data             Data to be sent along with the request
-     * @param string|null $method           Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
-     * @param string|null $permission_level Permission level required to preform the action
+     * @param string      $path   Path of the endpoint
+     * @param array|null  $data   Data to be sent along with the request
+     * @param string|null $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
+     *
+     * @return mixed
      */
-    protected function request($path, array $data = null, $method = null, $permission_level = null)
+    protected function request($path, array $data = null, $method = null)
     {
-        if (!isset($this->email) || !isset($this->auth_key)) {
-            throw new Exception('Authentication information must be provided');
+        if (!isset($this->email, $this->auth_key) || false === filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            throw new AuthenticationException('Authentication information must be provided');
         }
+
         $data = (is_null($data) ? [] : $data);
         $method = (is_null($method) ? 'get' : $method);
-        $permission_level = (is_null($permission_level) ? 'read' : $permission_level);
-
-        if (!is_null($this->permission_level[$permission_level])) {
-            if (!$this->permissions) {
-                $this->permissions();
-            }
-            if (!isset($this->permissions) || !in_array($this->permission_level[$permission_level], $this->permissions)) {
-                throw new Exception('You do not have permission to perform this request');
-            }
-        }
 
         //Removes null entries
         $data = array_filter($data, function ($val) {
@@ -259,6 +227,11 @@ class Api
         $error = curl_error($ch);
         $information = curl_getinfo($ch);
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if (in_array($http_code, [401, 403])) {
+            throw new UnauthorizedException('You do not have permission to perform this request');
+        }
+
         $response = json_decode($http_result);
 
         curl_close($ch);

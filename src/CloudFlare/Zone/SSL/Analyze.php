@@ -4,7 +4,6 @@ namespace Cloudflare\Zone\SSL;
 
 use Cloudflare\Api;
 use Cloudflare\Zone;
-use Cloudflare\Zone\SSL;
 
 /**
  * CloudFlare API wrapper
@@ -17,13 +16,6 @@ use Cloudflare\Zone\SSL;
  */
 class Analyze extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#ssl:read', 'edit' => '#ssl:edit'];
-
     /**
      * Analyze Certificate (permission needed: #ssl:read)
      * Returns the set of hostnames, the signature algorithm, and the expiration date of the certificate.

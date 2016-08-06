@@ -4,7 +4,6 @@ namespace Cloudflare\User\Billing\Subscriptions;
 
 use Cloudflare\Api;
 use Cloudflare\User;
-use Cloudflare\User\Billing;
 
 /**
  * CloudFlare API wrapper
@@ -18,13 +17,6 @@ use Cloudflare\User\Billing;
  */
 class Apps extends Api
 {
-    /**
-     * Default permissions level
-     *
-     * @var array
-     */
-    protected $permission_level = ['read' => '#billing:read', 'edit' => '#billing:edit'];
-
     /**
      * List (permission needed: #billing:read)
      * List all of your app subscriptions
@@ -77,7 +69,7 @@ class Apps extends Api
      *
      * @param string $identifier
      */
-    public function info(string $identifier)
+    public function info($identifier)
     {
         return $this->get('/user/billing/subscriptions/apps/'.$identifier);
     }
