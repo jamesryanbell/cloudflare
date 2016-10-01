@@ -30,13 +30,13 @@ class Organizations extends Api
     public function organizations($status = null, $name = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
     {
         $data = [
-            'status'     => $status,
-            'name'       => $name,
-            'page'       => $page,
-            'per_page'   => $per_page,
-            'order'      => $order,
-            'direction'  => $direction,
-            'match'      => $match,
+            'status'    => $status,
+            'name'      => $name,
+            'page'      => $page,
+            'per_page'  => $per_page,
+            'order'     => $order,
+            'direction' => $direction,
+            'match'     => $match,
         ];
 
         return $this->get('/user/organizations', $data);

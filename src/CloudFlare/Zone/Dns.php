@@ -103,13 +103,13 @@ class Dns extends Api
     public function update($zone_identifier, $identifier, $type = null, $name = null, $content = null, $ttl = null, $proxied = null, $data = null, $priority = null)
     {
         $data = [
-            'type'      => $type,
-            'name'      => $name,
-            'content'   => $content,
-            'ttl'       => $ttl,
-            'proxied'   => $proxied,
-            'priority'  => $priority,
-            'data'      => $data,
+            'type'     => $type,
+            'name'     => $name,
+            'content'  => $content,
+            'ttl'      => $ttl,
+            'proxied'  => $proxied,
+            'priority' => $priority,
+            'data'     => $data,
         ];
 
         return $this->put('zones/'.$zone_identifier.'/dns_records/'.$identifier, $data);
