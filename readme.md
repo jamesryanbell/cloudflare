@@ -57,5 +57,39 @@ If you are just performing a single action then you can connect to the API direc
     $dns->create('12345678901234567890', 'TXT', 'name.com', '127.0.0.1', 120);
 ```
 
+### PageRules
+
+```php
+    use Cloudflare\Zone\Pagerules;
+
+    // Define your targets
+    // Currently you can only specify one URL per page rule but this implementation matches the API
+    // so I am leaving it for now in the assumption they are planning to add multiple targets.
+    $targets = [
+        [
+            'target' => 'url',
+            'constraint' =>
+            [
+                'operator' => 'matches',
+                'value' => 'http://example.co.uk/*'
+            ]
+        ]
+    ];
+
+    // Define your actions
+    // Each action is held within it's own array.
+    $actions = [
+        [
+            'id' => 'always_online',
+            'value' => 'on'
+        ]
+    ];
+
+    $pagerules = new Cloudflare\Zone\Pagerules('email@example.com', 'API_KEY');
+    $pagerules->create($zoneId, $targets, $actions);
+
+```
+
+
 # License
 MIT
