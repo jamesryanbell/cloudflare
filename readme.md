@@ -28,7 +28,7 @@ The current feature list includes:
 - [x] [Railgun](https://www.cloudflare.com/railgun/) administration
 - [x] [Keyless SSL](https://blog.cloudflare.com/keyless-ssl-the-nitty-gritty-technical-details/)
 - [x] [Origin CA](https://blog.cloudflare.com/universal-ssl-encryption-all-the-way-to-the-origin-for-free/)
-- [ ] [Traffic Manager](https://www.cloudflare.com/traffic-manager/)
+- [x] [Traffic Manager](https://www.cloudflare.com/traffic-manager/) [BETA]
 - [ ] [Traffic Control](https://www.cloudflare.com/traffic-control/)
 
 ## Usage
