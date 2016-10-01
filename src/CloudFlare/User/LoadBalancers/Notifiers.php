@@ -51,7 +51,7 @@ class Notifiers extends Api
      */
     public function details($identifier)
     {
-        return $this->get('/user/load_balancers/notifiers/' . $identifier);
+        return $this->get('/user/load_balancers/notifiers/'.$identifier);
     }
 
     /**
@@ -59,8 +59,8 @@ class Notifiers extends Api
      * Modify a configured notifier
      *
      * @param string      $identifier
-     * @param string|null $address Notifier address
-     * @param string|null $type    Notifier type
+     * @param string|null $address    Notifier address
+     * @param string|null $type       Notifier type
      */
     public function update($identifier, $address = null, $type = null)
     {
@@ -69,7 +69,7 @@ class Notifiers extends Api
             'type'    => $type,
         ];
 
-        return $this->patch('/user/load_balancers/notifiers/' . $identifier, $data);
+        return $this->patch('/user/load_balancers/notifiers/'.$identifier, $data);
     }
 
     /**
@@ -80,6 +80,6 @@ class Notifiers extends Api
      */
     public function delete_notifier($identifier)
     {
-        return $this->delete('/user/load_balancers/notifiers/' . $identifier);
+        return $this->delete('/user/load_balancers/notifiers/'.$identifier);
     }
 }

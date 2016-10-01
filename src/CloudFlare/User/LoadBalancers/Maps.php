@@ -32,7 +32,7 @@ class Maps extends Api
      *
      * @param array       $global_pools Sorted list of pool IDs that will be utilized
      *                                  if a CF PoP cannot be assigned to a configured region.
-     * @param string|null $description Object description.
+     * @param string|null $description  Object description.
      */
     public function create($global_pools, $description = null)
     {
@@ -52,7 +52,7 @@ class Maps extends Api
      */
     public function details($identifier)
     {
-        return $this->get('/user/load_balancers/maps/' . $identifier);
+        return $this->get('/user/load_balancers/maps/'.$identifier);
     }
 
     /**
@@ -71,7 +71,7 @@ class Maps extends Api
             'description'  => $description,
         ];
 
-        return $this->patch('/user/load_balancers/maps/' . $identifier, $data);
+        return $this->patch('/user/load_balancers/maps/'.$identifier, $data);
     }
 
     /**
@@ -82,6 +82,6 @@ class Maps extends Api
      */
     public function delete_map($identifier)
     {
-        return $this->delete('/user/load_balancers/maps/' . $identifier);
+        return $this->delete('/user/load_balancers/maps/'.$identifier);
     }
 }
