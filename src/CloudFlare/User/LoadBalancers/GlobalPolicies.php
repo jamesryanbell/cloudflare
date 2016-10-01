@@ -30,9 +30,9 @@ class GlobalPolicies extends Api
      * Create a global policy
      * Create a new global policy
      *
-     * @param string      $fallback_pool ID for a fallback pool to use when all pools are down.
+     * @param string      $fallback_pool    ID for a fallback pool to use when all pools are down.
      * @param string      $location_mapping ID of the location map object.
-     * @param string|null $description Object description.
+     * @param string|null $description      Object description.
      */
     public function create($fallback_pool, $location_mapping, $description = null)
     {
@@ -53,7 +53,7 @@ class GlobalPolicies extends Api
      */
     public function details($identifier)
     {
-        return $this->get('/user/load_balancers/global_policies/' . $identifier);
+        return $this->get('/user/load_balancers/global_policies/'.$identifier);
     }
 
     /**
@@ -61,9 +61,9 @@ class GlobalPolicies extends Api
      * Modify a configured global policy
      *
      * @param string      $identifier
-     * @param string|null $fallback_pool ID for a fallback pool to use when all pools are down.
+     * @param string|null $fallback_pool    ID for a fallback pool to use when all pools are down.
      * @param string|null $location_mapping ID of the location map object.
-     * @param string|null $description Object description.
+     * @param string|null $description      Object description.
      */
     public function update($identifier, $fallback_pool = null, $location_mapping = null, $description = null)
     {
@@ -73,7 +73,7 @@ class GlobalPolicies extends Api
             'description'      => $description,
         ];
 
-        return $this->patch('/user/load_balancers/global_policies/' . $identifier, $data);
+        return $this->patch('/user/load_balancers/global_policies/'.$identifier, $data);
     }
 
     /**
@@ -84,6 +84,6 @@ class GlobalPolicies extends Api
      */
     public function delete_global_policy($identifier)
     {
-        return $this->delete('/user/load_balancers/global_policies/' . $identifier);
+        return $this->delete('/user/load_balancers/global_policies/'.$identifier);
     }
 }

@@ -68,7 +68,7 @@ class Monitors extends Api
      */
     public function details($identifier)
     {
-        return $this->get('/user/load_balancers/monitors/' . $identifier);
+        return $this->get('/user/load_balancers/monitors/'.$identifier);
     }
 
     /**
@@ -103,7 +103,7 @@ class Monitors extends Api
             'description'    => $description,
         ];
 
-        return $this->patch('/user/load_balancers/monitors/' . $identifier, $data);
+        return $this->patch('/user/load_balancers/monitors/'.$identifier, $data);
     }
 
     /**
@@ -114,6 +114,6 @@ class Monitors extends Api
      */
     public function delete_monitor($identifier)
     {
-        return $this->delete('/user/load_balancers/monitors/' . $identifier);
+        return $this->delete('/user/load_balancers/monitors/'.$identifier);
     }
 }

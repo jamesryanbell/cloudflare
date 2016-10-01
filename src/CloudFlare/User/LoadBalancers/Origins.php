@@ -30,11 +30,11 @@ class Origins extends Api
      * Create a origin
      * Create a new origin
      *
-     * @param string       $name     Object name
-     * @param string       $address  Origin server IPv4 or IPv6 address
-     * @param boolean|null $enabled  Whether this origin is enabled or not
-     * @param string|null  $notifier The ID of the notifier object to use for
-     *                               notifications relating to the health status of this origin.
+     * @param string      $name     Object name
+     * @param string      $address  Origin server IPv4 or IPv6 address
+     * @param bool|null   $enabled  Whether this origin is enabled or not
+     * @param string|null $notifier The ID of the notifier object to use for
+     *                              notifications relating to the health status of this origin.
      */
     public function create($name, $address, $enabled = null, $notifier = null)
     {
@@ -56,19 +56,19 @@ class Origins extends Api
      */
     public function details($identifier)
     {
-        return $this->get('/user/load_balancers/origins/' . $identifier);
+        return $this->get('/user/load_balancers/origins/'.$identifier);
     }
 
     /**
      * Modify an origin
      * Modify a configured origin
      *
-     * @param string       $identifier
-     * @param string|null  $name     Object name
-     * @param string|null  $address  Origin server IPv4 or IPv6 address
-     * @param boolean|null $enabled  Whether this origin is enabled or not
-     * @param string|null  $notifier The ID of the notifier object to use for
-     *                               notifications relating to the health status of this origin.
+     * @param string      $identifier
+     * @param string|null $name       Object name
+     * @param string|null $address    Origin server IPv4 or IPv6 address
+     * @param bool|null   $enabled    Whether this origin is enabled or not
+     * @param string|null $notifier   The ID of the notifier object to use for
+     *                                notifications relating to the health status of this origin.
      */
     public function update($identifier, $name = null, $address = null, $enabled = null, $notifier = null)
     {
@@ -78,7 +78,8 @@ class Origins extends Api
             'enabled'  => $enabled,
             'notifier' => $notifier,
         ];
-        return $this->patch('/user/load_balancers/origins/' . $identifier, $data);
+
+        return $this->patch('/user/load_balancers/origins/'.$identifier, $data);
     }
 
     /**
@@ -89,6 +90,6 @@ class Origins extends Api
      */
     public function delete_origin($identifier)
     {
-        return $this->delete('/user/load_balancers/origins/' . $identifier);
+        return $this->delete('/user/load_balancers/origins/'.$identifier);
     }
 }
