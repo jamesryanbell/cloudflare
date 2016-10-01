@@ -14,6 +14,22 @@ Installation should be done via composer, details of how to install composer can
 ``` bash
 $ composer require jamesryanbell/cloudflare
 ```
+## Features
+
+The current feature list includes:
+
+- [x] DNS Records
+- [x] Zones
+- [x] Web Application Firewall (WAF)
+- [x] CloudFlare IPs
+- [x] User Administration
+- [x] Virtual DNS Management
+- [x] Organization Administration
+- [x] [Railgun](https://www.cloudflare.com/railgun/) administration
+- [x] [Keyless SSL](https://blog.cloudflare.com/keyless-ssl-the-nitty-gritty-technical-details/)
+- [x] [Origin CA](https://blog.cloudflare.com/universal-ssl-encryption-all-the-way-to-the-origin-for-free/)
+- [ ] [Traffic Manager](https://www.cloudflare.com/traffic-manager/)
+- [ ] [Traffic Control](https://www.cloudflare.com/traffic-control/)
 
 ## Usage
 
