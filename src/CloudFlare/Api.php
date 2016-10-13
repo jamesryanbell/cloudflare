@@ -196,7 +196,7 @@ class Api
             $curl_options = array_replace($default_curl_options, $this->curl_options);
         }
 
-        $headers = ["X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}"];
+        $headers = ["X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}", "User-Agent: {__FILE__}"];
 
         $ch = curl_init();
         curl_setopt_array($ch, $curl_options);
