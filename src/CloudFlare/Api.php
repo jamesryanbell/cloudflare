@@ -232,6 +232,10 @@ class Api
         }
 
         $response = json_decode($http_result);
+        if (!$response) {
+            $response = new \stdClass();
+            $response->success = false;
+        }
 
         curl_close($ch);
         if ($response->success !== true) {
