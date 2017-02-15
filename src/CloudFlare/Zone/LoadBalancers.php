@@ -61,7 +61,7 @@ class LoadBalancers extends Api
      * @param string $zone_identifier
      * @param string $identifier
      */
-    public function details($identifier)
+    public function details($zone_identifier, $identifier)
     {
         return $this->get('/zones/'.$zone_identifier.'/load_balancers/'.$identifier);
     }
