@@ -2,9 +2,6 @@
 
 namespace Cloudflare;
 
-use Cloudflare\Exception\AuthenticationException;
-use Cloudflare\Exception\UnauthorizedException;
-
 /**
  * CloudFlare API wrapper
  *
@@ -31,6 +28,13 @@ class Api
     public $auth_key;
 
     /**
+     * Holds the request object to perform API requests
+     *
+     * @var RequestInterface
+     */
+    public $request;
+
+    /**
      * Holds the curl options
      *
      * @var array
@@ -50,11 +54,16 @@ class Api
             $client = $parameters[0];
             $this->email = $client->email;
             $this->auth_key = $client->auth_key;
+            $this->request = $client->request;
             $this->curl_options = $client->curl_options;
         } elseif ($num_args === 2) {
             $parameters = func_get_args();
             $this->email = $parameters[0];
             $this->auth_key = $parameters[1];
+        }
+
+        if ($this->request === null) {
+            $this->request = new Request();
         }
     }
 
@@ -76,6 +85,16 @@ class Api
     public function setAuthKey($token)
     {
         $this->auth_key = $token;
+    }
+
+    /**
+     * Setter to change request object
+     *
+     * @param RequestInterface $request The request object to perform API requests
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
     }
 
     /**
@@ -163,89 +182,13 @@ class Api
      * @param array|null  $data   Data to be sent along with the request
      * @param string|null $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
      *
+     * @throws \Cloudflare\Exception\UnauthorizedException
+     * @throws \Cloudflare\Exception\AuthenticationException
+     *
      * @return mixed
      */
     protected function request($path, array $data = null, $method = null)
     {
-        if (!isset($this->email, $this->auth_key) || false === filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            throw new AuthenticationException('Authentication information must be provided');
-        }
-
-        $data = (is_null($data) ? [] : $data);
-        $method = (is_null($method) ? 'get' : $method);
-
-        //Removes null entries
-        $data = array_filter($data, function ($val) {
-            return !is_null($val);
-        });
-
-        $url = 'https://api.cloudflare.com/client/v4/'.$path;
-
-        $default_curl_options = [
-            CURLOPT_VERBOSE        => false,
-            CURLOPT_FORBID_REUSE   => true,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_HEADER         => false,
-            CURLOPT_TIMEOUT        => 30,
-            CURLOPT_SSL_VERIFYPEER => true,
-        ];
-
-        $curl_options = $default_curl_options;
-        if (isset($this->curl_options) && is_array($this->curl_options)) {
-            $curl_options = array_replace($default_curl_options, $this->curl_options);
-        }
-
-        $user_agent = __FILE__;
-        $headers = ["X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}", "User-Agent: {$user_agent}"];
-
-        $ch = curl_init();
-        curl_setopt_array($ch, $curl_options);
-
-        $headers[] = 'Content-type: application/json';
-        $json_data = json_encode($data);
-
-        if ($method === 'post') {
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-        } elseif ($method === 'put') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-        } elseif ($method === 'delete') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
-        } elseif ($method === 'patch') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
-        } else {
-            $url .= '?'.http_build_query($data);
-        }
-
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_URL, $url);
-
-        $http_result = curl_exec($ch);
-        $error = curl_error($ch);
-        $information = curl_getinfo($ch);
-        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-        if (in_array($http_code, [401, 403])) {
-            throw new UnauthorizedException('You do not have permission to perform this request');
-        }
-
-        $response = json_decode($http_result);
-        if (!$response) {
-            $response = new \stdClass();
-            $response->success = false;
-        }
-
-        curl_close($ch);
-        if ($response->success !== true) {
-            $response->error = $error;
-            $response->http_code = $http_code;
-            $response->method = $method;
-            $response->information = $information;
-        }
-
-        return $response;
+        return $this->request->perform($this, $path, $data, $method);
     }
 }
