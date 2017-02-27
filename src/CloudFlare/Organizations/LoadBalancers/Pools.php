@@ -1,6 +1,6 @@
 <?php
 
-namespace Cloudflare\User\LoadBalancers;
+namespace Cloudflare\Organizations\LoadBalancers;
 
 use Cloudflare\Api;
 use Cloudflare\Organizations;
