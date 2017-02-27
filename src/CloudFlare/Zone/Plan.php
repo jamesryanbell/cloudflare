@@ -23,7 +23,7 @@ class Plan extends Api
      */
     public function available($zone_identifier)
     {
-        return $this->get('zones/'.$zone_identifier.'/plans');
+        return $this->get('zones/'.$zone_identifier.'/available_rate_plans');
     }
 
     /**
