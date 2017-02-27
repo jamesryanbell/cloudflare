@@ -33,21 +33,21 @@ class Monitors extends Api
      * Create a configured monitor
      *
      * @param string      $organization_identifier
-     * @param string      $expected_body  A case-insensitive substring to match in the body of the probe
-     *                                    response to declare an origin as up
-     * @param string      $expected_codes The expected HTTP response code or code range for the probe
-     * @param string|null $method         The HTTP method to use for the health check.
-     * @param int|null    $timeout        The timeout (in seconds) before marking the health check as failed
-     * @param string|null $path           The endpoint path to health check against.
-     * @param int|null    $interval       The interval between each health check. Shorter intervals may improve failover
-     *                                    time, but will increase load on the origins as we check from multiple locations.
-     * @param int|null    $retries        The number of retries to attempt in case of a timeout before marking the origin
-     *                                    as unhealthy. Retries are attempted immediately.
-     * @param array|null  $header         The HTTP request headers to send in the health check. It is recommended you set
-     *                                    a Host header by default. The User-Agent header cannot be overridden.
-     * @param int|null    $type           The protocol to use for the healthcheck. Currently supported protocols are
-     *                                    'HTTP' and 'HTTPS'.
-     * @param string|null $description    Object description
+     * @param string      $expected_body           A case-insensitive substring to match in the body of the probe
+     *                                             response to declare an origin as up
+     * @param string      $expected_codes          The expected HTTP response code or code range for the probe
+     * @param string|null $method                  The HTTP method to use for the health check.
+     * @param int|null    $timeout                 The timeout (in seconds) before marking the health check as failed
+     * @param string|null $path                    The endpoint path to health check against.
+     * @param int|null    $interval                The interval between each health check. Shorter intervals may improve failover
+     *                                             time, but will increase load on the origins as we check from multiple locations.
+     * @param int|null    $retries                 The number of retries to attempt in case of a timeout before marking the origin
+     *                                             as unhealthy. Retries are attempted immediately.
+     * @param array|null  $header                  The HTTP request headers to send in the health check. It is recommended you set
+     *                                             a Host header by default. The User-Agent header cannot be overridden.
+     * @param int|null    $type                    The protocol to use for the healthcheck. Currently supported protocols are
+     *                                             'HTTP' and 'HTTPS'.
+     * @param string|null $description             Object description
      */
     public function create($organization_identifier, $expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
     {
@@ -85,21 +85,21 @@ class Monitors extends Api
      *
      * @param string      $organization_identifier
      * @param string      $identifier
-     * @param string      $expected_body  A case-insensitive substring to match in the body of the probe
-     *                                    response to declare an origin as up
-     * @param string      $expected_codes The expected HTTP response code or code range for the probe
-     * @param string|null $method         The HTTP method to use for the health check.
-     * @param int|null    $timeout        The timeout (in seconds) before marking the health check as failed
-     * @param string|null $path           The endpoint path to health check against.
-     * @param int|null    $interval       The interval between each health check. Shorter intervals may improve failover
-     *                                    time, but will increase load on the origins as we check from multiple locations.
-     * @param int|null    $retries        The number of retries to attempt in case of a timeout before marking the origin
-     *                                    as unhealthy. Retries are attempted immediately.
-     * @param array|null  $header         The HTTP request headers to send in the health check. It is recommended you set
-     *                                    a Host header by default. The User-Agent header cannot be overridden.
-     * @param int|null    $type           The protocol to use for the healthcheck. Currently supported protocols are
-     *                                    'HTTP' and 'HTTPS'.
-     * @param string|null $description    Object description
+     * @param string      $expected_body           A case-insensitive substring to match in the body of the probe
+     *                                             response to declare an origin as up
+     * @param string      $expected_codes          The expected HTTP response code or code range for the probe
+     * @param string|null $method                  The HTTP method to use for the health check.
+     * @param int|null    $timeout                 The timeout (in seconds) before marking the health check as failed
+     * @param string|null $path                    The endpoint path to health check against.
+     * @param int|null    $interval                The interval between each health check. Shorter intervals may improve failover
+     *                                             time, but will increase load on the origins as we check from multiple locations.
+     * @param int|null    $retries                 The number of retries to attempt in case of a timeout before marking the origin
+     *                                             as unhealthy. Retries are attempted immediately.
+     * @param array|null  $header                  The HTTP request headers to send in the health check. It is recommended you set
+     *                                             a Host header by default. The User-Agent header cannot be overridden.
+     * @param int|null    $type                    The protocol to use for the healthcheck. Currently supported protocols are
+     *                                             'HTTP' and 'HTTPS'.
+     * @param string|null $description             Object description
      */
     public function update($organization_identifier, $identifier, $expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
     {
