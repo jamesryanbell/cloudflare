@@ -32,22 +32,34 @@ class LoadBalancers extends Api
      * Create a new load balancer
      *
      * @param string      $zone_identifier
-     * @param string      $name            A hostname of the record that should provide load balancing capabilities.
-     *                                     If this name already exists as a DNS record in your CloudFlare DNS,
-     *                                     the existing record will take precedence over the Load Balancer.
-     * @param string      $global_policy   ID of the Global Policy object.
+     * @param string      $name            The DNS hostname to associate with your Load Balancer. If this hostname already
+     *                                     exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+     *                                     precedence and the DNS record will not be used.
+     * @param string      $fallback_pool   The pool ID to use when all other pools are detected as unhealthy.
+     * @param array       $default_pools   A list of pool IDs ordered by their failover priority. Pools defined here are
+     *                                     used by default, or when region_pools are not configured for a given region.
      * @param string|null $description     Object description.
-     * @param int|null    $ttl             Time to live (TTL) of the DNS entry for the IP address returned
-     *                                     by this load balancer.
-     * @param bool|null   $proxied         Whether the hostname should be grey clouded (False) or orange clouded (True).
+     * @param int|null    $ttl             Time to live (TTL) of the DNS entry for the IP address returned by this load
+     *                                     balancer. This only applies to gray-clouded (unproxied) load balancers.
+     * @param object|null $region_pools    A mapping of region/country codes to a list of pool IDs (ordered by their
+     *                                     failover priority) for the given region. Any regions not explicitly defined
+     *                                     will fall back to using default_pools.
+     * @param int|null    $pop_pools       (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+     *                                     (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
+     *                                     explicitly defined will fall back to using default_pools.
+     *                                     balancer. This only applies to gray-clouded (unproxied) load balancers.
+     * @param bool|null   $proxied         Whether the hostname should be gray clouded (false) or orange clouded (true).
      */
-    public function create($zone_identifier, $name, $global_policy, $description = null, $ttl = null, $proxied = null)
+    public function create($zone_identifier, $name, $fallback_pool, $default_pools, $description = null, $ttl = null, $region_pools = null, $pop_pools = null, $proxied = null)
     {
         $data = [
             'name'          => $name,
-            'global_policy' => $global_policy,
+            'fallback_pool' => $fallback_pool,
+            'default_pools' => $default_pools,
             'description'   => $description,
             'ttl'           => $ttl,
+            'region_pools'  => $region_pools,
+            'pop_pools'     => $pop_pools,
             'proxied'       => $proxied,
         ];
 
@@ -72,22 +84,34 @@ class LoadBalancers extends Api
      *
      * @param string      $zone_identifier
      * @param string      $identifier
-     * @param string|null $name            A hostname of the record that should provide load balancing capabilities.
-     *                                     If this name already exists as a DNS record in your CloudFlare DNS,
-     *                                     the existing record will take precedence over the Load Balancer.
-     * @param string|null $global_policy   ID of the Global Policy object.
+     * @param string      $name            The DNS hostname to associate with your Load Balancer. If this hostname already
+     *                                     exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+     *                                     precedence and the DNS record will not be used.
+     * @param string      $fallback_pool   The pool ID to use when all other pools are detected as unhealthy.
+     * @param array       $default_pools   A list of pool IDs ordered by their failover priority. Pools defined here are
+     *                                     used by default, or when region_pools are not configured for a given region.
      * @param string|null $description     Object description.
-     * @param int|null    $ttl             Time to live (TTL) of the DNS entry for the IP address returned
-     *                                     by this load balancer.
-     * @param bool|null   $proxied         Whether the hostname should be grey clouded (False) or orange clouded (True).
+     * @param int|null    $ttl             Time to live (TTL) of the DNS entry for the IP address returned by this load
+     *                                     balancer. This only applies to gray-clouded (unproxied) load balancers.
+     * @param object|null $region_pools    A mapping of region/country codes to a list of pool IDs (ordered by their
+     *                                     failover priority) for the given region. Any regions not explicitly defined
+     *                                     will fall back to using default_pools.
+     * @param int|null    $pop_pools       (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+     *                                     (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
+     *                                     explicitly defined will fall back to using default_pools.
+     *                                     balancer. This only applies to gray-clouded (unproxied) load balancers.
+     * @param bool|null   $proxied         Whether the hostname should be gray clouded (false) or orange clouded (true).
      */
-    public function update($zone_identifier, $identifier, $name = null, $global_policy = null, $description = null, $ttl = null, $proxied = null)
+    public function update($zone_identifier, $identifier, $name, $fallback_pool, $default_pools, $description = null, $ttl = null, $region_pools = null, $pop_pools = null, $proxied = null)
     {
         $data = [
             'name'          => $name,
-            'global_policy' => $global_policy,
+            'fallback_pool' => $fallback_pool,
+            'default_pools' => $default_pools,
             'description'   => $description,
             'ttl'           => $ttl,
+            'region_pools'  => $region_pools,
+            'pop_pools'     => $pop_pools,
             'proxied'       => $proxied,
         ];
 

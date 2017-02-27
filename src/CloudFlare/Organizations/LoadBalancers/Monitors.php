@@ -3,7 +3,7 @@
 namespace Cloudflare\User\LoadBalancers;
 
 use Cloudflare\Api;
-use Cloudflare\User;
+use Cloudflare\Organizations;
 
 /**
  * CloudFlare API wrapper
@@ -20,16 +20,19 @@ class Monitors extends Api
     /**
      * List monitors
      * List configured monitors for a user
+     *
+     * @param string $organization_identifier
      */
-    public function monitors()
+    public function monitors($organization_identifier)
     {
-        return $this->get('/user/load_balancers/monitors');
+        return $this->get('/organizations/'.$organization_identifier.'/load_balancers/monitors');
     }
 
     /**
      * Create a monitor
      * Create a configured monitor
      *
+     * @param string      $organization_identifier
      * @param string      $expected_body  A case-insensitive substring to match in the body of the probe
      *                                    response to declare an origin as up
      * @param string      $expected_codes The expected HTTP response code or code range for the probe
@@ -46,7 +49,7 @@ class Monitors extends Api
      *                                    'HTTP' and 'HTTPS'.
      * @param string|null $description    Object description
      */
-    public function create($expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
+    public function create($organization_identifier, $expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
     {
         $data = [
             'expected_body'  => $expected_body,
@@ -61,24 +64,26 @@ class Monitors extends Api
             'description'    => $description,
         ];
 
-        return $this->post('/user/load_balancers/monitors', $data);
+        return $this->post('/organizations/'.$organization_identifier.'/load_balancers/monitors', $data);
     }
 
     /**
      * Monitor details
      * List a single configured CTM monitor for a user
      *
+     * @param string $organization_identifier
      * @param string $identifier
      */
-    public function details($identifier)
+    public function details($organization_identifier, $identifier)
     {
-        return $this->get('/user/load_balancers/monitors/'.$identifier);
+        return $this->get('/organizations/'.$organization_identifier.'/load_balancers/monitors/'.$identifier);
     }
 
     /**
      * Modify a monitor
      * Modify a configured monitor
      *
+     * @param string      $organization_identifier
      * @param string      $identifier
      * @param string      $expected_body  A case-insensitive substring to match in the body of the probe
      *                                    response to declare an origin as up
@@ -96,7 +101,7 @@ class Monitors extends Api
      *                                    'HTTP' and 'HTTPS'.
      * @param string|null $description    Object description
      */
-    public function update($identifier, $expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
+    public function update($organization_identifier, $identifier, $expected_body, $expected_codes, $method = null, $timeout = null, $path = null, $interval = null, $retries = null, $header = null, $type = null, $description = null)
     {
         $data = [
             'expected_body'  => $expected_body,
@@ -111,17 +116,18 @@ class Monitors extends Api
             'description'    => $description,
         ];
 
-        return $this->patch('/user/load_balancers/monitors/'.$identifier, $data);
+        return $this->patch('/organizations/'.$organization_identifier.'/load_balancers/monitors/'.$identifier, $data);
     }
 
     /**
      * Delete a monitor
      * Delete a configured monitor
      *
+     * @param string $organization_identifier
      * @param string $identifier
      */
-    public function delete_monitor($identifier)
+    public function delete_monitor($organization_identifier, $identifier)
     {
-        return $this->delete('/user/load_balancers/monitors/'.$identifier);
+        return $this->delete('/organizations/'.$organization_identifier.'/load_balancers/monitors/'.$identifier);
     }
 }
