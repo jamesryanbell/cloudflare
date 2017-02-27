@@ -33,17 +33,17 @@ class Pools extends Api
      * Create a new pool
      *
      * @param string      $organization_identifier
-     * @param string      $name               Object name
-     * @param array       $origins            A list of origins contained in the pool.
-     *                                        Traffic destined to the pool is balanced across all
-     *                                        available origins contained in the pool (as long as the pool
-     *                                        is considered available).
-     * @param string|null $description        Object description
-     * @param bool|null   $enabled            Whether this pool is enabled or not.
-     * @param string|null $monitor            ID of the monitor object to use for monitoring the health
-     *                                        status of origins inside this pool.
-     * @param string|null $notification_email ID of the notifier object to use for notifications relating
-     *                                        to the health status of origins inside this pool.
+     * @param string      $name                    Object name
+     * @param array       $origins                 A list of origins contained in the pool.
+     *                                             Traffic destined to the pool is balanced across all
+     *                                             available origins contained in the pool (as long as the pool
+     *                                             is considered available).
+     * @param string|null $description             Object description
+     * @param bool|null   $enabled                 Whether this pool is enabled or not.
+     * @param string|null $monitor                 ID of the monitor object to use for monitoring the health
+     *                                             status of origins inside this pool.
+     * @param string|null $notification_email      ID of the notifier object to use for notifications relating
+     *                                             to the health status of origins inside this pool.
      */
     public function create($organization_identifier, $name, $origins, $description = null, $enabled = null, $monitor = null, $notification_email = null)
     {
@@ -77,17 +77,17 @@ class Pools extends Api
      *
      * @param string      $organization_identifier
      * @param string      $identifier
-     * @param string      $name               Object name
-     * @param array       $origins            A list of origins contained in the pool.
-     *                                        Traffic destined to the pool is balanced across all
-     *                                        available origins contained in the pool (as long as the pool
-     *                                        is considered available).
-     * @param string|null $description        Object description
-     * @param bool|null   $enabled            Whether this pool is enabled or not.
-     * @param string|null $monitor            ID of the monitor object to use for monitoring the health
-     *                                        status of origins inside this pool.
-     * @param string|null $notification_email ID of the notifier object to use for notifications relating
-     *                                        to the health status of origins inside this pool.
+     * @param string      $name                    Object name
+     * @param array       $origins                 A list of origins contained in the pool.
+     *                                             Traffic destined to the pool is balanced across all
+     *                                             available origins contained in the pool (as long as the pool
+     *                                             is considered available).
+     * @param string|null $description             Object description
+     * @param bool|null   $enabled                 Whether this pool is enabled or not.
+     * @param string|null $monitor                 ID of the monitor object to use for monitoring the health
+     *                                             status of origins inside this pool.
+     * @param string|null $notification_email      ID of the notifier object to use for notifications relating
+     *                                             to the health status of origins inside this pool.
      */
     public function update($organization_identifier, $identifier, $name, $origins, $description = null, $enabled = null, $monitor = null, $notification_email = null)
     {
