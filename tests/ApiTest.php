@@ -1,7 +1,8 @@
 <?php
 
-use Cloudflare\Api as Api;
+use Cloudflare\Api;
 use Cloudflare\Exception\AuthenticationException;
+use Cloudflare\Request;
 
 class ApiTest extends PHPUnit_Framework_TestCase
 {
@@ -16,6 +17,7 @@ class ApiTest extends PHPUnit_Framework_TestCase
         $api = new Api('email@example.com', 'Auth Key');
         $this->assertEquals('email@example.com', $api->email);
         $this->assertEquals('Auth Key', $api->auth_key);
+        $this->assertInstanceOf(Request::class, $api->request);
     }
 
     public function testApiInitialisedFromPreviousObject()
@@ -45,6 +47,14 @@ class ApiTest extends PHPUnit_Framework_TestCase
         $api = new Api();
         $api->setCurlOption(CURLOPT_TIMEOUT, 5);
         $this->assertEquals(5, $api->curl_options[CURLOPT_TIMEOUT]);
+    }
+
+    public function testSetRequest()
+    {
+        $api = new Api();
+        $request = new Request();
+        $api->setRequest($request);
+        $this->assertSame($request, $api->request);
     }
 
     public function testHttpNoCredentials()
