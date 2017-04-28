@@ -30,8 +30,10 @@ class AccessRules extends Api
      * @param string|null $order                Field to order rules by
      * @param string|null $direction            Direction to order rules
      * @param string|null $match                Whether to match all search requirements or at least one (any)
+     * @param string|null $notes                Search in the access rules by notes.
      */
-    public function rules($zone_id, $scope_type = null, $mode = null, $configuration_target = null, $configuration_value = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null)
+
+    public function rules($zone_id, $scope_type = null, $mode = null, $configuration_target = null, $configuration_value = null, $page = null, $per_page = null, $order = null, $direction = null, $match = null, $notes = null)
     {
         $data = [
             'scope_type'           => $scope_type,
@@ -43,6 +45,7 @@ class AccessRules extends Api
             'order'                => $order,
             'direction'            => $direction,
             'match'                => $match,
+            'notes'                => $notes,
         ];
 
         return $this->get('/zones/'.$zone_id.'/firewall/access_rules/rules', $data);
