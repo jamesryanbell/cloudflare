@@ -196,12 +196,16 @@ class Api
         }
 
         $user_agent = __FILE__;
-        $headers = ["X-Auth-Email: {$this->email}", "X-Auth-Key: {$this->auth_key}", "User-Agent: {$user_agent}"];
+        $headers = [
+            "X-Auth-Email: {$this->email}", 
+            "X-Auth-Key: {$this->auth_key}", 
+            "User-Agent: {$user_agent}",
+            'Content-type: application/json',
+        ];
 
         $ch = curl_init();
         curl_setopt_array($ch, $curl_options);
 
-        $headers[] = 'Content-type: application/json';
         $json_data = json_encode($data);
 
         if ($method === 'post') {
