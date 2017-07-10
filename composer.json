@@ -12,6 +12,7 @@
     ],
     "require": {},
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "@stable",
         "phpunit/phpunit": "< 6",
         "satooshi/php-coveralls": "dev-master"
     },
@@ -19,5 +20,13 @@
         "psr-4": {
             "Cloudflare\\": "src/CloudFlare"
         }
+    },
+    "scripts": {
+        "phpcs": [
+            "./vendor/bin/php-cs-fixer --verbose fix --dry-run --using-cache=no src"
+        ],
+        "phpcs-fix": [
+            "./vendor/bin/php-cs-fixer --verbose fix --using-cache=no src"
+        ]
     }
 }
