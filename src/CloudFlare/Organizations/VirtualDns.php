@@ -14,7 +14,7 @@ use Cloudflare\Api;
  *
  * @version 1
  */
-class Virtual_Dns extends Api
+class VirtualDns extends Api
 {
     /**
      * Get Virtual DNS Clusters (permission needed: #dns_records:read)
