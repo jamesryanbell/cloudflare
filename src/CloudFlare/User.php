@@ -133,6 +133,7 @@ class User extends Api
      * Disable two-factor authentication for your CloudFlare user account
      *
      * @param int The token provided by the two-factor authenticator
+     * @param mixed $auth_token
      */
     public function disable_two_factor_authentication($auth_token)
     {
