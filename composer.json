@@ -12,6 +12,7 @@
     ],
     "require": {},
     "require-dev": {
+        "phpstan/phpstan": "@stable",
         "phpunit/phpunit": "< 6",
         "satooshi/php-coveralls": "dev-master"
     },
@@ -19,5 +20,10 @@
         "psr-4": {
             "Cloudflare\\": "src/CloudFlare"
         }
+    },
+    "scripts": {
+        "phpstan": [
+            "./vendor/bin/phpstan analyse src"
+        ]
     }
 }
