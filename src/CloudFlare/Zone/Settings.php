@@ -39,7 +39,7 @@ class Settings extends Api
     }
 
     /**
-     * Get Automatic HTTPS Rewrites setting permission needed: #zone_settings:edit
+     * Get Automatic HTTPS Rewrites setting (permission needed: #zone_settings:edit)
      * Enable the Automatic HTTPS Rewrites feature for this zone.
      *
      * @param string $zone_identifier API item identifier tag
@@ -397,7 +397,7 @@ class Settings extends Api
     }
 
     /**
-     * Change Automatic HTTPS Rewrites setting permission needed: #zone_settings:edit
+     * Change Automatic HTTPS Rewrites setting (permission needed: #zone_settings:edit)
      * Enable the Automatic HTTPS Rewrites feature for this zone.
      *
      * @param string      $zone_identifier API item identifier tag
