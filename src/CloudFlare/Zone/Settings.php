@@ -39,6 +39,17 @@ class Settings extends Api
     }
 
     /**
+     * Get Automatic HTTPS Rewrites setting permission needed: #zone_settings:edit
+     * Enable the Automatic HTTPS Rewrites feature for this zone.
+     *
+     * @param string $zone_identifier API item identifier tag
+     */
+    public function automatic_https_rewrites($zone_identifier)
+    {
+        return $this->get('zones/'.$zone_identifier.'/settings/automatic_https_rewrites');
+    }
+
+    /**
      * Get Always Use HTTPS setting permission needed: #zone_settings:read
      * Reply to all requests for URLs that use "http" with a 301 redirect to the equivalent "https" URL. If you only want to redirect for a subset of requests, consider creating an "Always use HTTPS" page rule.
      *
@@ -394,6 +405,22 @@ class Settings extends Api
         ];
 
         return $this->patch('zones/'.$zone_identifier.'/settings', $data);
+    }
+
+    /**
+     * Change Automatic HTTPS Rewrites setting permission needed: #zone_settings:edit
+     * Enable the Automatic HTTPS Rewrites feature for this zone.
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     */
+    public function change_automatic_https_rewrites($zone_identifier, $value = null)
+    {
+        $data = [
+            'value' => $value,
+        ];
+
+        return $this->patch('zones/'.$zone_identifier.'/settings/automatic_https_rewrites', $data);
     }
 
     /**
