@@ -39,6 +39,17 @@ class Settings extends Api
     }
 
     /**
+     * Get Automatic HTTPS Rewrites setting (permission needed: #zone_settings:edit)
+     * Enable the Automatic HTTPS Rewrites feature for this zone.
+     *
+     * @param string $zone_identifier API item identifier tag
+     */
+    public function automatic_https_rewrites($zone_identifier)
+    {
+        return $this->get('zones/'.$zone_identifier.'/settings/automatic_https_rewrites');
+    }
+
+    /**
      * Get Always Online setting (permission needed: #zone_settings:read)
      * When enabled, Always Online will serve pages from our cache if your server is offline
      * (https://support.cloudflare.com/hc/en-us/articles/200168006)
@@ -399,6 +410,22 @@ class Settings extends Api
         ];
 
         return $this->patch('zones/'.$zone_identifier.'/settings', $data);
+    }
+
+    /**
+     * Change Automatic HTTPS Rewrites setting (permission needed: #zone_settings:edit)
+     * Enable the Automatic HTTPS Rewrites feature for this zone.
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     */
+    public function change_automatic_https_rewrites($zone_identifier, $value = null)
+    {
+        $data = [
+            'value' => $value,
+        ];
+
+        return $this->patch('zones/'.$zone_identifier.'/settings/automatic_https_rewrites', $data);
     }
 
     /**
