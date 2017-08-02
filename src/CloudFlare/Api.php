@@ -165,14 +165,11 @@ class Api
      *
      * @return mixed
      */
-    protected function request($path, array $data = null, $method = null)
+    protected function request($path, array $data = array(), $method = 'get')
     {
         if (!isset($this->email, $this->auth_key) || false === filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             throw new AuthenticationException('Authentication information must be provided');
         }
-
-        $data = (is_null($data) ? [] : $data);
-        $method = (is_null($method) ? 'get' : $method);
 
         //Removes null entries
         $data = array_filter($data, function ($val) {
