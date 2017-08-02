@@ -51,6 +51,22 @@ class Settings extends Api
     }
 
     /**
+     * Get Always Use HTTPS setting permission needed: #zone_settings:read
+     *
+     * Reply to all requests for URLs that use "http" with a 301 redirect to the equivalent "https" URL. If you only want to redirect for a subset of requests, consider creating an "Always use HTTPS" page rule.
+     *
+     * @link https://api.cloudflare.com/#zone-settings-get-always-use-https-setting
+     *
+     * @param string $zone_identifier API item identifier tag
+     *
+     * @return \stdClass | false
+     */
+    public function always_use_https($zone_identifier)
+    {
+        return $this->get('zones/' . $zone_identifier . '/settings/always_use_https');
+    }
+
+    /**
      * Get Browser Cache TTL setting (permission needed: #zone_settings:read)
      * Browser Cache TTL (in seconds) specifies how long CloudFlare-cached resources will remain on your visitors' computers.
      * CloudFlare will honor any larger times specified by your server.
@@ -399,6 +415,26 @@ class Settings extends Api
         ];
 
         return $this->patch('zones/'.$zone_identifier.'/settings/always_online', $data);
+    }
+
+    /**
+     * Change Always Use HTTPS setting (permission needed: #zone_settings:edit)
+     *
+     * Reply to all requests for URLs that use "http" with a 301 redirect to the equivalent "https" URL. If you only want to redirect for a subset of requests, consider creating an "Always use HTTPS" page rule.
+     *
+     * @link https://api.cloudflare.com/#zone-settings-change-always-use-https-setting
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     *
+     * @return \stdClass | false
+     */
+    public function change_always_use_https($zone_identifier, $value = null)
+    {
+        $data = array(
+            'value' => $value
+        );
+        return $this->patch('zones/' . $zone_identifier . '/settings/always_use_https', $data);
     }
 
     /**
