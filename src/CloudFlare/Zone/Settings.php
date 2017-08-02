@@ -386,6 +386,18 @@ class Settings extends Api
     }
 
     /**
+     * Get Always Use HTTPS setting (permission needed: #zone_settings:read)
+     * When "on", reply to all requests for URLs that use "http" with a 301 redirect to the equivalent "https" URL.
+     * (https://api.cloudflare.com/#zone-settings-get-always-use-https-setting)
+     *
+     * @param string $zone_identifier API item identifier tag
+     */
+    public function always_use_https($zone_identifier)
+    {
+        return $this->get('zones/'.$zone_identifier.'/settings/always_use_https');
+    }
+
+    /**
      * Change Always Online setting (permission needed: #zone_settings:edit)
      * When enabled, Always Online will serve pages from our cache if your server is offline (https://support.cloudflare.com/hc/en-us/articles/200168006)
      *
@@ -827,5 +839,22 @@ class Settings extends Api
         ];
 
         return $this->patch('zones/'.$zone_identifier.'/settings/waf', $data);
+    }
+
+    /**
+     * Change Always Use HTTPS setting (permission needed: #zone_settings:edit)
+     * When "on", reply to all requests for URLs that use "http" with a 301 redirect to the equivalent "https" URL. 
+     * (https://api.cloudflare.com/#zone-settings-change-always-use-https-setting)
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     */
+    public function change_always_use_https($zone_identifier, $value = null)
+    {
+        $data = [
+            'value' => $value,
+        ];
+
+        return $this->patch('zones/'.$zone_identifier.'/settings/always_use_https', $data);
     }
 }
