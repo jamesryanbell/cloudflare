@@ -92,12 +92,12 @@ class Api
     /**
      * API call method for sending requests using GET
      *
-     * @param string     $path Path of the endpoint
-     * @param array|null $data Data to be sent along with the request
+     * @param string $path Path of the endpoint
+     * @param array  $data Data to be sent along with the request
      *
      * @return mixed
      */
-    public function get($path, array $data = null)
+    public function get($path, array $data = array())
     {
         return $this->request($path, $data, 'get');
     }
@@ -105,12 +105,12 @@ class Api
     /**
      * API call method for sending requests using POST
      *
-     * @param string     $path Path of the endpoint
-     * @param array|null $data Data to be sent along with the request
+     * @param string $path Path of the endpoint
+     * @param array  $data Data to be sent along with the request
      *
      * @return mixed
      */
-    public function post($path, array $data = null)
+    public function post($path, array $data = array())
     {
         return $this->request($path, $data, 'post');
     }
@@ -118,12 +118,12 @@ class Api
     /**
      * API call method for sending requests using PUT
      *
-     * @param string     $path Path of the endpoint
-     * @param array|null $data Data to be sent along with the request
+     * @param string $path Path of the endpoint
+     * @param array  $data Data to be sent along with the request
      *
      * @return mixed
      */
-    public function put($path, array $data = null)
+    public function put($path, array $data = array())
     {
         return $this->request($path, $data, 'put');
     }
@@ -131,12 +131,12 @@ class Api
     /**
      * API call method for sending requests using DELETE
      *
-     * @param string     $path Path of the endpoint
-     * @param array|null $data Data to be sent along with the request
+     * @param string $path Path of the endpoint
+     * @param array  $data Data to be sent along with the request
      *
      * @return mixed
      */
-    public function delete($path, array $data = null)
+    public function delete($path, array $data = array())
     {
         return $this->request($path, $data, 'delete');
     }
@@ -144,12 +144,12 @@ class Api
     /**
      * API call method for sending requests using PATCH
      *
-     * @param string     $path Path of the endpoint
-     * @param array|null $data Data to be sent along with the request
+     * @param string $path Path of the endpoint
+     * @param array  $data Data to be sent along with the request
      *
      * @return mixed
      */
-    public function patch($path, array $data = null)
+    public function patch($path, array $data = array())
     {
         return $this->request($path, $data, 'patch');
     }
@@ -159,9 +159,9 @@ class Api
      *
      * API call method for sending requests using GET, POST, PUT, DELETE OR PATCH
      *
-     * @param string      $path   Path of the endpoint
-     * @param array|null  $data   Data to be sent along with the request
-     * @param string|null $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
+     * @param string $path   Path of the endpoint
+     * @param array  $data   Data to be sent along with the request
+     * @param string $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
      *
      * @return mixed
      */
