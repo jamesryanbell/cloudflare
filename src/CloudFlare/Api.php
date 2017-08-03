@@ -97,7 +97,7 @@ class Api
      *
      * @return mixed
      */
-    public function get($path, array $data = array())
+    public function get($path, array $data = [])
     {
         return $this->request($path, $data, 'get');
     }
@@ -110,7 +110,7 @@ class Api
      *
      * @return mixed
      */
-    public function post($path, array $data = array())
+    public function post($path, array $data = [])
     {
         return $this->request($path, $data, 'post');
     }
@@ -123,7 +123,7 @@ class Api
      *
      * @return mixed
      */
-    public function put($path, array $data = array())
+    public function put($path, array $data = [])
     {
         return $this->request($path, $data, 'put');
     }
@@ -136,7 +136,7 @@ class Api
      *
      * @return mixed
      */
-    public function delete($path, array $data = array())
+    public function delete($path, array $data = [])
     {
         return $this->request($path, $data, 'delete');
     }
@@ -149,7 +149,7 @@ class Api
      *
      * @return mixed
      */
-    public function patch($path, array $data = array())
+    public function patch($path, array $data = [])
     {
         return $this->request($path, $data, 'patch');
     }
@@ -165,7 +165,7 @@ class Api
      *
      * @return mixed
      */
-    protected function request($path, array $data = array(), $method = 'get')
+    protected function request($path, array $data = [], $method = 'get')
     {
         if (!isset($this->email, $this->auth_key) || false === filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             throw new AuthenticationException('Authentication information must be provided');
@@ -194,8 +194,8 @@ class Api
 
         $user_agent = __FILE__;
         $headers = [
-            "X-Auth-Email: {$this->email}", 
-            "X-Auth-Key: {$this->auth_key}", 
+            "X-Auth-Email: {$this->email}",
+            "X-Auth-Key: {$this->auth_key}",
             "User-Agent: {$user_agent}",
             'Content-type: application/json',
         ];
