@@ -4,7 +4,6 @@ namespace Cloudflare\User\Billing\Subscriptions;
 
 use Cloudflare\Api;
 use Cloudflare\User;
-use Cloudflare\User\Billing;
 
 /**
  * CloudFlare API wrapper
@@ -13,17 +12,11 @@ use Cloudflare\User\Billing;
  * App Subscription
  *
  * @author James Bell <james@james-bell.co.uk>
+ *
  * @version 1
  */
-
 class Apps extends Api
 {
-    /**
-     * Default permissions level
-     * @var array
-     */
-    protected $permission_level = array('read' => '#billing:read', 'edit' => '#billing:edit');
-
     /**
      * List (permission needed: #billing:read)
      * List all of your app subscriptions
@@ -36,6 +29,7 @@ class Apps extends Api
     /**
      * Search, sort, and paginate (permission needed: #billing:read)
      * Search, sort, and paginate your subscriptions
+     *
      * @param int|null    $page         Page number of paginated results
      * @param int|null    $per_page     Number of items per page
      * @param string|null $order        Field to order subscriptions by
@@ -51,7 +45,7 @@ class Apps extends Api
      */
     public function search_sort_paginate($page = null, $per_page = null, $order = null, $status = null, $price = null, $activated_on = null, $expires_on = null, $expired_on = null, $cancelled_on = null, $renewed_on = null, $direction = null, $match = null)
     {
-        $data = array(
+        $data = [
             'page'         => $page,
             'per_page'     => $per_page,
             'order'        => $order,
@@ -63,18 +57,20 @@ class Apps extends Api
             'cancelled_on' => $cancelled_on,
             'renewed_on'   => $renewed_on,
             'direction'    => $direction,
-            'match'        => $match
-        );
+            'match'        => $match,
+        ];
+
         return $this->get('/user/billing/subscriptions/apps', $data);
     }
 
     /**
      * Info (permission needed: #billing:read)
      * Billing subscription details
+     *
      * @param string $identifier
      */
-    public function info(string $identifier)
+    public function info($identifier)
     {
-        return $this->get('/user/billing/subscriptions/apps/' . $identifier);
+        return $this->get('/user/billing/subscriptions/apps/'.$identifier);
     }
 }

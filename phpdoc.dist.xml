@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-  <title><![CDATA[CloudFlare API v4]]></title>
+  <title><![CDATA[CloudFlare API - PHP]]></title>
   <parser>
     <encoding>utf8</encoding>
     <markers>
@@ -15,6 +15,6 @@
     <directory>src</directory>
   </files>
   <transformations>
-    <template name="clean" />
+    <template name="responsive" />
   </transformations>
 </phpdoc>

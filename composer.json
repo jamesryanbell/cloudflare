@@ -1,6 +1,6 @@
 {
     "name": "jamesryanbell/cloudflare",
-    "description": "Cloudflare API V4 PHP wrapper",
+    "description": "CloudFlare API - PHP",
     "license": "MIT",
     "keywords": ["cloudflare", "api"],
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "require": {},
     "require-dev": {
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "< 6",
         "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {

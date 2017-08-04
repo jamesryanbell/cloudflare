@@ -1,0 +1,10 @@
+filter:
+    excluded_paths:
+        - 'tests/*'
+checks:
+    php: true
+coding_style:
+    php:
+        spaces:
+            before_left_brace:
+                function: false
