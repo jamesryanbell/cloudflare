@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/jamesryanbell/cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/cloudflare) [![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/cloudflare.svg)](https://coveralls.io/r/jamesryanbell/cloudflare?branch=master) [![Dependency Status](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a) [![Latest Stable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/stable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Total Downloads](https://poser.pugx.org/jamesryanbell/cloudflare/downloads.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![StyleCI](https://styleci.io/repos/22810771/shield)](https://styleci.io/repos/22810771) [![License](https://poser.pugx.org/jamesryanbell/cloudflare/license.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jamesryanbell/cloudflare/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jamesryanbell/cloudflare/?branch=master)
 
-# CloudFlare API - PHP
+# Cloudflare v4 API - PHP
 
-The documentation for the API can be found at https://api.cloudflare.com, I will try to update this as soon as possible when new features are added to the API. If I miss one please submit a pull request.
+The documentation for Cloudflare's API can be found at https://api.cloudflare.com, I will try to update this as soon as possible when new features are added to the API. If I miss one please submit a pull request.
 
 If you spot an issue with the package just let me know via issues but please include as much detail as possible, ideally with code examples, environment information etc.
 
@@ -21,7 +21,7 @@ The current feature list includes:
 - [x] DNS Records
 - [x] Zones
 - [x] Web Application Firewall (WAF)
-- [x] CloudFlare IPs
+- [x] Cloudflare IPs
 - [x] User Administration
 - [x] Virtual DNS Management
 - [x] Organization Administration
