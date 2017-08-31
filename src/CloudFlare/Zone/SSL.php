@@ -96,4 +96,30 @@ class SSL extends Api
     {
         return $this->delete('zones/'.$zone_identifier.'/custom_certificates/'.$identifier);
     }
+    
+    /**
+	 * Get SSL Verification Info for a Zone (permission needed: #ssl:read)
+	 * https://api.cloudflare.com/#ssl-verification-properties
+	 *
+	 * @param string $zone_identifier API item identifier tag
+	 */
+	public function free_ssl_status($zone_identifier)
+	{
+		return $this->get('zones/'.$zone_identifier.'/ssl/verification');
+	}
+
+	/**
+	 * Immediately retry SSL verification (permission needed: #ssl:edit)
+	 * https://api.cloudflare.com/#ssl-verification-properties
+	 *
+	 * @param string $zone_identifier API item identifier tag
+	 */
+	public function free_ssl_retry($zone_identifier)
+	{
+		$data = [
+			'retry' => true
+		];
+
+		return $this->get('zones/'.$zone_identifier.'/ssl/verification', $data);
+	}
 }
