@@ -1,3 +1,16 @@
+## Note: Please use the official Cloudflare PHP package ##
+https://github.com/cloudflare/cloudflare-php
+
+I will continue to fix bugs but there will be no futher development on this library given Cloudflare have released an official package.
+
+You can read more about the official package here:
+
+- https://blog.cloudflare.com/cloudflare-php-api-binding/
+- https://support.cloudflare.com/hc/en-us/articles/115001661191
+
+#
+
+
 [![Build Status](https://travis-ci.org/jamesryanbell/cloudflare.svg?branch=master)](https://travis-ci.org/jamesryanbell/cloudflare) [![Coverage Status](https://img.shields.io/coveralls/jamesryanbell/cloudflare.svg)](https://coveralls.io/r/jamesryanbell/cloudflare?branch=master) [![Dependency Status](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a/badge.svg?style=flat)](http://www.versioneye.com/user/projects/53e78e96e09a429c6200000a) [![Latest Stable Version](https://poser.pugx.org/jamesryanbell/cloudflare/v/stable.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Total Downloads](https://poser.pugx.org/jamesryanbell/cloudflare/downloads.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![StyleCI](https://styleci.io/repos/22810771/shield)](https://styleci.io/repos/22810771) [![License](https://poser.pugx.org/jamesryanbell/cloudflare/license.svg)](https://packagist.org/packages/jamesryanbell/cloudflare) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jamesryanbell/cloudflare/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jamesryanbell/cloudflare/?branch=master)
 
 # CloudFlare API - PHP
