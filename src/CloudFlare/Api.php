@@ -171,10 +171,8 @@ class Api
             throw new AuthenticationException('Authentication information must be provided');
         }
 
-        //Removes null entries
-        $data = array_filter($data, function ($val) {
-            return !is_null($val);
-        });
+        // Removes null entries
+        $data = array_filter($data);
 
         $url = 'https://api.cloudflare.com/client/v4/'.$path;
 
