@@ -20,6 +20,9 @@ class Certificates extends Api
      * List Certificates
      * List all existing CloudFlare-issued Certificates for a given zone. Use your Certificates API Key as your
      * User Service Key when calling this endpoint
+     * @param null|mixed $page
+     * @param null|mixed $per_page
+     * @param null|mixed $direction
      */
     public function certificates($page = null, $per_page = null, $direction = null)
     {

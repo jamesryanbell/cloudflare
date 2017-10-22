@@ -107,6 +107,7 @@ class Pools extends Api
      * Delete a pool
      * Delete a configured pool
      *
+     * @param string $organization_identifier
      * @param string $identifier
      */
     public function delete_pool($organization_identifier, $identifier)
