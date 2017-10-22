@@ -29,6 +29,16 @@ class Dns extends Api
      * @param int|null   $priority        MX record priority value
      * @param array|null $data            Additional data required for SRV record
      */
+    
+    public function add($name)
+    {
+        $data = [
+            'name'     => $name,
+        ];
+
+        return $this->post('zones', $data);
+    }
+    
     public function create($zone_identifier, $type, $name, $content, $ttl = null, $proxied = null, $priority = null, $data = null)
     {
         $data = [
