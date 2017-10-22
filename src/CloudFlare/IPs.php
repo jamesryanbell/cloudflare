@@ -20,6 +20,6 @@ class IPs extends Api
      */
     public function ips()
     {
-        return $this->get('/ips');
+        return $this->get('ips');
     }
 }
