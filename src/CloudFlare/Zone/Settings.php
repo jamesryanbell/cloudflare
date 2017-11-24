@@ -461,7 +461,8 @@ class Settings extends Api
         $data = [
             'value' => $value,
         ];
-        return $this->patch('zones/' . $zone_identifier . '/settings/always_use_https', $data);
+
+        return $this->patch('zones/'.$zone_identifier.'/settings/always_use_https', $data);
     }
 
     /**
