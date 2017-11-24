@@ -16,6 +16,21 @@ use Cloudflare\Api;
 class SSL extends Api
 {
     /**
+     * Get SSL Verification permission needed: #ssl:read
+     *
+     * @param string $zone_identifier API item identifier tag
+     * @param string $retry     Immediately retry SSL Verification
+     */
+    public function verification($zone_identifier, $retry = null)
+    {
+        $data = [
+            'retry' => $retry,
+        ];
+
+        return $this->get('zones/'.$zone_identifier.'/ssl/verification', $data);
+    }
+
+    /**
      * List SSL configurations (permission needed: #ssl:read)
      *
      * @param string $zone_identifier API item identifier tag
