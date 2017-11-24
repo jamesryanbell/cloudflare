@@ -50,6 +50,7 @@ class ApiTest extends PHPUnit_Framework_TestCase
     public function testHttpNoCredentials()
     {
         $http = new Api();
+
         try {
             $http->get('test');
             $this->fail('Expected exception not thrown');

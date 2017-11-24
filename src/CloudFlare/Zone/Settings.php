@@ -74,7 +74,7 @@ class Settings extends Api
      */
     public function always_use_https($zone_identifier)
     {
-        return $this->get('zones/' . $zone_identifier . '/settings/always_use_https');
+        return $this->get('zones/'.$zone_identifier.'/settings/always_use_https');
     }
 
     /**
@@ -458,9 +458,9 @@ class Settings extends Api
      */
     public function change_always_use_https($zone_identifier, $value = null)
     {
-        $data = array(
-            'value' => $value
-        );
+        $data = [
+            'value' => $value,
+        ];
         return $this->patch('zones/' . $zone_identifier . '/settings/always_use_https', $data);
     }
 
