@@ -1,8 +1,0 @@
-preset: recommended
-
-risky: false
-
-linting: true
-
-disabled:
-  - phpdoc_summary
