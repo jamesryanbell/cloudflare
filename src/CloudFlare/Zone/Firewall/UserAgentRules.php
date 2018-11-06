@@ -9,7 +9,7 @@ use Cloudflare\Api;
  *
  * Firewall user agent rules for a Zone
  *
- * @author  Alexander Fedra <alexander.fedra@gmail.com>
+ * @author  Alexander Fedra <contact@dercoder.at>
  *
  * @version 1
  */

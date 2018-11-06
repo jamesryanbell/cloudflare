@@ -1,5 +1,5 @@
 {
-    "name": "jamesryanbell/cloudflare",
+    "name": "dercoder/cloudflare",
     "description": "CloudFlare API - PHP",
     "license": "MIT",
     "keywords": ["cloudflare", "api"],
@@ -7,6 +7,10 @@
         {
             "name": "James Bell",
             "email": "james@james-bell.co.uk"
+        },
+        {
+            "name": "Alexander Fedra",
+            "email": "contact@dercoder.at"
         }
     ],
     "require": {},
