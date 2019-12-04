@@ -1,5 +1,5 @@
 {
-    "name": "jamesryanbell/cloudflare",
+    "name": "fmp777/cloudflare",
     "description": "CloudFlare API - PHP",
     "license": "MIT",
     "keywords": ["cloudflare", "api"],
@@ -9,10 +9,11 @@
             "email": "james@james-bell.co.uk"
         }
     ],
-    "require": {},
+    "require": {
+        "jamesryanbell/cloudflare": "dev-master"
+    },
     "require-dev": {
         "phpunit/phpunit": "< 6",
-        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-4": {
