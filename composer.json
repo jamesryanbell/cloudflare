@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "jamesryanbell/cloudflare": "dev-master"
+        "fmp777/cloudflare": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "< 6"
