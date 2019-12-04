@@ -13,7 +13,7 @@
         "jamesryanbell/cloudflare": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "< 6",
+        "phpunit/phpunit": "< 6"
     },
     "autoload": {
         "psr-4": {
