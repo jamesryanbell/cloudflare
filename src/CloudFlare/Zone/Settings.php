@@ -891,4 +891,29 @@ class Settings extends Api
 
         return $this->patch('zones/'.$zone_identifier.'/settings/waf', $data);
     }
+
+
+    public function min_tls_version($zone_identifier)
+    {
+        return $this->get('zones/'.$zone_identifier.'/settings/min_tls_version');
+    }
+
+    /**
+     * Change Minimum TLS Version setting
+     * Only accept HTTPS requests that use at least the TLS protocol version specified. For example, if TLS 1.1 is selected, TLS 1.0 connections will be rejected, while 1.1, 1.2, and 1.3 (if enabled) will be permitted.
+     * https://api.cloudflare.com/#zone-settings-change-minimum-tls-version-setting
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     *
+     * @return mixed
+     */
+    public function change_min_tls_version($zone_identifier, $value = null)
+    {
+        $data = [
+            'value' => $value,
+        ];
+
+        return $this->patch('zones/'.$zone_identifier.'/settings/min_tls_version', $data);
+    }
 }
