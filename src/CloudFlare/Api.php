@@ -229,11 +229,20 @@ class Api
         $information = curl_getinfo($ch);
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
+        $response = json_decode($http_result);
+
         if (in_array($http_code, [401, 403])) {
-            throw new UnauthorizedException('You do not have permission to perform this request');
+            if (!$response) {
+                throw new UnauthorizedException('You do not have permission to perform this request');
+            } else {
+                $response->success = false;
+                $error_obj = new \stdClass();
+                $error_obj->code = 0;
+                $error_obj->message = $response->error;
+                $response->errors[] = $error_obj;
+            }
         }
 
-        $response = json_decode($http_result);
         if (!$response) {
             $response = new \stdClass();
             $response->success = false;
