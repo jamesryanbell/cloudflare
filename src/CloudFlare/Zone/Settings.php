@@ -916,4 +916,38 @@ class Settings extends Api
 
         return $this->patch('zones/'.$zone_identifier.'/settings/min_tls_version', $data);
     }
+    
+    /**
+     * Bot Fight Mode
+     * Gets the current settings object for bot fight mode ->result->fight_mode
+     *
+     * @param string $zone_identifier API item identifier tag
+     */
+    public function bot_fight_mode($zone_identifier)
+    {
+        return $this->get('zones/' . $zone_identifier . '/bot_management');
+    }
+
+    /**
+     * Change Bot Fight Mode
+     * Enable or disable bot fight mode
+     * undocumented by cloudflare
+     *
+     * @param string      $zone_identifier API item identifier tag
+     * @param string|null $value           Value of the zone setting (default: off)
+     *
+     * @return mixed
+     */
+    public function change_bot_fight_mode($zone_identifier, $value = true)
+    {
+        # doesn't follow other standards of on/off
+        if ($value === 'off' || $value === false || $value === 0) $value = false;
+        else $value = true;
+
+        $data = [
+            'fight_mode' => $value,
+        ];
+
+        return $this->put('zones/' . $zone_identifier . '/bot_management', $data);
+    }
 }
