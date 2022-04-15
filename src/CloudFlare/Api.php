@@ -176,6 +176,8 @@ class Api
             return !is_null($val);
         });
 
+        $path = preg_replace('|^/|', '', $path); // FMP EDIT - a slash in path double slashes the api call - hackfix it
+        $path = str_replace('//', '/', $path); // FMP EDIT - remove any other double slashes made in error
         $url = 'https://api.cloudflare.com/client/v4/'.$path;
 
         $default_curl_options = [
